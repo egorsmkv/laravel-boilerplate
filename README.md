@@ -1,7 +1,4 @@
-# Laravel Payments Masterclass
-
-> [!NOTE]
-> Final code of the masterclass is here: https://github.com/egorsmkv/laravel-payments-masterclass-final
+# Laravel Boilerplate for Development
 
 ### Usage
 
@@ -17,7 +14,7 @@ docker build --tag laravel_app:1.0 docker/apps
 docker-compose -f docker-compose.dev.yml up
 
 # Enter the container
-docker exec -it laravel-payments-masterclass-apps-1 bash
+docker exec -it laravel-boilerplate-dev-apps-1 bash
 
 # Install required libraries
 cd /app/frontend && php composer.phar install
