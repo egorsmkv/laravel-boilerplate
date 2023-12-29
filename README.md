@@ -17,7 +17,7 @@ docker-compose -f docker-compose.dev.yml up
 docker exec -it laravel-boilerplate-dev-apps-1 bash
 
 # Install required libraries
-cd /app/frontend && php composer.phar install
+cd /app/frontend && composer install
 
 # Copy Laravel environment variables file
 cp .env.dev.example .env
