@@ -1,0 +1,71 @@
+version: '3'
+
+services:
+  apps:
+    image: laravel_app:1.0
+    env_file:
+      - dev.env
+    volumes:
+      - ./phpfpm/dev/env.conf:/opt/bitnami/php/etc/php-fpm.d/env.conf
+      - ./phpfpm/dev/custom.ini:/opt/bitnami/php/etc/conf.d/custom.ini
+      - ./phpfpm/logs:/var/log/php-fpm/
+      - ./apps:/app
+    ports:
+      - "5173:5173"
+
+  queue_worker:
+    image: laravel_app:1.0
+    tty: true
+    volumes:
+      - ./phpfpm/dev/env.conf:/opt/bitnami/php/etc/php-fpm.d/env.conf
+      - ./phpfpm/dev/custom.ini:/opt/bitnami/php/etc/conf.d/custom.ini
+      - ./apps:/app
+    command: sh -c "cd /app/frontend && php artisan queue:work"
+    depends_on:
+      - mysql
+
+  caddy:
+    image: caddy:2.7
+    ports:
+      - "80:80"
+    volumes:
+      - ./caddy/dev/Caddyfile:/etc/caddy/Caddyfile
+      - ./ssl:/ssl
+      - ./apps:/app
+      - caddy_data:/data
+    depends_on:
+      - apps
+      - queue_worker
+
+  mysql:
+    image: mysql:8.2
+    env_file:
+      - dev.env
+    command: [
+      '--character-set-server=utf8mb4',
+      '--collation-server=utf8mb4_unicode_ci',
+      '--default-authentication-plugin=mysql_native_password'
+    ]
+    ports:
+      - "3380:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  adminer:
+    image: adminer:4.8.1-standalone
+    env_file:
+      - dev.env
+    ports:
+      - "8001:8080"
+    depends_on:
+      - mysql
+
+  inbucket:
+    image: inbucket/inbucket:main
+    ports:
+      - "2500:2500"
+      - "9001:9000"
+
+volumes:
+  caddy_data:
+  mysql_data:

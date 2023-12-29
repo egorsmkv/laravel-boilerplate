@@ -1,0 +1,7 @@
+.idea/
+
+apps/frontend/vendor/
+apps/frontend/node_modules/
+apps/frontend/db.sqlite
+
+phpfpm/logs
