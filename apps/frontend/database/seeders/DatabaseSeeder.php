@@ -1,19 +1,22 @@
 <?php
 
+namespace Database\Seeders;
+
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    private function load(): void
-    {
-        require __DIR__ . '/Roles/CreateRolesBase.php';
-        require __DIR__ . '/Roles/CreateRolesSeeder.php';
-    }
-
+    /**
+     * Seed the application's database.
+     */
     public function run(): void
     {
-        $this->load();
+        // \App\Models\User::factory(10)->create();
 
-        $this->call(CreateRolesSeeder::class);
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
     }
 }

@@ -13,7 +13,7 @@ services:
     ports:
       - "5173:5173"
 
-  queue_worker:
+  queue:
     image: laravel_app:1.0
     tty: true
     volumes:
@@ -35,7 +35,7 @@ services:
       - caddy_data:/data
     depends_on:
       - apps
-      - queue_worker
+      - queue
 
   pgsql:
     image: postgres:16.1-alpine
