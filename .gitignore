@@ -1,7 +1,21 @@
 .idea/
+.vscode/
 
 apps/frontend/vendor/
 apps/frontend/node_modules/
+apps/frontend/public/hot
+apps/frontend/public/storage
+apps/frontend/storage/*.key
 apps/frontend/db.sqlite
 
 phpfpm/logs
+
+.env
+.env.backup
+.phpunit.result.cache
+
+Homestead.json
+Homestead.yaml
+
+npm-debug.log
+yarn-error.log
