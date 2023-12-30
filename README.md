@@ -2,9 +2,7 @@
 
 ### Usage
 
-Fill the `dev.env` file before the start.
-
-Next, run the following commands:
+Run the following commands to install this project:
 
 ```bash
 # Create the app docker image
@@ -27,7 +25,12 @@ php artisan key:generate
 
 # Apply migrations
 php artisan migrate
+```
 
-# Start vite in developer mode
+### Useful commands
+
+Start Vite in developer mode:
+
+```bash
 docker exec -it laravel-boilerplate-dev-apps-1 bash -c 'cd /app/frontend && npm run dev'
 ```
