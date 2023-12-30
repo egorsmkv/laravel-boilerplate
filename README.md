@@ -27,4 +27,7 @@ php artisan key:generate
 
 # Apply migrations
 php artisan migrate
+
+# Start vite in developer mode
+docker exec -it laravel-boilerplate-dev-apps-1 bash -c 'cd /app/frontend && npm run dev'
 ```
