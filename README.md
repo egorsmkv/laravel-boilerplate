@@ -6,7 +6,7 @@ Run the following commands to install this project:
 
 ```bash
 # Create the app docker image
-docker build --tag laravel_app:1.0 docker/apps
+docker build --tag laravel_app:1.0 docker/dev
 
 # Up containers
 docker-compose -f docker-compose.dev.yml up

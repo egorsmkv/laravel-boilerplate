@@ -1,15 +1,16 @@
-FROM bitnami/php-fpm:8.2
+FROM bitnami/php-fpm:8.3
 
 RUN apt update && apt install -y autoconf php-dev pkg-php-tools wget build-essential
 
 RUN curl -sL https://deb.nodesource.com/setup_20.x -o /tmp/nodesource_setup.sh && \
     bash /tmp/nodesource_setup.sh && \
     apt install -y nodejs && \
-    rm /tmp/nodesource_setup.sh
+    rm /tmp/nodesource_setup.sh && \
+    npm install -g npm
 
-RUN wget https://pecl.php.net/get/redis-5.3.4.tgz && \
-    tar xzf redis-5.3.4.tgz &&  \
-    cd redis-5.3.4 &&  \
+RUN wget https://pecl.php.net/get/redis-6.0.2.tgz && \
+    tar xzf redis-6.0.2.tgz &&  \
+    cd redis-6.0.2 &&  \
     phpize &&  \
     ./configure &&  \
     make &&  \
