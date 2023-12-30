@@ -4,6 +4,7 @@
 apps/frontend/vendor/
 apps/frontend/node_modules/
 apps/frontend/public/hot
+apps/frontend/public/vendor/telescope
 apps/frontend/public/storage
 apps/frontend/storage/*.key
 apps/frontend/db.sqlite
