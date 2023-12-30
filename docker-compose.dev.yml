@@ -37,19 +37,14 @@ services:
       - apps
       - queue_worker
 
-  mysql:
-    image: mysql:8.2
+  pgsql:
+    image: postgres:16.1-alpine
     env_file:
       - dev.env
-    command: [
-      "--character-set-server=utf8mb4",
-      "--collation-server=utf8mb4_unicode_ci",
-      "--default-authentication-plugin=mysql_native_password"
-    ]
     ports:
       - "3380:3306"
     volumes:
-      - mysql_data:/var/lib/mysql
+      - pgsql_data:/var/lib/postgresql/data
 
   adminer:
     image: adminer:4.8.1-standalone
@@ -58,7 +53,7 @@ services:
     ports:
       - "8001:8080"
     depends_on:
-      - mysql
+      - pgsql
 
   inbucket:
     image: inbucket/inbucket:main
@@ -67,7 +62,7 @@ services:
       - "9001:9000"
 
   redis:
-    image: redis:7.2
+    image: redis:7.2-alpine
     command: [
       "redis-server",
       "--appendonly",
@@ -78,5 +73,5 @@ services:
 
 volumes:
   caddy_data:
-  mysql_data:
+  pgsql_data:
   redis_data:
