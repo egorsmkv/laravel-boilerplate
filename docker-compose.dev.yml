@@ -22,7 +22,7 @@ services:
       - ./apps:/app
     command: sh -c "cd /app/frontend && php artisan queue:work"
     depends_on:
-      - mysql
+      - redis
 
   caddy:
     image: caddy:2.7
@@ -42,9 +42,9 @@ services:
     env_file:
       - dev.env
     command: [
-      '--character-set-server=utf8mb4',
-      '--collation-server=utf8mb4_unicode_ci',
-      '--default-authentication-plugin=mysql_native_password'
+      "--character-set-server=utf8mb4",
+      "--collation-server=utf8mb4_unicode_ci",
+      "--default-authentication-plugin=mysql_native_password"
     ]
     ports:
       - "3380:3306"
@@ -66,6 +66,17 @@ services:
       - "2500:2500"
       - "9001:9000"
 
+  redis:
+    image: redis:7.2
+    command: [
+      "redis-server",
+      "--appendonly",
+      "yes"
+    ]
+    volumes:
+      - redis_data:/data
+
 volumes:
   caddy_data:
   mysql_data:
+  redis_data:

@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Jobs\TestJob;
 
 class HomeController extends Controller
 {
@@ -19,5 +20,19 @@ class HomeController extends Controller
     public function index(Request $request): View
     {
         return view('home');
+    }
+
+    /**
+     * Just a test to invoke the job
+     *
+     * @param Request $request
+     *
+     * @return string
+     */
+    public function startTestJob(Request $request): string
+    {
+        TestJob::dispatch(10);
+
+        return 'OK';
     }
 }
