@@ -30,7 +30,6 @@ services:
       - "80:80"
     volumes:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile
-      - ./ssl:/ssl
       - ./apps:/app
       - caddy_data:/data
     depends_on:
@@ -41,8 +40,6 @@ services:
     image: postgres:16.1-alpine
     env_file:
       - dev.env
-    ports:
-      - "3380:3306"
     volumes:
       - pgsql_data:/var/lib/postgresql/data
 
@@ -58,7 +55,6 @@ services:
   inbucket:
     image: inbucket/inbucket:main
     ports:
-      - "2500:2500"
       - "9001:9000"
 
   redis:
