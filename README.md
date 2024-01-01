@@ -9,7 +9,7 @@ Run the following commands to install this project:
 docker build --tag laravel_app:1.0 docker/dev
 
 # Up containers
-docker-compose -f docker-compose.yml up
+docker compose up
 
 # Enter the container
 docker exec -it laravel-boilerplate-dev-apps-1 bash
