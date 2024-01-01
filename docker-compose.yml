@@ -6,8 +6,8 @@ services:
     env_file:
       - dev.env
     volumes:
-      - ./phpfpm/dev/env.conf:/opt/bitnami/php/etc/php-fpm.d/env.conf
-      - ./phpfpm/dev/custom.ini:/opt/bitnami/php/etc/conf.d/custom.ini
+      - ./phpfpm/env.conf:/opt/bitnami/php/etc/php-fpm.d/env.conf
+      - ./phpfpm/custom.ini:/opt/bitnami/php/etc/conf.d/custom.ini
       - ./phpfpm/logs:/var/log/php-fpm/
       - ./apps:/app
     ports:
@@ -17,8 +17,8 @@ services:
     image: laravel_app:1.0
     tty: true
     volumes:
-      - ./phpfpm/dev/env.conf:/opt/bitnami/php/etc/php-fpm.d/env.conf
-      - ./phpfpm/dev/custom.ini:/opt/bitnami/php/etc/conf.d/custom.ini
+      - ./phpfpm/env.conf:/opt/bitnami/php/etc/php-fpm.d/env.conf
+      - ./phpfpm/custom.ini:/opt/bitnami/php/etc/conf.d/custom.ini
       - ./apps:/app
     command: sh -c "cd /app/frontend && php artisan queue:work"
     depends_on:
@@ -29,7 +29,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./caddy/dev/Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
       - ./ssl:/ssl
       - ./apps:/app
       - caddy_data:/data
