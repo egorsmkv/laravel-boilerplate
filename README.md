@@ -15,7 +15,10 @@ docker compose up
 docker exec -it laravel-boilerplate-dev-apps-1 bash
 
 # Install required libraries
-cd /app/frontend && composer install && php artisan telescope:install && npm install
+cd /app/frontend && \
+  composer install && \
+  php artisan telescope:install && \
+  npm install
 
 # Copy Laravel environment variables file
 cp .env.dev.example .env

@@ -1,3 +1,3 @@
-import './bootstrap';
+import 'flowbite';
 
-import * as bootstrap from 'bootstrap';
+import './bootstrap';
