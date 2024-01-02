@@ -1,5 +1,9 @@
 # Laravel Boilerplate for Development
 
+### Requirements
+
+- Docker Engine 24.x
+
 ### Usage
 
 Run the following commands to install this project:
