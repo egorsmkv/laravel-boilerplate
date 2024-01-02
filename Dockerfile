@@ -1,6 +1,6 @@
 FROM bitnami/php-fpm:8.3
 
-RUN apt update && apt install -y autoconf php-dev pkg-php-tools wget build-essential
+RUN apt update && apt install -y autoconf php-dev pkg-php-tools unzip wget build-essential
 
 RUN curl -sL https://deb.nodesource.com/setup_20.x -o /tmp/nodesource_setup.sh && \
     bash /tmp/nodesource_setup.sh && \
