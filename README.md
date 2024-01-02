@@ -23,27 +23,37 @@ APPS_CONTAINER=laravel-boilerplate-dev-apps-1 # bash
 set APPS_CONTAINER laravel-boilerplate-dev-apps-1 # fish
 
 # Install required libraries
-docker exec -it $APPS_CONTAINER bash -c 'cd /app/frontend && composer install && php artisan telescope:install && npm install'
+docker exec -it $APPS_CONTAINER bash -c 'composer install && php artisan telescope:install && bun install'
 
 # Generate "APP_KEY"
-docker exec -it $APPS_CONTAINER php /app/frontend/artisan key:generate
+docker exec -it $APPS_CONTAINER php artisan key:generate
 
 # Apply migrations
-docker exec -it $APPS_CONTAINER php /app/frontend/artisan migrate
+docker exec -it $APPS_CONTAINER php artisan migrate
 ```
 
 ### Useful commands
 
-Start Vite in developer mode:
+Use Vite:
 
 ```bash
-docker exec -it $APPS_CONTAINER bash -c 'cd /app/frontend && npm run dev'
+# Start dev server
+docker exec -it $APPS_CONTAINER bun run dev
+
+# Build for production
+docker exec -it $APPS_CONTAINER bun run build
 ```
 
 Start queue worker:
 
 ```bash
-docker exec -it $APPS_CONTAINER php /app/frontend/artisan queue:listen -vvv
+docker exec -it $APPS_CONTAINER php artisan queue:listen -vvv
+```
+
+Check resources usage:
+
+```bash
+docker stats --no-stream
 ```
 
 ### Profiling
