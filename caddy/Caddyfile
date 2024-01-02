@@ -1,9 +1,9 @@
 {
-    debug
+	debug
 }
 
 localhost:80 {
-    log {
+	log {
 		output stdout
 		format console
 		level DEBUG
