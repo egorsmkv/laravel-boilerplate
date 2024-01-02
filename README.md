@@ -43,3 +43,7 @@ Start queue worker:
 ```bash
 docker exec -it laravel-boilerplate-dev-apps-1 php /app/frontend/artisan queue:listen -vvv
 ```
+
+### Maintenance
+
+Read the UPDATE.md file to keep the project up to date.
