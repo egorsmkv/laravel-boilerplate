@@ -12,16 +12,18 @@ services:
       - ./apps:/app
     ports:
       - "5173:5173"
+    depends_on:
+      - pgsql
+      - redis
 
   queue:
     image: laravel_app:1.0
-    tty: true
     volumes:
-      - ./phpfpm/env.conf:/opt/bitnami/php/etc/php-fpm.d/env.conf
       - ./phpfpm/custom.ini:/opt/bitnami/php/etc/conf.d/custom.ini
       - ./apps:/app
-    command: sh -c "cd /app/frontend && php artisan queue:work"
+    command: sh -c "cd /app/frontend && php artisan queue:listen -vvv"
     depends_on:
+      - pgsql
       - redis
 
   caddy:
@@ -34,7 +36,6 @@ services:
       - caddy_data:/data
     depends_on:
       - apps
-      - queue
 
   pgsql:
     image: postgres:16.1-alpine
