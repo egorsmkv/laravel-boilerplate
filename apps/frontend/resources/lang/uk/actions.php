@@ -17,6 +17,7 @@ return [
     'choose'          => 'Виберіть',
     'choose_file'     => 'Виберіть файл',
     'choose_image'    => 'Виберіть Зображення',
+    'click_to_copy'   => 'Натисніть, щоб скопіювати',
     'close'           => 'Закрити',
     'collapse'        => 'Згорнути',
     'collapse_all'    => 'Закрити все',

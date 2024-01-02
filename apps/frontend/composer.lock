@@ -6810,16 +6810,16 @@
         },
         {
             "name": "laravel-lang/actions",
-            "version": "1.3.1",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Lang/actions.git",
-                "reference": "aca74d135e543fd44137b683d3bf156c9b696bb5"
+                "reference": "8bf23383a69c13404f9753de4884028e5c4077ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Lang/actions/zipball/aca74d135e543fd44137b683d3bf156c9b696bb5",
-                "reference": "aca74d135e543fd44137b683d3bf156c9b696bb5",
+                "url": "https://api.github.com/repos/Laravel-Lang/actions/zipball/8bf23383a69c13404f9753de4884028e5c4077ce",
+                "reference": "8bf23383a69c13404f9753de4884028e5c4077ce",
                 "shasum": ""
             },
             "require": {
@@ -6871,22 +6871,22 @@
             ],
             "support": {
                 "issues": "https://github.com/Laravel-Lang/actions/issues",
-                "source": "https://github.com/Laravel-Lang/actions/tree/1.3.1"
+                "source": "https://github.com/Laravel-Lang/actions/tree/1.4.1"
             },
-            "time": "2023-12-31T01:29:17+00:00"
+            "time": "2024-01-02T09:51:24+00:00"
         },
         {
             "name": "laravel-lang/attributes",
-            "version": "2.8.1",
+            "version": "2.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Lang/attributes.git",
-                "reference": "e85a26f09b4b54f24a8c84baf44c40a7c8214008"
+                "reference": "f846e8cd2079082725b4f2066fe5595aeea10183"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Lang/attributes/zipball/e85a26f09b4b54f24a8c84baf44c40a7c8214008",
-                "reference": "e85a26f09b4b54f24a8c84baf44c40a7c8214008",
+                "url": "https://api.github.com/repos/Laravel-Lang/attributes/zipball/f846e8cd2079082725b4f2066fe5595aeea10183",
+                "reference": "f846e8cd2079082725b4f2066fe5595aeea10183",
                 "shasum": ""
             },
             "require": {
@@ -6940,9 +6940,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Laravel-Lang/attributes/issues",
-                "source": "https://github.com/Laravel-Lang/attributes/tree/2.8.1"
+                "source": "https://github.com/Laravel-Lang/attributes/tree/2.9.1"
             },
-            "time": "2023-12-31T00:42:12+00:00"
+            "time": "2024-01-02T09:45:55+00:00"
         },
         {
             "name": "laravel-lang/common",
@@ -7147,16 +7147,16 @@
         },
         {
             "name": "laravel-lang/lang",
-            "version": "14.1.3",
+            "version": "14.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Lang/lang.git",
-                "reference": "ffd65525b7aa8f887023cba50254fb9f54d1edf4"
+                "reference": "0d5d2dbce4167ddc5cc54c425de97e0459fd7104"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Lang/lang/zipball/ffd65525b7aa8f887023cba50254fb9f54d1edf4",
-                "reference": "ffd65525b7aa8f887023cba50254fb9f54d1edf4",
+                "url": "https://api.github.com/repos/Laravel-Lang/lang/zipball/0d5d2dbce4167ddc5cc54c425de97e0459fd7104",
+                "reference": "0d5d2dbce4167ddc5cc54c425de97e0459fd7104",
                 "shasum": ""
             },
             "require": {
@@ -7203,7 +7203,7 @@
                 "issues": "https://github.com/Laravel-Lang/lang/issues",
                 "source": "https://github.com/Laravel-Lang/lang"
             },
-            "time": "2024-01-01T09:46:10+00:00"
+            "time": "2024-01-02T02:17:17+00:00"
         },
         {
             "name": "laravel-lang/locale-list",

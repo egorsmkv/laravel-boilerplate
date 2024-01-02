@@ -151,6 +151,7 @@ return [
     'uuid'                 => 'Поле :attribute має бути коректним UUID ідентифікатором.',
     'attributes'           => [
         'address'                  => 'адреса',
+        'affiliate_url'            => 'афілійована URL-адреса',
         'age'                      => 'вік',
         'amount'                   => 'сума',
         'area'                     => 'область',

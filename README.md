@@ -46,6 +46,10 @@ Start queue worker:
 docker exec -it $APPS_CONTAINER php /app/frontend/artisan queue:listen -vvv
 ```
 
+### Profiling
+
+Access `http://localhost/?SPX_KEY=dev&SPX_UI_URI=/` to enable PHP-SPX and see the profiling results.
+
 ### Maintenance
 
 Read the UPDATE.md file to keep the project up to date.
