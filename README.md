@@ -50,7 +50,7 @@ Start queue worker:
 docker exec -it $APPS_CONTAINER php artisan queue:listen -vvv
 ```
 
-Check resources usage:
+Check usage of resources:
 
 ```bash
 docker stats --no-stream
