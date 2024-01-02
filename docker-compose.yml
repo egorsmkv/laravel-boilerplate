@@ -2,7 +2,7 @@ version: '3'
 
 services:
   apps:
-    image: laravel_app:1.0
+    image: laravel_app_dev:1.0
     env_file:
       - dev.env
     volumes:
