@@ -16,8 +16,9 @@
     "laravel/ui": "^4.3"
   },
   "require-dev": {
-    "laravel/telescope": "*",
     "fakerphp/faker": "^1.9.1",
+    "laravel-lang/common": "^6.1",
+    "laravel/telescope": "*",
     "mockery/mockery": "^1.4.4",
     "nunomaduro/collision": "^7.0",
     "spatie/laravel-ignition": "^2.0"
@@ -36,7 +37,8 @@
       "@php artisan package:discover --ansi"
     ],
     "post-update-cmd": [
-      "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+      "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+      "php artisan lang:update"
     ],
     "post-root-package-install": [
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
