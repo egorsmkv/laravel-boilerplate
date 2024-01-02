@@ -16,21 +16,6 @@ services:
       - pgsql
       - redis
 
-  queue:
-    image: laravel_app:1.0
-    volumes:
-      - ./phpfpm/custom.ini:/opt/bitnami/php/etc/conf.d/custom.ini
-      - ./apps:/app
-    command: [
-      "php",
-      "/app/frontend/artisan",
-      "queue:listen",
-      "-vvv"
-    ]
-    depends_on:
-      - pgsql
-      - redis
-
   caddy:
     image: caddy:2.7
     ports:

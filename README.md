@@ -37,3 +37,9 @@ Start Vite in developer mode:
 ```bash
 docker exec -it laravel-boilerplate-dev-apps-1 bash -c 'cd /app/frontend && npm run dev'
 ```
+
+Start queue worker:
+
+```bash
+docker exec -it laravel-boilerplate-dev-apps-1 php /app/frontend/artisan queue:listen -vvv
+```
