@@ -1,5 +1,6 @@
 # How to update components
 
+- [ ] Check https://docs.docker.com/engine/release-notes to see the latest version of Docker Engine
 - [ ] In `docker-compose.yml` check new versions of images
 - [ ] In `Dockerfile` check new version of `bitnami/php-fpm` image
     - [ ] Check a new version of NodeJS
