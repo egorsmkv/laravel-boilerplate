@@ -15,6 +15,10 @@ services:
     depends_on:
       - pgsql
       - redis
+    deploy:
+      resources:
+        limits:
+          memory: 512M
 
   caddy:
     image: caddy:2.7
@@ -26,6 +30,10 @@ services:
       - caddy_data:/data
     depends_on:
       - apps
+    deploy:
+      resources:
+        limits:
+          memory: 128M
 
   pgsql:
     image: postgres:16.1-alpine
@@ -33,6 +41,10 @@ services:
       - dev.env
     volumes:
       - pgsql_data:/var/lib/postgresql/data
+    deploy:
+      resources:
+        limits:
+          memory: 512M
 
   adminer:
     image: adminer:4.8.1-standalone
@@ -42,11 +54,19 @@ services:
       - "8001:8080"
     depends_on:
       - pgsql
+    deploy:
+      resources:
+        limits:
+          memory: 128M
 
   inbucket:
     image: inbucket/inbucket:main
     ports:
       - "9001:9000"
+    deploy:
+      resources:
+        limits:
+          memory: 128M
 
   redis:
     image: redis:7.2-alpine
@@ -57,6 +77,10 @@ services:
     ]
     volumes:
       - redis_data:/data
+    deploy:
+      resources:
+        limits:
+          memory: 64M
 
 volumes:
   caddy_data:
