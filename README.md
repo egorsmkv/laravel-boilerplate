@@ -11,23 +11,21 @@ docker build --tag laravel_app:1.0 .
 # Up containers
 docker compose up
 
-# Enter the container
-docker exec -it laravel-boilerplate-dev-apps-1 bash
+# Copy Laravel environment variables file
+cp -n .env.dev.example apps/frontend/.env
+
+# Set apps container name
+APPS_CONTAINER=laravel-boilerplate-dev-apps-1 # bash
+set APPS_CONTAINER laravel-boilerplate-dev-apps-1 # fish
 
 # Install required libraries
-cd /app/frontend && \
-  composer install && \
-  php artisan telescope:install && \
-  npm install
-
-# Copy Laravel environment variables file
-cp .env.dev.example .env
+docker exec -it $APPS_CONTAINER bash -c 'cd /app/frontend && composer install && php artisan telescope:install && npm install'
 
 # Generate "APP_KEY"
-php artisan key:generate
+docker exec -it $APPS_CONTAINER php /app/frontend/artisan key:generate
 
 # Apply migrations
-php artisan migrate
+docker exec -it $APPS_CONTAINER php /app/frontend/artisan migrate
 ```
 
 ### Useful commands
@@ -35,13 +33,13 @@ php artisan migrate
 Start Vite in developer mode:
 
 ```bash
-docker exec -it laravel-boilerplate-dev-apps-1 bash -c 'cd /app/frontend && npm run dev'
+docker exec -it $APPS_CONTAINER bash -c 'cd /app/frontend && npm run dev'
 ```
 
 Start queue worker:
 
 ```bash
-docker exec -it laravel-boilerplate-dev-apps-1 php /app/frontend/artisan queue:listen -vvv
+docker exec -it $APPS_CONTAINER php /app/frontend/artisan queue:listen -vvv
 ```
 
 ### Maintenance
