@@ -17,3 +17,5 @@ RUN wget https://pecl.php.net/get/redis-6.0.2.tgz && \
     ./configure &&  \
     make &&  \
     make install
+
+WORKDIR /app/frontend
