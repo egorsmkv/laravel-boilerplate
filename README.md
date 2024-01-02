@@ -12,7 +12,7 @@ docker build --tag laravel_app:1.0 .
 docker compose up
 
 # Copy Laravel environment variables file
-cp -n .env.dev.example apps/frontend/.env
+cp -n dev-frontend.env apps/frontend/.env
 
 # Set apps container name
 APPS_CONTAINER=laravel-boilerplate-dev-apps-1 # bash
