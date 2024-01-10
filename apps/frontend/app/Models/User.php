@@ -8,11 +8,10 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 /**
- * Class User
+ * Class User.
  *
  * Represents a user in the system.
  *
- * @package App\Models
  * @property int $id
  * @property string $name
  * @property string $email

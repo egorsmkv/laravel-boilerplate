@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Jobs\TestJob;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use App\Jobs\TestJob;
 
 class HomeController extends Controller
 {
@@ -22,7 +22,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Just a test to invoke the job
+     * Just a test to invoke the job.
      *
      * @param Request $request
      * @return string
