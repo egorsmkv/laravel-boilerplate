@@ -50,6 +50,12 @@ Start queue worker:
 docker exec -it $APPS_CONTAINER php artisan queue:listen -vvv
 ```
 
+Apply fixes by phpcs:
+
+```bash
+docker exec -it $APPS_CONTAINER vendor/bin/php-cs-fixer fix --config phpcs.php
+```
+
 Check usage of resources:
 
 ```bash
