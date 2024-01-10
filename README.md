@@ -56,6 +56,12 @@ Apply fixes by phpcs:
 docker exec -it $APPS_CONTAINER vendor/bin/php-cs-fixer fix --config phpcs.php
 ```
 
+Analyse the code by [Larastan](https://github.com/larastan/larastan):
+
+```bash
+docker exec -it $APPS_CONTAINER ./vendor/bin/phpstan analyse
+```
+
 Check usage of resources:
 
 ```bash
