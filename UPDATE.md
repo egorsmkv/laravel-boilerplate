@@ -4,5 +4,6 @@
 - [ ] In `docker-compose.yml` check new versions of images
 - [ ] In `Dockerfile` check new version of `bitnami/php-fpm` image
     - [ ] Check a new version of phpredis
+    - [ ] Check a new version of Caddy
 - [ ] In the apps container run `composer update` / `composer outdated` to check new versions
 - [ ] In the apps container run `bun x npm-check-updates --format group -i` to check new versions
