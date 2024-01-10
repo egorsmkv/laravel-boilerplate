@@ -1,8 +1,8 @@
 # Laravel Boilerplate for Development
 
 > [!NOTE]  
-> The idea of this project is simple: current boilerplate must be `a)` on the latest version of Laravel 
-> `b)` use lightweight to run with Docker `c)` use modern technologies (PHP, PgSQL, etc).
+> The idea of this project is simple: current boilerplate must `a)` be on the latest version of Laravel
+> `b)` be lightweight to run with Docker `c)` to use modern technologies (PHP, PgSQL, etc).
 
 ### Requirements
 
