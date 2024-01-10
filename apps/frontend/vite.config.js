@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import {defineConfig} from 'vite';
 import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
@@ -14,13 +14,13 @@ export default defineConfig({
     server: {
         watch: {
             ignored: [
-                '**/node_modules/**', 
-                '**/vendor/**', 
+                '**/node_modules/**',
+                '**/vendor/**',
                 '**/.git/**',
             ]
         },
         hmr: {
             host: 'localhost',
         },
-    }, 
+    },
 });

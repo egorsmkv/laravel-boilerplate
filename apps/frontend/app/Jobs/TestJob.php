@@ -7,7 +7,6 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Exception;
 
 class TestJob implements ShouldQueue
 {
@@ -21,7 +20,9 @@ class TestJob implements ShouldQueue
     }
 
     /**
-     * Execute the job.
+     * Executes the job for a given number of iterations.
+     *
+     * @return void
      */
     public function handle(): void
     {
@@ -34,7 +35,7 @@ class TestJob implements ShouldQueue
 
             // A new exception will cause a failed job, it will be saved into the database to failed_jobs table
             //if ($iterations == 4) {
-            //   throw new Exception('bug');
+            //   throw new \Exception('bug');
             //}
 
             echo "Executing this job...\n";
