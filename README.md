@@ -1,5 +1,9 @@
 # Laravel Boilerplate for Development
 
+> [!NOTE]  
+> The idea of this project is simple: current boilerplate must be `a)` on the latest version of Laravel 
+> `b)` use lightweight to run with Docker `c)` use modern technologies (PHP, PgSQL, etc).
+
 ### Requirements
 
 - Docker Engine 24.x
@@ -44,7 +48,7 @@ docker exec -it $APPS_CONTAINER bun run dev
 docker exec -it $APPS_CONTAINER bun run build
 ```
 
-Start queue worker:
+Start queue worker:[README.md](README.md)
 
 ```bash
 docker exec -it $APPS_CONTAINER php artisan queue:listen -vvv
