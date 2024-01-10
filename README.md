@@ -48,7 +48,7 @@ docker exec -it $APPS_CONTAINER bun run dev
 docker exec -it $APPS_CONTAINER bun run build
 ```
 
-Start queue worker:[README.md](README.md)
+Start queue worker:
 
 ```bash
 docker exec -it $APPS_CONTAINER php artisan queue:listen -vvv
