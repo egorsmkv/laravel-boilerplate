@@ -15,6 +15,10 @@ services:
     depends_on:
       - pgsql
       - redis
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
     deploy:
       resources:
         limits:
@@ -30,6 +34,10 @@ services:
       - caddy_data:/data
     depends_on:
       - apps
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
     deploy:
       resources:
         limits:
@@ -41,6 +49,10 @@ services:
       - dev.env
     volumes:
       - pgsql_data:/var/lib/postgresql/data
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
     deploy:
       resources:
         limits:
@@ -54,6 +66,10 @@ services:
       - "8001:8080"
     depends_on:
       - pgsql
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "1"
     deploy:
       resources:
         limits:
@@ -63,6 +79,10 @@ services:
     image: inbucket/inbucket:main
     ports:
       - "9001:9000"
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "1"
     deploy:
       resources:
         limits:
@@ -77,6 +97,10 @@ services:
     ]
     volumes:
       - redis_data:/data
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "1"
     deploy:
       resources:
         limits:
