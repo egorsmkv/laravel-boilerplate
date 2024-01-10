@@ -19,6 +19,7 @@
     "laravel/telescope": "^4"
   },
   "require-dev": {
+    "enlightn/security-checker": "^1.11",
     "fakerphp/faker": "^1.23",
     "friendsofphp/php-cs-fixer": "^3.46",
     "larastan/larastan": "^2.8",

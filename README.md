@@ -72,6 +72,13 @@ Check usage of resources:
 docker stats --no-stream
 ```
 
+Check security vulnerabilities in dependencies:
+
+```bash
+docker exec -it $APPS_CONTAINER vendor/bin/security-checker security:check composer.lock
+docker exec -it $APPS_CONTAINER composer audit
+```
+
 ### Profiling
 
 Access `http://localhost/?SPX_KEY=dev&SPX_UI_URI=/` to enable PHP-SPX and see the profiling results.
