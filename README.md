@@ -59,7 +59,7 @@ docker exec -it apps_dev vendor/bin/php-cs-fixer fix --config phpcs.php
 Analyse the code by [Larastan](https://github.com/larastan/larastan):
 
 ```bash
-docker exec -it apps_dev ./vendor/bin/phpstan analyse
+docker exec -it apps_dev ./vendor/bin/phpstan analyse --memory-limit=256M
 ```
 
 Check usage of resources:

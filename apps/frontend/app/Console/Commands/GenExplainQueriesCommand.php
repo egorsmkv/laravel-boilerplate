@@ -2,18 +2,20 @@
 
 namespace App\Console\Commands;
 
-use App\Helpers\TestHelper;
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
+use Laravel\Telescope\Contracts\EntriesRepository;
 use Laravel\Telescope\EntryType;
 use Laravel\Telescope\Storage\EntryQueryOptions;
-use Laravel\Telescope\Contracts\EntriesRepository;
-use Illuminate\Support\Str;
 
 class GenExplainQueriesCommand extends Command
 {
     protected $signature = 'app:gen-explain-queries {time_min_ms} {format}';
     protected $description = 'Generate EXPLAIN ANALYZE queries from Telescope entries.';
 
+    /**
+     * @var string[] We ignore SQL queries that contain any of these substrings.
+     */
     protected $ignoredSubStrings = [
         'telescope_entries',
         'information_schema.tables',
