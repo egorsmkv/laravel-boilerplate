@@ -10,6 +10,8 @@ services:
       - ./phpfpm/custom.ini:/opt/bitnami/php/etc/conf.d/custom.ini
       - ./phpfpm/logs:/var/log/php-fpm/
       - ./apps:/app
+    networks:
+      - app_dev
     ports:
       - "5173:5173"
     depends_on:
@@ -32,6 +34,8 @@ services:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile
       - ./apps:/app
       - caddy_data:/data
+    networks:
+      - app_dev
     depends_on:
       - apps
     logging:
@@ -49,6 +53,8 @@ services:
       - dev.env
     volumes:
       - pgsql_data:/var/lib/postgresql/data
+    networks:
+      - app_dev
     logging:
       options:
         max-size: "10m"
@@ -62,6 +68,8 @@ services:
     image: adminer:4.8.1-standalone
     env_file:
       - dev.env
+    networks:
+      - app_dev
     ports:
       - "8001:8080"
     depends_on:
@@ -77,6 +85,8 @@ services:
 
   inbucket:
     image: inbucket/inbucket:main
+    networks:
+      - app_dev
     ports:
       - "9001:9000"
     logging:
@@ -97,6 +107,8 @@ services:
     ]
     volumes:
       - redis_data:/data
+    networks:
+      - app_dev
     logging:
       options:
         max-size: "10m"
@@ -110,3 +122,7 @@ volumes:
   caddy_data:
   pgsql_data:
   redis_data:
+
+networks:
+   app_dev:
+     driver: bridge
