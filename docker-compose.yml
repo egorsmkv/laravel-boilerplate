@@ -60,12 +60,21 @@ services:
           memory: 128M
 
   pgsql:
-    image: postgres:16.1-alpine
+    image: postgres:15-alpine
     container_name: pgsql_dev
     env_file:
       - dev.env
+    command: [
+      postgres,
+      -c, shared_preload_libraries=pg_stat_statements,
+      -c, log_connections=on,
+      -c, log_statement=all,
+      -c, "log_line_prefix=%m [%p]: [%l-1] app=%a,db=%d,client=%h,user=%u ",
+      -c, cluster_name=instance15,
+    ]
     volumes:
       - pgsql_data:/var/lib/postgresql/data
+      - pgsql_run:/var/run/postgresql/
     networks:
       - app_dev
     logging:
@@ -154,9 +163,52 @@ services:
         limits:
           memory: 64M
 
+  temboard-ui:
+    image: dalibo/temboard:8
+    container_name: temboard_ui_dev
+    links:
+      - repository
+    env_file:
+      - temboard.env
+    ports:
+      - "8888:8888"
+    networks:
+      - app_dev
+
+  repository:
+    image: postgres:15-alpine
+    container_name: temboard_repository_dev
+    env_file:
+      - temboard.env
+    command: [
+      postgres,
+      -c, log_connections=on,
+      -c, log_statement=all,
+      -c, "log_line_prefix=%m [%p]: [%l-1] app=%a,db=%d,client=%h,user=%u ",
+      -c, cluster_name=repository,
+    ]
+    networks:
+      - app_dev
+
+  temboard-agent:
+    image: dalibo/temboard-agent:8
+    container_name: temboard_agent_dev
+    volumes:
+      - pgsql_data:/var/lib/postgresql/data
+      - pgsql_run:/var/run/postgresql/
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - app_dev
+    links:
+      - pgsql:pgsql.acme.tld
+      - temboard-ui
+    env_file:
+      - temboard_agent.env
+
 volumes:
   caddy_data:
   pgsql_data:
+  pgsql_run:
   redis_data:
 
 networks:
