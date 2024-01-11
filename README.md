@@ -22,18 +22,14 @@ docker compose up
 # Copy Laravel environment variables file
 cp -n dev-frontend.env apps/frontend/.env
 
-# Set apps container name
-APPS_CONTAINER=apps_dev # bash
-set APPS_CONTAINER apps_dev # fish
-
 # Install required libraries
-docker exec -it $APPS_CONTAINER bash -c 'composer install && php artisan telescope:install && bun install'
+docker exec -it apps_dev bash -c 'composer install && php artisan telescope:install && bun install'
 
 # Generate "APP_KEY"
-docker exec -it $APPS_CONTAINER php artisan key:generate
+docker exec -it apps_dev php artisan key:generate
 
 # Apply migrations
-docker exec -it $APPS_CONTAINER php artisan migrate
+docker exec -it apps_dev php artisan migrate
 ```
 
 ### Useful commands
@@ -42,28 +38,28 @@ Use Vite:
 
 ```bash
 # Start dev server
-docker exec -it $APPS_CONTAINER bun run dev
+docker exec -it apps_dev bun run dev
 
 # Build for production
-docker exec -it $APPS_CONTAINER bun run build
+docker exec -it apps_dev bun run build
 ```
 
 Start queue worker:
 
 ```bash
-docker exec -it $APPS_CONTAINER php artisan queue:listen -vvv
+docker exec -it apps_dev php artisan queue:listen -vvv
 ```
 
 Apply fixes by phpcs:
 
 ```bash
-docker exec -it $APPS_CONTAINER vendor/bin/php-cs-fixer fix --config phpcs.php
+docker exec -it apps_dev vendor/bin/php-cs-fixer fix --config phpcs.php
 ```
 
 Analyse the code by [Larastan](https://github.com/larastan/larastan):
 
 ```bash
-docker exec -it $APPS_CONTAINER ./vendor/bin/phpstan analyse
+docker exec -it apps_dev ./vendor/bin/phpstan analyse
 ```
 
 Check usage of resources:
@@ -75,8 +71,8 @@ docker stats --no-stream
 Check security vulnerabilities in dependencies:
 
 ```bash
-docker exec -it $APPS_CONTAINER vendor/bin/security-checker security:check composer.lock
-docker exec -it $APPS_CONTAINER composer audit
+docker exec -it apps_dev vendor/bin/security-checker security:check composer.lock
+docker exec -it apps_dev composer audit
 ```
 
 ### Database monitoring
