@@ -79,6 +79,10 @@ docker exec -it $APPS_CONTAINER vendor/bin/security-checker security:check compo
 docker exec -it $APPS_CONTAINER composer audit
 ```
 
+### Database monitoring
+
+Access `http://localhost:8888` to enter the temboard.
+
 ### Profiling
 
 Access `http://localhost/?SPX_KEY=dev&SPX_UI_URI=/` to enable PHP-SPX and see the profiling results.
