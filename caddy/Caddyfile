@@ -2,7 +2,7 @@
 	debug
 }
 
-localhost:80 {
+:80 {
 	log {
 		output stdout
 		format console

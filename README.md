@@ -23,8 +23,8 @@ docker compose up
 cp -n dev-frontend.env apps/frontend/.env
 
 # Set apps container name
-APPS_CONTAINER=laravel-boilerplate-dev-apps-1 # bash
-set APPS_CONTAINER laravel-boilerplate-dev-apps-1 # fish
+APPS_CONTAINER=apps_dev # bash
+set APPS_CONTAINER apps_dev # fish
 
 # Install required libraries
 docker exec -it $APPS_CONTAINER bash -c 'composer install && php artisan telescope:install && bun install'
