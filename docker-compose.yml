@@ -3,6 +3,7 @@ version: '3'
 services:
   apps:
     image: laravel_app_dev:1.0
+    container_name: apps_dev
     env_file:
       - dev.env
     volumes:
@@ -33,6 +34,7 @@ services:
 
   caddy:
     image: caddy:2.7
+    container_name: caddy_dev
     ports:
       - "80:80"
     volumes:
@@ -59,6 +61,7 @@ services:
 
   pgsql:
     image: postgres:16.1-alpine
+    container_name: pgsql_dev
     env_file:
       - dev.env
     volumes:
@@ -81,6 +84,7 @@ services:
 
   adminer:
     image: adminer:4.8.1-standalone
+    container_name: adminer_dev
     env_file:
       - dev.env
     networks:
@@ -105,6 +109,7 @@ services:
 
   inbucket:
     image: inbucket/inbucket:main
+    container_name: inbucket_dev
     networks:
       - app_dev
     ports:
@@ -125,6 +130,7 @@ services:
 
   redis:
     image: redis:7.2-alpine
+    container_name: redis_dev
     command: [
       "redis-server",
       "--appendonly",
@@ -156,3 +162,4 @@ volumes:
 networks:
    app_dev:
      driver: bridge
+     name: app_dev
