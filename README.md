@@ -86,6 +86,8 @@ If you would like to use temboard, then up the container with the following comm
 docker compose -f docker-compose.temboard.yml up
 ```
 
+Also, use https://explain.dalibo.com to visualize and underst the execution plan.
+
 ### Profiling
 
 Access `http://localhost/?SPX_KEY=dev&SPX_UI_URI=/` to enable PHP-SPX and see the profiling results.
