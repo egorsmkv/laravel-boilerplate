@@ -86,7 +86,15 @@ If you would like to use temboard, then up the container with the following comm
 docker compose -f docker-compose.temboard.yml up
 ```
 
-Also, use https://explain.dalibo.com to visualize and underst the execution plan.
+### Query optimization
+
+Run the following command to generate SQL queries to get the execution plan:
+
+```bash
+docker exec -it apps_dev app:gen-explain-queries 2 json
+```
+
+Then, use https://explain.dalibo.com to visualize and understand the execution plan.
 
 ### Profiling
 
