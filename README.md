@@ -80,6 +80,12 @@ docker exec -it apps_dev composer audit
 - Access `http://localhost:8081` to enter the pgweb.
 - Access `http://localhost:8888` to enter the temboard.
 
+If you would like to use temboard, then up the container with the following command:
+
+```bash
+docker compose -f docker-compose.temboard.yml up
+```
+
 ### Profiling
 
 Access `http://localhost/?SPX_KEY=dev&SPX_UI_URI=/` to enable PHP-SPX and see the profiling results.
