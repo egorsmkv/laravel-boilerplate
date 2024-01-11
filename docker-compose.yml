@@ -243,13 +243,13 @@ services:
 
 volumes:
   caddy_data:
-    name: caddy_data
+    name: caddy_dev_data
   pgsql_data:
-    name: pgsql_data
+    name: pgsql_dev_data
   pgsql_run:
-    name: pgsql_run
+    name: pgsql_dev_run
   redis_data:
-    name: redis_data
+    name: redis_dev_data
 
 networks:
    app_dev:
