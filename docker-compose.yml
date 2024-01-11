@@ -91,15 +91,15 @@ services:
         limits:
           memory: 512M
 
-  adminer:
-    image: adminer:4.8.1-standalone
-    container_name: adminer_dev
+  pgweb:
+    image: sosedoff/pgweb:latest
+    container_name: pgweb_dev
     env_file:
       - dev.env
     networks:
       - app_dev
     ports:
-      - "8001:8080"
+      - "8081:8081"
     depends_on:
       - pgsql
     logging:
@@ -114,7 +114,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 128M
+          memory: 64M
 
   inbucket:
     image: inbucket/inbucket:main
