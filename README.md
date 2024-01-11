@@ -77,7 +77,8 @@ docker exec -it apps_dev composer audit
 
 ### Database monitoring
 
-Access `http://localhost:8888` to enter the temboard.
+- Access `http://localhost:8081` to enter the pgweb.
+- Access `http://localhost:8888` to enter the temboard.
 
 ### Profiling
 
