@@ -76,6 +76,8 @@
             <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
                 @if (app()->isLocal())
                     <a href="/telescope" class="hover:underline">Telescope</a>
+                    &bull;
+                    <a href="http://localhost:8000" class="hover:underline">Buggregator</a>
                 @else
                     We are in production.
                 @endif
