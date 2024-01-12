@@ -1,4 +1,4 @@
-# GoRidge sample application
+# Goridge sample application
 
 ## Build the image
 
