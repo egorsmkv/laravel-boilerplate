@@ -44,6 +44,12 @@ docker exec -it apps_dev bun run dev
 docker exec -it apps_dev bun run build
 ```
 
+Update locales:
+
+```bash
+docker exec -it apps_dev php artisan lang:update
+```
+
 Start queue worker:
 
 ```bash
