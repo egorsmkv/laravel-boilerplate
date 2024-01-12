@@ -15,7 +15,7 @@ class TestGoridgeCommand extends Command
         $nIters = $this->argument('n_iters');
 
         $rpc = new Goridge\RPC\RPC(
-            Goridge\Relay::create('tcp://goridge_hello_dev:6001')
+            Goridge\Relay::create(config('rpc.hello_addr'))
         );
 
         for ($i = 0; $i < $nIters; $i++) {

@@ -26,7 +26,7 @@ class TestHelper
     public static function currentDate(): string
     {
         $rpc = new Goridge\RPC\RPC(
-            Goridge\Relay::create('tcp://goridge_hello_dev:6001')
+            Goridge\Relay::create(config('rpc.hello_addr'))
         );
 
         /* @phpstan-ignore-next-line */
