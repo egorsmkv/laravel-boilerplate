@@ -34,6 +34,12 @@ docker exec -it apps_dev php artisan migrate
 
 ### Useful commands
 
+Fix permissions:
+
+```bash
+chmod -R 777 apps/frontend/storage
+```
+
 Use Vite:
 
 ```bash
