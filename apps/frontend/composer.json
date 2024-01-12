@@ -1,10 +1,9 @@
 {
-  "name": "laravel/laravel",
+  "name": "egorsmkv/laravel-app",
   "type": "project",
-  "description": "The Laravel Framework.",
+  "description": "The Laravel app.",
   "keywords": [
-    "framework",
-    "laravel"
+    "app"
   ],
   "license": "proprietary",
   "require": {
