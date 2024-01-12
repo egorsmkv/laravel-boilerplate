@@ -3,10 +3,6 @@ includes:
     - ./vendor/larastan/larastan/extension.neon
 
 parameters:
-    bladestan:
-        template_paths:
-            - resources/views
-
     paths:
         - app
 
