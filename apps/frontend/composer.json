@@ -26,7 +26,8 @@
     "larastan/larastan": "^2.8",
     "mockery/mockery": "^1.6",
     "nunomaduro/collision": "^7",
-    "spatie/laravel-ignition": "^2"
+    "spatie/laravel-ignition": "^2",
+    "tomasvotruba/bladestan": "^0.5.0"
   },
   "autoload": {
     "psr-4": {

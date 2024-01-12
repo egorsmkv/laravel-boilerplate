@@ -1,9 +1,15 @@
 includes:
+    - ./vendor/tomasvotruba/bladestan/config/extension.neon
     - ./vendor/larastan/larastan/extension.neon
 
 parameters:
+    bladestan:
+        template_paths:
+            - resources/views
+
     paths:
         - app
+
     level: 9
     ignoreErrors:
     excludePaths:
