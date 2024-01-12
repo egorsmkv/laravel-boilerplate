@@ -29,7 +29,8 @@
     "nunomaduro/collision": "^7",
     "spatie/laravel-ignition": "^2",
     "symfony/var-dumper": "^6.4",
-    "tomasvotruba/bladestan": "^0.5.0"
+    "tomasvotruba/bladestan": "^0.5.0",
+    "phpunit/phpunit": "^10.1"
   },
   "autoload": {
     "psr-4": {
@@ -38,7 +39,11 @@
       "Database\\Seeders\\": "database/seeders/"
     }
   },
-  "autoload-dev": {},
+  "autoload-dev": {
+    "psr-4": {
+        "Tests\\": "tests/"
+    }
+  },
   "scripts": {
     "post-autoload-dump": [
       "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",

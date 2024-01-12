@@ -15,4 +15,3 @@ phpfpm/logs
 .env.backup
 .phpunit.result.cache
 .php-cs-fixer.cache
-
