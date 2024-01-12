@@ -1,0 +1,13 @@
+apps/goridge-hello
+
+apps/frontend/node_modules
+apps/frontend/vendor
+apps/frontend/phpcs.php
+apps/frontend/phpstan.neon
+
+Dockerfile
+prod.env
+docker-compose.yml
+README.md
+
+phpfpm/logs
