@@ -25,7 +25,7 @@ class TestGoridgeCommand extends Command
 
             $result = $rpc->call('App.CurrentDate', '2006-01-02 15:04:05');
 
-            /** @phpstan-ignore-next-line */
+            /* @phpstan-ignore-next-line */
             $this->comment($result);
             $this->comment('');
 

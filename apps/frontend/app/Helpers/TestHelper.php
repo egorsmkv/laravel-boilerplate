@@ -29,7 +29,7 @@ class TestHelper
             Goridge\Relay::create('tcp://goridge_hello_dev:6001')
         );
 
-        /** @phpstan-ignore-next-line */
+        /* @phpstan-ignore-next-line */
         return $rpc->call('App.CurrentDate', '2006-01-02 15:04:05');
     }
 }

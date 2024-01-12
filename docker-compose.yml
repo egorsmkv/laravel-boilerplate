@@ -116,13 +116,13 @@ services:
         limits:
           memory: 64M
 
-  inbucket:
-    image: inbucket/inbucket:main
-    container_name: inbucket_dev
+  buggregator:
+    image: ghcr.io/buggregator/server:latest
+    container_name: buggregator_dev
     networks:
       - app_dev
     ports:
-      - "9001:9000"
+      - "8000:8000"
     logging:
       options:
         max-size: "10m"
@@ -135,7 +135,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 128M
+          memory: 512M
 
   redis:
     image: redis:7.2-alpine

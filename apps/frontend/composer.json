@@ -24,9 +24,11 @@
     "fakerphp/faker": "^1.23",
     "friendsofphp/php-cs-fixer": "^3.46",
     "larastan/larastan": "^2.8",
+    "maantje/xhprof-buggregator-laravel": "^0.2.1",
     "mockery/mockery": "^1.6",
     "nunomaduro/collision": "^7",
     "spatie/laravel-ignition": "^2",
+    "symfony/var-dumper": "^6.4",
     "tomasvotruba/bladestan": "^0.5.0"
   },
   "autoload": {
