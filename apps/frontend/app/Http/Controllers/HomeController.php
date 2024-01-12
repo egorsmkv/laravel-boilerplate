@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Helpers\TestHelper;
 use App\Jobs\TestJob;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -18,7 +19,9 @@ class HomeController extends Controller
      */
     public function index(Request $request): View
     {
-        return view('home');
+        $currentDate = TestHelper::currentDate();
+
+        return view('home', compact('currentDate'));
     }
 
     /**
