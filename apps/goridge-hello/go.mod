@@ -1,4 +1,4 @@
-module github.com/egorsmkv/laravel-boilerplate-dev/goridge/hello
+module github.com/egorsmkv/laravel-boilerplate-dev/apps/goridge-hello
 
 go 1.21.6
 

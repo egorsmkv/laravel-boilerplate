@@ -1,5 +1,8 @@
 version: '3'
 
+include:
+  - docker-compose.rpc.yml
+
 services:
   apps:
     image: laravel_app_dev:1.0
@@ -147,25 +150,6 @@ services:
     ]
     volumes:
       - redis_data:/data
-    networks:
-      - app_dev
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "1"
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    deploy:
-      resources:
-        limits:
-          memory: 64M
-
-  goridge-hello:
-    image: goridge-hello:1.0
-    container_name: goridge_hello_dev
     networks:
       - app_dev
     logging:
