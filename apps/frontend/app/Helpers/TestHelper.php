@@ -2,7 +2,10 @@
 
 namespace App\Helpers;
 
-use Spiral\Goridge;
+use ZMQ;
+use ZMQContext;
+use ZMQSocket;
+use ZMQSocketException;
 
 class TestHelper
 {
@@ -25,11 +28,27 @@ class TestHelper
      */
     public static function currentDate(): string
     {
-        $rpc = new Goridge\RPC\RPC(
-            Goridge\Relay::create(config('rpc.hello_addr'))
-        );
+        // Create a new socket
+        $socket = new ZMQSocket(new ZMQContext(), ZMQ::SOCKET_REQ, 'MySocket-test1');
 
-        /* @phpstan-ignore-next-line */
-        return $rpc->call('App.CurrentDate', '2006-01-02 15:04:05');
+        // Connect to an endpoint with some configuration
+
+        // $socket->setSockOpt(ZMQ::SOCKOPT_SNDTIMEO, 2 * 1000);
+        // $socket->setSockOpt(ZMQ::SOCKOPT_RCVTIMEO, 2 * 1000);
+        // $socket->setSockOpt(ZMQ::SOCKOPT_TCP_KEEPALIVE_CNT, 10);
+        // $socket->setSockOpt(ZMQ::SOCKOPT_TCP_KEEPALIVE_INTVL, 1);
+        // $socket->setSockOpt(ZMQ::SOCKOPT_TCP_KEEPALIVE_IDLE, 1);
+
+        $socket = $socket->connect(config('rpc.go_hello_addr'));
+
+        try {
+            // Send and receive
+            $send = $socket->send('2006-01-02 15:04:05');
+            $result = $send->recv();
+
+            return $result;
+        } catch (ZMQSocketException $e) {
+            return 'ERROR';
+        }
     }
 }

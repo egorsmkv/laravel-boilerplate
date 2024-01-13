@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0c145ad0789867bc99d1c23276a95d2",
+    "content-hash": "c3f782f766067d5b78989e82efe3423e",
     "packages": [
         {
             "name": "archtechx/enums",
@@ -4182,143 +4182,6 @@
             "time": "2023-12-12T22:17:13+00:00"
         },
         {
-            "name": "spiral/goridge",
-            "version": "4.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/roadrunner-php/goridge.git",
-                "reference": "a5d67441dc862aa32647622975c9e6f6042a593d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/roadrunner-php/goridge/zipball/a5d67441dc862aa32647622975c9e6f6042a593d",
-                "reference": "a5d67441dc862aa32647622975c9e6f6042a593d",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "ext-sockets": "*",
-                "php": ">=8.1",
-                "spiral/roadrunner": "^2023"
-            },
-            "require-dev": {
-                "google/protobuf": "^3.22",
-                "infection/infection": "^0.26.1",
-                "jetbrains/phpstorm-attributes": "^1.0",
-                "phpunit/phpunit": "^10.0",
-                "rybakit/msgpack": "^0.7",
-                "vimeo/psalm": "^5.9"
-            },
-            "suggest": {
-                "ext-msgpack": "MessagePack codec support",
-                "ext-protobuf": "Protobuf codec support",
-                "google/protobuf": "(^3.0) Protobuf codec support",
-                "rybakit/msgpack": "(^0.7) MessagePack codec support"
-            },
-            "type": "goridge",
-            "autoload": {
-                "psr-4": {
-                    "Spiral\\Goridge\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Anton Titov (wolfy-j)",
-                    "email": "wolfy-j@spiralscout.com"
-                },
-                {
-                    "name": "Valery Piashchynski",
-                    "homepage": "https://github.com/rustatian"
-                },
-                {
-                    "name": "Aleksei Gagarin (roxblnfk)",
-                    "homepage": "https://github.com/roxblnfk"
-                },
-                {
-                    "name": "Pavel Buchnev (butschster)",
-                    "email": "pavel.buchnev@spiralscout.com"
-                },
-                {
-                    "name": "Maksim Smakouz (msmakouz)",
-                    "email": "maksim.smakouz@spiralscout.com"
-                },
-                {
-                    "name": "RoadRunner Community",
-                    "homepage": "https://github.com/roadrunner-server/roadrunner/graphs/contributors"
-                }
-            ],
-            "description": "High-performance PHP-to-Golang RPC bridge",
-            "homepage": "https://spiral.dev/",
-            "support": {
-                "chat": "https://discord.gg/V6EK4he",
-                "docs": "https://roadrunner.dev/docs",
-                "forum": "https://forum.roadrunner.dev/",
-                "issues": "https://github.com/roadrunner-server/roadrunner/issues",
-                "source": "https://github.com/roadrunner-php/goridge/tree/4.1.1"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/sponsors/roadrunner-server",
-                    "type": "github"
-                }
-            ],
-            "time": "2023-12-21T10:47:02+00:00"
-        },
-        {
-            "name": "spiral/roadrunner",
-            "version": "v2023.3.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/roadrunner-server/roadrunner.git",
-                "reference": "362f643b79eeac05e27e6dd3b42aaddf405f49f6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/roadrunner-server/roadrunner/zipball/362f643b79eeac05e27e6dd3b42aaddf405f49f6",
-                "reference": "362f643b79eeac05e27e6dd3b42aaddf405f49f6",
-                "shasum": ""
-            },
-            "type": "metapackage",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Anton Titov / Wolfy-J",
-                    "email": "wolfy.jd@gmail.com"
-                },
-                {
-                    "name": "Valery Piashchynski",
-                    "homepage": "https://github.com/rustatian"
-                },
-                {
-                    "name": "RoadRunner Community",
-                    "homepage": "https://github.com/roadrunner-server/roadrunner/graphs/contributors"
-                }
-            ],
-            "description": "RoadRunner: High-performance PHP application server and process manager written in Go and powered with plugins",
-            "homepage": "https://roadrunner.dev/",
-            "support": {
-                "chat": "https://discord.gg/V6EK4he",
-                "docs": "https://roadrunner.dev/docs",
-                "forum": "https://forum.roadrunner.dev/",
-                "issues": "https://github.com/roadrunner-server/roadrunner/issues",
-                "source": "https://github.com/roadrunner-server/roadrunner/tree/v2023.3.9"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/sponsors/roadrunner-server",
-                    "type": "github"
-                }
-            ],
-            "time": "2024-01-11T13:35:47+00:00"
-        },
-        {
             "name": "symfony/console",
             "version": "v6.4.2",
             "source": {
@@ -8158,16 +8021,16 @@
         },
         {
             "name": "laravel-lang/lang",
-            "version": "14.2.1",
+            "version": "14.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Lang/lang.git",
-                "reference": "b759f3e4a3419a7a6a148e6cba910d89accc3256"
+                "reference": "86a7eca3e9d68bef9ce474e0a892afdc1e718c64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Lang/lang/zipball/b759f3e4a3419a7a6a148e6cba910d89accc3256",
-                "reference": "b759f3e4a3419a7a6a148e6cba910d89accc3256",
+                "url": "https://api.github.com/repos/Laravel-Lang/lang/zipball/86a7eca3e9d68bef9ce474e0a892afdc1e718c64",
+                "reference": "86a7eca3e9d68bef9ce474e0a892afdc1e718c64",
                 "shasum": ""
             },
             "require": {
@@ -8214,7 +8077,7 @@
                 "issues": "https://github.com/Laravel-Lang/lang/issues",
                 "source": "https://github.com/Laravel-Lang/lang"
             },
-            "time": "2024-01-11T17:40:24+00:00"
+            "time": "2024-01-13T02:09:36+00:00"
         },
         {
             "name": "laravel-lang/publisher",

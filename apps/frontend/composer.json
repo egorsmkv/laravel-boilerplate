@@ -15,8 +15,7 @@
     "laravel/telescope": "^4",
     "laravel/tinker": "^2.9",
     "laravel/ui": "^4.3",
-    "sentry/sentry-laravel": "^4.1",
-    "spiral/goridge": "^4.1"
+    "sentry/sentry-laravel": "^4.1"
   },
   "require-dev": {
     "laravel-lang/common": "^6.1",
