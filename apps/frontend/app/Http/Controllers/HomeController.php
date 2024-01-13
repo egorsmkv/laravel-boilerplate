@@ -80,11 +80,11 @@ class HomeController extends Controller
         for ($i = 1; $i <= 10; $i++) {
             try {
                 // Send and receive
-                $send = $socket->send(sprintf("hello there, using MySocket-test: %d", $i));
+                $send = $socket->send(sprintf('hello there, using MySocket-test: %d', $i));
                 $result = $send->recv();
-    
+
                 dump($result);
-    
+
                 echo sprintf('Python RPC result: %s', $result) . '<br>';
             } catch (ZMQSocketException $e) {
                 // ZMQ::ERR_EAGAIN may happen
