@@ -9,20 +9,15 @@
 Run the following commands to install this project:
 
 ```bash
-# Copy the code
-cp -r ../apps .
-
 # Create the app docker image
-docker build --build-arg CADDY_ARCH=amd64 --tag laravel_app_prod:1.0 .
+task build_amd64
+task build_arm64
 
 # Up containers
-docker compose up -d
+task up
 
 # Migrate
-docker exec -it apps_prod php artisan migrate
-
-# Remove the code
-rm -rf apps/
+task migrate
 ```
 
 ### Useful commands
@@ -31,11 +26,11 @@ Enter the container:
 
 ```bash
 # Enter the container
-docker exec -it apps_prod bash
+task bash
 ```
 
 Check usage of resources:
 
 ```bash
-docker stats --no-stream
+task stats
 ```

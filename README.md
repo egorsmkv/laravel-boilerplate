@@ -14,22 +14,16 @@ Run the following commands to install this project:
 
 ```bash
 # Create the app docker image
-docker build --tag laravel_app_dev:1.0 .
+task build
 
 # Up containers
-docker compose up
+task up
 
 # Copy Laravel environment variables file
 cp -n dev-frontend.env apps/frontend/.env
 
-# Install required libraries
-docker exec -it apps_dev bash -c 'composer install && php artisan telescope:install && bun install'
-
-# Generate "APP_KEY"
-docker exec -it apps_dev php artisan key:generate
-
-# Apply migrations
-docker exec -it apps_dev php artisan migrate
+# Install dependencies, generate key, run migrations
+task install
 ```
 
 ### Useful commands
@@ -37,54 +31,53 @@ docker exec -it apps_dev php artisan migrate
 Fix permissions:
 
 ```bash
-chmod -R 777 apps/frontend/storage
+task fix-perms
 ```
 
 Use Vite:
 
 ```bash
 # Start dev server
-docker exec -it apps_dev bun run dev
+task bun-dev
 
 # Build for production
-docker exec -it apps_dev bun run build
+task bun-build
 ```
 
 Update locales:
 
 ```bash
-docker exec -it apps_dev php artisan lang:update
+task lang-update
 ```
 
 Start queue worker:
 
 ```bash
-docker exec -it apps_dev php artisan queue:listen -vvv
+task queue-listen
 ```
 
 Apply fixes by phpcs:
 
 ```bash
-docker exec -it apps_dev vendor/bin/php-cs-fixer fix --config phpcs.php
+task phpcs-fix
 ```
 
 Analyse the code by [Larastan](https://github.com/larastan/larastan):
 
 ```bash
-docker exec -it apps_dev ./vendor/bin/phpstan analyse --memory-limit=256M
+task phpstan
 ```
 
 Check usage of resources:
 
 ```bash
-docker stats --no-stream
+task stats
 ```
 
 Check security vulnerabilities in dependencies:
 
 ```bash
-docker exec -it apps_dev vendor/bin/security-checker security:check composer.lock
-docker exec -it apps_dev composer audit
+task check-security
 ```
 
 ### Database monitoring
@@ -95,7 +88,7 @@ docker exec -it apps_dev composer audit
 If you would like to use temboard, then up the container with the following command:
 
 ```bash
-docker compose -f docker-compose.temboard.yml up
+task up-with-temboard
 ```
 
 ### Query optimization
@@ -103,7 +96,7 @@ docker compose -f docker-compose.temboard.yml up
 Run the following command to generate SQL queries to get the execution plan:
 
 ```bash
-docker exec -it apps_dev app:gen-explain-queries 2 json
+task gen-explain-queries
 ```
 
 Then, use https://explain.dalibo.com to visualize and understand the execution plan.

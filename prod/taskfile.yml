@@ -1,0 +1,34 @@
+version: '3'
+
+tasks:
+  build_arm64:
+    cmds:
+      - cp -r ../apps .
+      - docker build --build-arg CADDY_ARCH=arm64 --tag laravel_app_prod:1.0 .
+      - rm -rf ./apps
+
+  build_amd64:
+    cmds:
+      - cp -r ../apps .
+      - docker build --build-arg CADDY_ARCH=amd64 --tag laravel_app_prod:1.0 .
+      - rm -rf ./apps
+
+  up:
+    cmds:
+      - docker compose up -d
+
+  migrate:
+    cmds:
+      - docker exec -it apps_prod php artisan migrate
+
+  bash:
+    cmds:
+      - docker exec -it apps_prod bash
+
+  stats:
+    cmds:
+      - docker stats --no-stream
+
+  logs:
+    cmds:
+      - docker compose logs -f

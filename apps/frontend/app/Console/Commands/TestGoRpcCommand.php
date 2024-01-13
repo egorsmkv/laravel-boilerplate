@@ -20,7 +20,7 @@ class TestGoRpcCommand extends Command
         // Create a new socket
         $socket = new ZMQSocket(new ZMQContext(), ZMQ::SOCKET_REQ, 'MySocket-console-test1');
 
-        // Connect to an endpoint        
+        // Connect to an endpoint
         $socket = $socket->connect(config('rpc.go_hello_addr'));
 
         for ($i = 0; $i < $nIters; $i++) {
