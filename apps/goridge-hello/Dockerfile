@@ -14,4 +14,6 @@ FROM alpine:3.19
 WORKDIR /app
 COPY --from=build /app/server .
 
+EXPOSE 6001
+
 CMD ["/app/server"]
