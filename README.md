@@ -2,7 +2,7 @@
 
 > [!NOTE]  
 > The idea of this project is simple: current boilerplate must `a)` be on the latest version of Laravel
-> `b)` be lightweight to run with Docker `c)` to use modern technologies such as PHP 8.3, PgSQL 16, Go 1.21 using [Goridge](https://github.com/roadrunner-server/goridge), etc.
+> `b)` be lightweight to run with Docker `c)` to use modern technologies such as PHP 8.3, PgSQL 16, Go 1.21 using [Goridge](https://github.com/roadrunner-server/goridge), Python 3.12, etc.
 
 ### Requirements
 

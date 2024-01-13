@@ -64,24 +64,32 @@ class HomeController extends Controller
      */
     public function startTestPythonZMQ(Request $request): string
     {
-        /* Create new queue object */
+        // Create a new socket
         $socket = new ZMQSocket(new ZMQContext(), ZMQ::SOCKET_REQ, 'MySocket-test');
 
-        /* Connect to an endpoint */
+        // Connect to an endpoint with some configuration
 
-        $socket->setSockOpt(ZMQ::SOCKOPT_SNDTIMEO, 2 * 1000);
-        $socket->setSockOpt(ZMQ::SOCKOPT_RCVTIMEO, 2 * 1000);
+        // $socket->setSockOpt(ZMQ::SOCKOPT_SNDTIMEO, 2 * 1000);
+        // $socket->setSockOpt(ZMQ::SOCKOPT_RCVTIMEO, 2 * 1000);
+        // $socket->setSockOpt(ZMQ::SOCKOPT_TCP_KEEPALIVE_CNT, 10);
+        // $socket->setSockOpt(ZMQ::SOCKOPT_TCP_KEEPALIVE_INTVL, 1);
+        // $socket->setSockOpt(ZMQ::SOCKOPT_TCP_KEEPALIVE_IDLE, 1);
 
-        $socket = $socket->connect("tcp://127.0.0.1:5555");
+        $socket = $socket->connect(config('rpc.python_hello_addr'));
 
-        try {
-            $send = $socket->send("hello there, using MySocket-test", ZMQ::MODE_DONTWAIT);
-
-            /* Send and receive */
-            dump($send->recv(ZMQ::MODE_DONTWAIT));
-        } catch (ZMQSocketException $e) {
-            // ZMQ::ERR_EAGAIN
-            dump(['msg' => $e->getMessage(), 'code' => $e->getCode()]);
+        for ($i = 1; $i <= 10; $i++) {
+            try {
+                // Send and receive
+                $send = $socket->send(sprintf("hello there, using MySocket-test: %d", $i));
+                $result = $send->recv();
+    
+                dump($result);
+    
+                echo sprintf('Python RPC result: %s', $result) . '<br>';
+            } catch (ZMQSocketException $e) {
+                // ZMQ::ERR_EAGAIN may happen
+                dump(['msg' => $e->getMessage(), 'code' => $e->getCode()]);
+            }
         }
 
         return 'OK';
