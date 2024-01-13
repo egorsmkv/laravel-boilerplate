@@ -3,7 +3,7 @@ FROM bitnami/php-fpm:8.3
 ARG CADDY_ARCH
 
 RUN apt update && \
-    apt install -y autoconf php-dev pkg-php-tools unzip wget build-essential && \
+    apt install -y autoconf php-dev pkg-php-tools unzip wget build-essential git libzmq3-dev && \
     pecl install excimer
 
 RUN wget https://pecl.php.net/get/redis-6.0.2.tgz && \
@@ -16,6 +16,13 @@ RUN wget https://pecl.php.net/get/redis-6.0.2.tgz && \
     cd /app && \
     rm redis-6.0.2.tgz package.xml && \
     rm -rf redis-6.0.2
+
+RUN git clone https://github.com/zeromq/php-zmq.git && \
+    cd php-zmq &&  \
+    phpize &&  \
+    ./configure &&  \
+    make &&  \
+    make install
 
 RUN wget https://github.com/caddyserver/caddy/releases/download/v2.7.6/caddy_2.7.6_linux_$CADDY_ARCH.tar.gz && \
     tar xzf caddy_2.7.6_linux_$CADDY_ARCH.tar.gz && \
