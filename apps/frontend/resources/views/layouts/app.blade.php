@@ -77,7 +77,7 @@
                 @if (app()->isLocal())
                     <a href="/telescope" class="hover:underline">Telescope</a>
                     &bull;
-                    <a href="http://localhost:8000" class="hover:underline">Buggregator</a>
+                    <a href="http://{{ request()->getHost() }}:8000" class="hover:underline">Buggregator</a>
                 @else
                     We are in production.
                 @endif
