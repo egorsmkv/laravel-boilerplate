@@ -67,3 +67,7 @@ tasks:
   logs:
     cmds:
       - docker compose logs -f
+
+  bash:
+    cmds:
+      - docker exec -it apps_dev bash
