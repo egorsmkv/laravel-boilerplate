@@ -1,8 +1,10 @@
 # Laravel Boilerplate for Development
 
-> [!NOTE]  
-> The idea of this project is simple: current boilerplate must `a)` be on the latest version of Laravel
-> `b)` be lightweight to run with Docker `c)` to use modern technologies such as PHP 8.3, PgSQL 16, Go 1.21, Python 3.12, etc.
+> [!NOTE]
+> The idea of this project is simple: current boilerplate must:
+> - be on the latest version of Laravel
+> - be lightweight to run with Docker
+> - to use modern technologies such as PHP 8.3, PgSQL 16, Go 1.21, Python 3.12, etc.
 
 ### Requirements
 
@@ -13,8 +15,10 @@
 Run the following commands to install this project:
 
 ```bash
-# Create the app docker image
+# Build our dev image
+task build-init
 task build
+task build-prune
 
 # Up containers
 task up

@@ -1,9 +1,18 @@
 version: '3'
 
 tasks:
+  build-init:
+    cmds:
+      - docker buildx create --bootstrap --use --name=laravel_builder_dev --node dev --driver=docker-container
+
   build:
     cmds:
-      - docker build --tag laravel_app_dev:1.0 .
+      - docker buildx build --builder laravel_builder_dev --force-rm --load --tag laravel_app_dev:1.0 .
+      - docker image prune -f
+
+  build-prune:
+    cmds:
+      - docker buildx prune -f
 
   install:
     cmds:

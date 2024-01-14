@@ -10,8 +10,12 @@ Run the following commands to install this project:
 
 ```bash
 # Create the app docker image
-task build_amd64
-task build_arm64
+task build-init
+
+task build-amd64
+task build-arm64
+
+task build-prune
 
 # Up containers
 task up
