@@ -2,6 +2,7 @@ version: '3'
 
 include:
   - docker-compose.rpc.yml
+  # - docker-compose.monitor.yml
 
 services:
   apps:
