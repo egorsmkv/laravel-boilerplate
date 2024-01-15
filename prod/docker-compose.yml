@@ -58,6 +58,35 @@ services:
         limits:
           memory: 128M
 
+  schedule:
+    image: laravel_app_prod:1.0
+    container_name: schedule_prod
+    restart: always
+    env_file:
+      - prod.env
+    command:
+      - php
+      - artisan
+      - schedule:work
+    depends_on:
+      - pgsql
+      - redis
+    networks:
+      - app_prod
+    logging:
+      options:
+        max-size: 100M
+        max-file: 3
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
   caddy:
     image: laravel_app_prod:1.0
     container_name: caddy_prod
@@ -145,6 +174,6 @@ volumes:
     name: redis_prod_data
 
 networks:
-   app_prod:
-     driver: bridge
-     name: app_prod
+  app_prod:
+    driver: bridge
+    name: app_prod
