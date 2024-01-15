@@ -75,7 +75,9 @@
             <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
             <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
                 @if (app()->isLocal())
-                    <a href="/telescope" class="hover:underline">Telescope</a>
+                    <a href="http://{{ request()->getHost() }}/telescope" class="hover:underline">Telescope</a>
+                    &bull;
+                    <a href="http://{{ request()->getHost() }}/horizon" class="hover:underline">Horizon</a>
                     &bull;
                     <a href="http://{{ request()->getHost() }}:8000" class="hover:underline">Buggregator</a>
                 @else

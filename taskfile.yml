@@ -28,9 +28,9 @@ tasks:
     cmds:
       - docker compose -f docker-compose.temboard.yml up
 
-  queue-listen:
+  queue:
     cmds:
-      - docker exec -it apps_dev php artisan queue:listen -vvv
+      - docker exec -it apps_dev php artisan horizon
 
   down:
     cmds:

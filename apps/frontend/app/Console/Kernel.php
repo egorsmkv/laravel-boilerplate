@@ -2,8 +2,8 @@
 
 namespace App\Console;
 
-use DateTimeZone;
 use App\Console\Commands\TestScheduleCommand;
+use DateTimeZone;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -26,6 +26,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         $schedule->command(TestScheduleCommand::class)->everyMinute();
+
+        $schedule->command('horizon:snapshot')->everyFiveMinutes();
     }
 
     /**
@@ -35,7 +37,7 @@ class Kernel extends ConsoleKernel
      */
     protected function scheduleTimezone(): DateTimeZone|string|null
     {
-        return (string)config('app.timezone');
+        return (string) config('app.timezone');
     }
 
     /**
