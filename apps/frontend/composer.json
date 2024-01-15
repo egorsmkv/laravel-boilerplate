@@ -16,6 +16,7 @@
     "laravel/sanctum": "^3.3",
     "laravel/tinker": "^2.9",
     "laravel/ui": "^4.3",
+    "league/flysystem-aws-s3-v3": "^3.0",
     "sentry/sentry-laravel": "^4.1"
   },
   "require-dev": {
