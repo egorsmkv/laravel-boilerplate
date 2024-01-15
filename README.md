@@ -57,7 +57,7 @@ task lang-update
 Start queue worker:
 
 ```bash
-task queue-listen
+task queue
 ```
 
 Apply fixes by phpcs:
