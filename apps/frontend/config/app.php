@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool)env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -184,5 +184,14 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
+
+    'horizon' => [
+        'guest_view' => env('HORIZON_GUEST_VIEW', false),
+
+        'admins' => [
+            'email_1' => env('ADMIN_EMAIL_1', 'hello1@example.com'),
+            'email_2' => env('ADMIN_EMAIL_2', 'hello2@example.com'),
+        ],
+    ],
 
 ];
