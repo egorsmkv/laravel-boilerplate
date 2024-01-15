@@ -43,6 +43,7 @@ WORKDIR /app/frontend
 
 RUN rm bun.lockb package.json postcss.config.js tailwind.config.js vite.config.js && \
     composer install --prefer-dist --optimize-autoloader --no-dev && \
+    php artisan horizon:publish && \
     php artisan key:generate && \
     php artisan optimize && \
     php artisan view:cache && \
