@@ -16,7 +16,7 @@ tasks:
 
   install:
     cmds:
-      - docker exec -it apps_dev bash -c 'composer install && php artisan telescope:install && bun install'
+      - docker exec -it apps_dev bash -c 'composer install && php artisan telescope:publish && bun install'
       - docker exec -it apps_dev php artisan key:generate
       - docker exec -it apps_dev php artisan migrate
 

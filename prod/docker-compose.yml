@@ -1,7 +1,7 @@
 version: '3'
 
-include:
-  - docker-compose.rpc.yml
+# include:
+#  - docker-compose.rpc.yml
 
 services:
   apps:
