@@ -3,12 +3,14 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 use Laravel\Telescope\Contracts\EntriesRepository;
 use Laravel\Telescope\EntryType;
 use Laravel\Telescope\Storage\EntryQueryOptions;
 use ZMQ;
 use ZMQContext;
 use ZMQSocket;
+use ZMQSocketException;
 
 class AnalyzeQueriesCommand extends Command
 {
@@ -24,21 +26,26 @@ class AnalyzeQueriesCommand extends Command
             (new EntryQueryOptions)->limit($limit),
         )->reverse();
 
-        $socket = new ZMQSocket(new ZMQContext(), ZMQ::SOCKET_REQ, 'app');
-        $socket = $socket->connect(config('rpc.go_analyze_query'));
-        
-        foreach ($entries as $entry) {
-            $this->info('-- ' . $entry->content['file'] . ':' . $entry->content['line']);
-            $this->info($entry->content['sql'] . "\n");
-            
-            // Send and receive
-            $send = $socket->send($entry->content['sql']);
-            $result = $send->recv();
+        try {
+            $socket = new ZMQSocket(new ZMQContext(), ZMQ::SOCKET_REQ, 'app');
 
-            $data = json_encode(json_decode($result), JSON_PRETTY_PRINT);
+            $socket = $socket->connect(config('rpc.go_analyze_query'));
 
-            $this->comment($data);
-            $this->comment('');
+            foreach ($entries as $entry) {
+                $this->info('-- ' . $entry->content['file'] . ':' . $entry->content['line']);
+                $this->info($entry->content['sql'] . "\n");
+
+                // Send and receive
+                $send = $socket->send($entry->content['sql']);
+                $result = $send->recv();
+
+                $data = json_encode(json_decode($result), JSON_PRETTY_PRINT);
+
+                $this->comment($data);
+                $this->comment('');
+            }
+        } catch (ZMQSocketException $e) {
+            Log::error($e);
         }
     }
 }

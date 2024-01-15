@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Helpers\TestHelper;
 use App\Jobs\TestJob;
 use App\Mail\TestMail;
 use Illuminate\Http\Request;
@@ -25,9 +24,7 @@ class HomeController extends Controller
      */
     public function index(Request $request): View
     {
-        $currentDate = TestHelper::currentDate();
-
-        return view('home', compact('currentDate'));
+        return view('home');
     }
 
     /**
@@ -61,6 +58,7 @@ class HomeController extends Controller
      *
      * @param Request $request
      * @return string
+     * @throws ZMQSocketException
      */
     public function startTestPythonZMQ(Request $request): string
     {

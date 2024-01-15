@@ -25,6 +25,7 @@ class TestHelper
      * Returns the current date and time formatted as "Y-m-d H:i:s".
      *
      * @return string The formatted date and time returned from the Go service.
+     * @throws ZMQSocketException
      */
     public static function currentDate(): string
     {
@@ -44,9 +45,8 @@ class TestHelper
         try {
             // Send and receive
             $send = $socket->send('2006-01-02 15:04:05');
-            $result = $send->recv();
 
-            return $result;
+            return $send->recv();
         } catch (ZMQSocketException $e) {
             return 'ERROR';
         }
