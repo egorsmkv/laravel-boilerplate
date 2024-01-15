@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Storage;
 
 class TestPutFileCommand extends Command
 {
@@ -17,6 +17,7 @@ class TestPutFileCommand extends Command
         $exists = Storage::disk('s3')->exists('first.txt');
         if ($exists) {
             $this->comment('The file exists.');
+
             return;
         }
 
