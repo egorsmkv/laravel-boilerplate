@@ -62,7 +62,7 @@ tasks:
 
   check-security:
     cmds:
-      - docker exec -it apps_dev vendor/bin/security-checker security:check composer.lock
+      - docker exec -it apps_dev security-checker security:check composer.lock
       - docker exec -it apps_dev composer audit
 
   gen-explain-queries:

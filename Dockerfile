@@ -2,6 +2,7 @@ FROM bitnami/php-fpm:8.3
 
 RUN apt update && apt install -y autoconf php-dev pkg-php-tools unzip git libzmq3-dev zlib1g-dev wget build-essential && \
     curl -fsSL https://bun.sh/install | bash && \
+    composer global require enlightn/security-checker && \
     mv /root/.bun/bin/bun /usr/local/bin && \
     pear channel-update pear.php.net && \
     pecl install xhprof excimer xdebug
@@ -27,5 +28,7 @@ RUN git clone https://github.com/NoiseByNorthwest/php-spx.git && \
     ./configure &&  \
     make &&  \
     make install
+
+ENV PATH="${PATH}:/root/.composer/vendor/bin"
 
 WORKDIR /app/frontend
