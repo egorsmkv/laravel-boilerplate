@@ -79,6 +79,8 @@
                     &bull;
                     <a href="http://{{ request()->getHost() }}/horizon" class="hover:underline">Horizon</a>
                     &bull;
+                    <a href="http://{{ request()->getHost() }}:8081" class="hover:underline">pgweb</a>
+                    &bull;
                     <a href="http://{{ request()->getHost() }}:8000" class="hover:underline">Buggregator</a>
                 @else
                     We are in production.
