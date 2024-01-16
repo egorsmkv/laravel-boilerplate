@@ -65,7 +65,7 @@ services:
     links:
       - pgsql:pgsql.acme.tld
     env_file:
-      - temboard_agent.env
+      - dev.env
     logging:
       options:
         max-size: "10m"

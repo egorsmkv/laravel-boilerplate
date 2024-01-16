@@ -26,7 +26,11 @@ tasks:
 
   up-with-temboard:
     cmds:
-      - docker compose -f docker-compose.temboard.yml up
+      - docker compose -f docker-compose.temboard.yml up -d
+
+  down-with-temboard:
+    cmds:
+      - docker compose -f docker-compose.temboard.yml down
 
   queue:
     cmds:
