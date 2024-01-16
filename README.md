@@ -28,6 +28,9 @@ cp -n dev-frontend.env apps/frontend/.env
 
 # Install dependencies, generate key, run migrations
 task install
+
+# Run queue worker
+task queue
 ```
 
 ### Useful commands
@@ -52,12 +55,6 @@ Update locales:
 
 ```bash
 task lang-update
-```
-
-Start queue worker:
-
-```bash
-task queue
 ```
 
 Apply fixes by phpcs:
