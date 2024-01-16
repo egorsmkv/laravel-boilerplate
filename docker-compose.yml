@@ -21,7 +21,7 @@ services:
       - "5173:5173"
     depends_on:
       - pgsql
-      - redis
+      - dragonflydb
     logging:
       options:
         max-size: "10m"
@@ -141,16 +141,11 @@ services:
         limits:
           memory: 512M
 
-  redis:
-    image: redis:7.2-alpine
-    container_name: redis_dev
-    command: [
-      "redis-server",
-      "--appendonly",
-      "yes"
-    ]
+  dragonflydb:
+    image: docker.dragonflydb.io/dragonflydb/dragonfly:latest
+    container_name: dragonflydb_dev
     volumes:
-      - redis_data:/data
+      - dragonflydb_data:/data
     networks:
       - app_dev
     logging:
@@ -158,14 +153,11 @@ services:
         max-size: "10m"
         max-file: "1"
     ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
+      memlock: -1
     deploy:
       resources:
         limits:
-          memory: 64M
+          memory: 1G
 
   minio:
     image: minio/minio:latest
@@ -206,8 +198,8 @@ volumes:
     name: pgsql_dev_data
   pgsql_run:
     name: pgsql_dev_run
-  redis_data:
-    name: redis_dev_data
+  dragonflydb_data:
+    name: dragonflydb_dev_data
   minio_data:
     name: minio_dev_data
 
