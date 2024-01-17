@@ -1,0 +1,27 @@
+[velox]
+build_args = [
+    '-trimpath',
+    '-ldflags',
+    '-s -X github.com/roadrunner-server/roadrunner/v2/internal/meta.version=${VERSION} -X github.com/roadrunner-server/roadrunner/v2/internal/meta.buildTime=${TIME}'
+]
+
+[roadrunner]
+ref = "v2023.3.9"
+
+[github]
+    [github.token]
+    token = "${RT_TOKEN}"
+
+    [github.plugins]
+    appLogger = { ref = "v4.2.1", owner = "roadrunner-server", repository = "app-logger" }
+    logger = { ref = "v4.2.4", owner = "roadrunner-server", repository = "logger" }
+
+    # HTTP + MIDDLEWARE
+    http = { ref = "v4.4.2", owner = "roadrunner-server", repository = "http" }
+
+    # SERVER
+    server = { ref = "v4.5.3", owner = "roadrunner-server", repository = "server" }
+
+[log]
+level = "debug"
+mode = "development"
