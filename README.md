@@ -84,13 +84,7 @@ task check-security
 ### Database monitoring
 
 - Access `http://localhost:8081` to enter the pgweb.
-- Access `http://localhost:8888` to enter the temboard.
-
-If you would like to use temboard, then up the container with the following command:
-
-```bash
-task up-with-temboard
-```
+- Access `http://localhost:9080` to enter the CockroachDB UI.
 
 ### Query optimization
 
