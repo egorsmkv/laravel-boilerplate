@@ -150,6 +150,7 @@ services:
   dragonflydb:
     image: docker.dragonflydb.io/dragonflydb/dragonfly:latest
     container_name: dragonflydb_dev
+    command: dragonfly --logtostderr --requirepass L2hgheewayei5eechW2
     volumes:
       - dragonflydb_data:/data
     networks:
