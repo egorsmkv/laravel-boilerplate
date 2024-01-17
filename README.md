@@ -86,16 +86,6 @@ task check-security
 - Access `http://localhost:8081` to enter the pgweb.
 - Access `http://localhost:9080` to enter the CockroachDB UI.
 
-### Query optimization
-
-Run the following command to generate SQL queries to get the execution plan:
-
-```bash
-task gen-explain-queries
-```
-
-Then, use https://explain.dalibo.com to visualize and understand the execution plan.
-
 ### Profiling
 
 Access `http://localhost/?SPX_KEY=dev&SPX_UI_URI=/` to enable PHP-SPX and see the profiling results.
