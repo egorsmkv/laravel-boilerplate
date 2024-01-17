@@ -10,8 +10,6 @@ apps/frontend/storage/*.key
 apps/frontend/db.sqlite
 apps/frontend/rr
 
-phpfpm/logs
-
 .env
 .env.backup
 .phpunit.result.cache

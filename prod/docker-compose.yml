@@ -10,6 +10,13 @@ services:
     restart: always
     env_file:
       - prod.env
+    command:
+      - php
+      - artisan
+      - octane:start
+      - --server=roadrunner
+      - --host=0.0.0.0
+      - --port=8080
     depends_on:
       - cockroachdb
       - dragonflydb
@@ -56,7 +63,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 1G
+          memory: 512M
 
   schedule:
     image: laravel_app_prod:1.0
@@ -162,10 +169,10 @@ services:
         max-file: "1"
     ulimits:
       memlock: -1
-    deploy:
-      resources:
-        limits:
-          memory: 1G
+    # deploy:
+    #   resources:
+    #     limits:
+    #       memory: 1500M
   
   minio:
     image: minio/minio:latest

@@ -1,10 +1,18 @@
-FROM bitnami/php-fpm:8.3
+FROM php:8.3.1-cli
 
 ARG CADDY_ARCH
 
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
+    php composer-setup.php && \
+    php -r "unlink('composer-setup.php');" && \
+    mv composer.phar /usr/bin/composer
+
 RUN apt update && \
-    apt install -y autoconf php-dev pkg-php-tools unzip wget build-essential git libzmq3-dev && \
+    apt install -y autoconf unzip wget git libzmq3-dev libpq-dev && \
+    docker-php-ext-install pgsql pdo_pgsql pcntl bcmath sockets && \
     pecl install excimer
+
+WORKDIR /app
 
 RUN wget https://pecl.php.net/get/redis-6.0.2.tgz && \
     tar xzf redis-6.0.2.tgz &&  \
@@ -36,9 +44,9 @@ RUN mv /tmp/caddy/Caddyfile /app && \
     mv /tmp/certs /app && \
     mv /tmp/apps/frontend /app && \
     mv prod-frontend.env /app/frontend/.env && \
-    cp ./phpfpm/env.conf /opt/bitnami/php/etc/php-fpm.d/env.conf && \
-    cp ./phpfpm/custom.ini /opt/bitnami/php/etc/conf.d/custom.ini && \
-    rm -rf apps phpfpm /app/frontend/node_modules
+    cp ./php/custom.ini /usr/local/etc/php/conf.d/custom.ini && \
+    cp ./rr/rr /app/frontend/ && \
+    rm -rf apps rr php /app/frontend/node_modules
 
 WORKDIR /app/frontend
 

@@ -11,14 +11,13 @@ services:
     env_file:
       - dev.env
     volumes:
-      - ./phpfpm/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ./php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
       - ./apps:/app
       - cockroach_certs_data:/certs
     command: 
       - php
       - artisan
-      - octane:start
-      - --server=roadrunner
+      - serve
       - --host=0.0.0.0
       - --port=8080
     networks:
