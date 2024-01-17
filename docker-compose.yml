@@ -11,11 +11,16 @@ services:
     env_file:
       - dev.env
     volumes:
-      - ./phpfpm/env.conf:/opt/bitnami/php/etc/php-fpm.d/env.conf
-      - ./phpfpm/custom.ini:/opt/bitnami/php/etc/conf.d/custom.ini
-      - ./phpfpm/logs:/var/log/php-fpm/
+      - ./phpfpm/custom.ini:/usr/local/etc/php/conf.d/custom.ini
       - ./apps:/app
       - cockroach_certs_data:/certs
+    command: 
+      - php
+      - artisan
+      - octane:start
+      - --server=roadrunner
+      - --host=0.0.0.0
+      - --port=8080
     networks:
       - app_dev
     ports:

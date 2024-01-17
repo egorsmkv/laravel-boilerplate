@@ -1,9 +1,15 @@
-FROM bitnami/php-fpm:8.3
+FROM php:8.3.1-cli
 
-RUN apt update && apt install -y autoconf php-dev pkg-php-tools unzip git libzmq3-dev zlib1g-dev wget build-essential && \
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
+    php composer-setup.php && \
+    php -r "unlink('composer-setup.php');" && \
+    mv composer.phar /usr/bin/composer
+
+RUN apt update && apt install -y autoconf unzip git libzmq3-dev zlib1g-dev wget libpq-dev && \
     curl -fsSL https://bun.sh/install | bash && \
     composer global require enlightn/security-checker && \
     mv /root/.bun/bin/bun /usr/local/bin && \
+    docker-php-ext-install pgsql pdo_pgsql pcntl bcmath sockets && \
     pear channel-update pear.php.net && \
     pecl install xhprof excimer xdebug
 

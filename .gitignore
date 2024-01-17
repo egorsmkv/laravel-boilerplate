@@ -8,6 +8,7 @@ apps/frontend/public/vendor
 apps/frontend/public/storage
 apps/frontend/storage/*.key
 apps/frontend/db.sqlite
+apps/frontend/rr
 
 phpfpm/logs
 
