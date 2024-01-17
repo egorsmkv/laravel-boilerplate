@@ -1,10 +1,10 @@
 # Laravel Boilerplate for Development
 
 > [!NOTE]
-> The idea of this project is simple: current boilerplate must:
+> The idea of this project is simple, current boilerplate must:
 > - be on the latest version of Laravel
 > - be lightweight to run with Docker
-> - to use modern technologies such as PHP 8.3, PgSQL 16, Go 1.21, Python 3.12, etc.
+> - to use modern technologies such as PHP 8.3, Go 1.21, Python 3.12, etc.
 
 ### Requirements
 
