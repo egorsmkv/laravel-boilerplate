@@ -1,4 +1,4 @@
-# RoadRunner built by velox
+# RoadRunner built by Velox
 
 ```bash
 wget https://github.com/roadrunner-server/velox/releases/download/v1.7.2/velox-1.7.2-linux-amd64.tar.gz
