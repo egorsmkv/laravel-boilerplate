@@ -14,7 +14,6 @@ ref = "v2023.3.9"
 
     [github.plugins]
     logger = { ref = "v4.2.13", owner = "roadrunner-server", repository = "logger" }
-    static = { ref = "v4.1.14", owner = "roadrunner-server", repository = "static" }
 
     # HTTP + MIDDLEWARE
     http = { ref = "v4.4.12", owner = "roadrunner-server", repository = "http" }
