@@ -9,6 +9,9 @@
 Run the following commands to install this project:
 
 ```bash
+# Generate certificates for CockroachDB
+task certs-init
+
 # Create the app docker image
 task build-init
 

@@ -33,6 +33,7 @@ WORKDIR /tmp
 COPY . .
 
 RUN mv /tmp/caddy/Caddyfile /app && \
+    mv /tmp/certs /app && \
     mv /tmp/apps/frontend /app && \
     mv prod-frontend.env /app/frontend/.env && \
     cp ./phpfpm/env.conf /opt/bitnami/php/etc/php-fpm.d/env.conf && \

@@ -1,6 +1,11 @@
 version: '3'
 
 tasks:
+  certs-init:
+    cmds:
+      - docker run --rm -v ./certs:/certs -it cockroachdb/cockroach:v23.1.13 cert create-ca --certs-dir=/certs --ca-key=/certs/ca.key
+      - docker run --rm -v ./certs:/certs -it cockroachdb/cockroach:v23.1.13 cert create-client root --certs-dir=/certs --ca-key=/certs/ca.key
+
   build-init:
     cmds:
       - docker buildx create --bootstrap --use --name=laravel_builder_prod --node prod --driver=docker-container

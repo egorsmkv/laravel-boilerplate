@@ -11,7 +11,7 @@ services:
     env_file:
       - prod.env
     depends_on:
-      - pgsql
+      - cockroachdb
       - dragonflydb
     networks:
       - app_prod
@@ -40,7 +40,7 @@ services:
       - artisan
       - horizon
     depends_on:
-      - pgsql
+      - cockroachdb
       - dragonflydb
     networks:
       - app_prod
@@ -56,7 +56,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 512M
+          memory: 1G
 
   schedule:
     image: laravel_app_prod:1.0
@@ -69,7 +69,7 @@ services:
       - artisan
       - schedule:work
     depends_on:
-      - pgsql
+      - cockroachdb
       - dragonflydb
     networks:
       - app_prod
@@ -117,20 +117,28 @@ services:
         limits:
           memory: 128M
 
-  pgsql:
-    image: postgres:16-alpine
-    container_name: pgsql_prod
-    restart: always
+  cockroachdb:
+    image: cockroachdb/cockroach:v23.1.13
+    container_name: cockroachdb_prod
     env_file:
       - prod.env
+    command:
+      - start-single-node
+      - --http-addr
+      - :9080
+      - --certs-dir
+      - /certs
+    ports:
+      - "9080:9080"
     volumes:
-      - pgsql_data:/var/lib/postgresql/data
+      - cockroach_data:/cockroach/cockroach-data
+      - ./certs:/certs
     networks:
       - app_prod
     logging:
       options:
-        max-size: 64M
-        max-file: 3
+        max-size: "10m"
+        max-file: "3"
     ulimits:
       nproc: 65535
       nofile:
@@ -192,12 +200,14 @@ services:
           memory: 512M
 
 volumes:
-  pgsql_data:
-    name: pgsql_prod_data
   dragonflydb_data:
     name: dragonflydb_prod_data
   minio_data:
     name: minio_prod_data
+  cockroach_data:
+    name: cockroach_prod_data
+  cockroach_certs_data:
+    name: cockroach_certs_prod_data
 
 networks:
   app_prod:
