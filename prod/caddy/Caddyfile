@@ -11,8 +11,12 @@
 		level INFO
 	}
 
-	reverse_proxy apps:8080 {
+	root * /app/frontend/public
+
+	php_fastcgi apps:9000 {
 		header_up Host {host}
 		header_up X-Real-IP {remote_host}
 	}
+
+	file_server
 }
