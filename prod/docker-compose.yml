@@ -168,11 +168,7 @@ services:
         max-file: "1"
     ulimits:
       memlock: -1
-    # deploy:
-    #   resources:
-    #     limits:
-    #       memory: 1500M
-  
+
   minio:
     image: minio/minio:latest
     container_name: minio_prod
