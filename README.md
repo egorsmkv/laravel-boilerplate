@@ -20,6 +20,9 @@ task build-init
 task build
 task build-prune
 
+# Generate database certs
+task certs-init
+
 # Up containers
 task up
 

@@ -20,6 +20,11 @@ tasks:
       - docker exec -it apps_dev php artisan key:generate
       - docker exec -it apps_dev php artisan migrate
 
+  certs-init:
+    cmds:
+      - docker run --rm -v ./certs:/certs -it cockroachdb/cockroach:v23.1.13 cert create-ca --certs-dir=/certs --ca-key=/certs/ca.key
+      - docker run --rm -v ./certs:/certs -it cockroachdb/cockroach:v23.1.13 cert create-client root --certs-dir=/certs --ca-key=/certs/ca.key
+
   up:
     cmds:
       - docker compose up -d

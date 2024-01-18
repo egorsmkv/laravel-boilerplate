@@ -1,6 +1,8 @@
 .idea/
 .vscode/
 
+certs/
+
 apps/frontend/vendor/
 apps/frontend/node_modules/
 apps/frontend/public/hot

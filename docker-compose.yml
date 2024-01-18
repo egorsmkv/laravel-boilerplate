@@ -12,7 +12,7 @@ services:
     volumes:
       - ./php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
       - ./apps:/app
-      - cockroach_certs_data:/certs
+      - ./certs:/certs
     command: 
       - php
       - artisan
@@ -82,7 +82,7 @@ services:
       - "9080:9080"
     volumes:
       - cockroach_data:/cockroach/cockroach-data
-      - cockroach_certs_data:/certs
+      - ./certs:/certs
     networks:
       - app_dev
     logging:
@@ -109,7 +109,7 @@ services:
     ports:
       - "8081:8081"
     volumes:
-      - cockroach_certs_data:/certs
+      - ./certs:/certs
     depends_on:
       - cockroachdb
     logging:
@@ -203,8 +203,6 @@ volumes:
     name: minio_dev_data
   cockroach_data:
     name: cockroach_dev_data
-  cockroach_certs_data:
-    name: cockroach_certs_dev_data
 
 networks:
    app_dev:
