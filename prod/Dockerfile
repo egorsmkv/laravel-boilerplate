@@ -57,6 +57,8 @@ RUN wget https://pecl.php.net/get/redis-6.0.2.tgz && \
     composer clear-cache && \
     chown -R daemon:daemon /app && chown -R daemon:daemon /tmp/caddy
 
+WORKDIR /app/frontend
+
 ENV XDG_DATA_HOME=/tmp/
 ENV XDG_CONFIG_HOME=/tmp/
 
