@@ -40,11 +40,11 @@ RUN wget https://pecl.php.net/get/redis-6.0.2.tgz && \
     tar xzf caddy_2.7.6_linux_$CADDY_ARCH.tar.gz && \
     rm caddy_2.7.6_linux_$CADDY_ARCH.tar.gz LICENSE README.md && \
     cd /tmp && \
-    mv /tmp/caddy/Caddyfile /app && \
+    mv /tmp/Caddyfile /app && \
     mv /tmp/certs /app && \
     mv /tmp/apps/frontend /app && \
     mv prod-frontend.env /app/frontend/.env && \
-    cp ./php/custom.ini /usr/local/etc/php/conf.d/custom.ini && \
+    cp ./custom.ini /usr/local/etc/php/conf.d/custom.ini && \
     rm -rf apps php /app/frontend/node_modules && \
     cd /app/frontend && \
     composer install --prefer-dist --optimize-autoloader --no-dev && \

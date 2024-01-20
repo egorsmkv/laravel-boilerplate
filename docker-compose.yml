@@ -10,7 +10,7 @@ services:
     env_file:
       - dev.env
     volumes:
-      - ./php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ./custom.ini:/usr/local/etc/php/conf.d/custom.ini
       - ./apps:/app
       - ./certs:/certs
     command: 
@@ -46,7 +46,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./Caddyfile:/etc/caddy/Caddyfile
       - ./apps:/app
       - caddy_data:/data
     networks:
