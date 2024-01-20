@@ -1,4 +1,4 @@
-FROM php:8.3.1-cli
+FROM php:8.3.2-cli
 
 ARG CADDY_ARCH
 

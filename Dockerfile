@@ -1,4 +1,4 @@
-FROM php:8.3.1-cli
+FROM php:8.3.2-cli
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
     php composer-setup.php && \
