@@ -10,7 +10,8 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
 RUN apt update && \
     apt install -y autoconf unzip wget git libzmq3-dev libpq-dev && \
     docker-php-ext-install pgsql pdo_pgsql pcntl bcmath sockets && \
-    pecl install excimer
+    pecl install excimer && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
@@ -57,7 +58,8 @@ RUN rm bun.lockb package.json postcss.config.js tailwind.config.js vite.config.j
     php artisan optimize && \
     php artisan view:cache && \
     php artisan route:cache && \
-    php artisan config:cache
+    php artisan config:cache && \
+    composer clear-cache
 
 RUN chown -R daemon:daemon /app && chown -R daemon:daemon /tmp/caddy
 

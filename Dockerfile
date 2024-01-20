@@ -11,7 +11,9 @@ RUN apt update && apt install -y autoconf unzip git libzmq3-dev zlib1g-dev wget 
     mv /root/.bun/bin/bun /usr/local/bin && \
     docker-php-ext-install pgsql pdo_pgsql pcntl bcmath sockets && \
     pear channel-update pear.php.net && \
-    pecl install xhprof excimer xdebug
+    pecl install xhprof excimer xdebug && \
+    composer clear-cache && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://github.com/zeromq/php-zmq.git && \
     cd php-zmq &&  \
