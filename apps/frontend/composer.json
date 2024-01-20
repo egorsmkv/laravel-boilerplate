@@ -31,8 +31,7 @@
     "nunomaduro/collision": "^7",
     "phpunit/phpunit": "^10.1",
     "spatie/laravel-ignition": "^2",
-    "symfony/var-dumper": "^6.4",
-    "tomasvotruba/bladestan": "^0.5.0"
+    "symfony/var-dumper": "^6.4"
   },
   "autoload": {
     "psr-4": {
