@@ -1,9 +1,19 @@
 apps/go-hello
 
+apps/frontend/.idea
+apps/frontend/.php-cs-fixer.cache
 apps/frontend/node_modules
 apps/frontend/vendor
 apps/frontend/phpcs.php
 apps/frontend/phpstan.neon
+
+apps/frontend/bun.lockb
+apps/frontend/package.json
+apps/frontend/postcss.config.js
+apps/frontend/tailwind.config.js
+apps/frontend/vite.config.js
+
+rr/
 
 Dockerfile
 prod.env
