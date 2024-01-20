@@ -95,7 +95,6 @@ Access `http://localhost/?SPX_KEY=dev&SPX_UI_URI=/` to enable PHP-SPX and see th
 
 ### Maintenance
 
-- Read the UPDATE.md file to keep the project up to date;
+- Read **UPDATE.md** to keep the project up to date;
 - Use [dive](https://github.com/wagoodman/dive) to analyze Docker images;
-- Use [grype](https://github.com/anchore/grype) to check security vulnerabilities;
-- Use [dep-scan](https://github.com/owasp-dep-scan/dep-scan) to check security vulnerabilities;
+- Use [grype](https://github.com/anchore/grype) and [dep-scan](https://github.com/owasp-dep-scan/dep-scan) to check security vulnerabilities;
