@@ -20,7 +20,7 @@ export default defineConfig({
             ]
         },
         hmr: {
-            host: 'localhost',
+            host: process.env.HMR_HOST,
         },
     },
 });

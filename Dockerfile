@@ -1,19 +1,15 @@
-FROM php:8.3.2-cli
+FROM php:8.3.2-cli-alpine3.19
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
     php composer-setup.php && \
     php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/bin/composer
 
-RUN apt update && apt install -y autoconf unzip git libzmq3-dev zlib1g-dev wget libpq-dev && \
-    curl -fsSL https://bun.sh/install | bash && \
+RUN apk --no-cache add wget unzip git linux-headers build-base autoconf zeromq-dev zlib-dev libpq-dev && \
     composer global require enlightn/security-checker && \
-    mv /root/.bun/bin/bun /usr/local/bin && \
     docker-php-ext-install pgsql pdo_pgsql pcntl bcmath sockets && \
-    pear channel-update pear.php.net && \
     pecl install xhprof excimer xdebug && \
-    composer clear-cache && \
-    rm -rf /var/lib/apt/lists/*
+    composer clear-cache
 
 RUN git clone https://github.com/zeromq/php-zmq.git && \
     cd php-zmq &&  \

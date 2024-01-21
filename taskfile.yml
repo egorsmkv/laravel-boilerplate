@@ -43,11 +43,13 @@ tasks:
 
   bun-dev:
     cmds:
-      - docker exec -it apps_dev bun run dev
+      - cd apps/frontend && bun run dev
+    env:
+      HMR_HOST: d.yehors.com
 
   bun-build:
     cmds:
-      - docker exec -it apps_dev bun run build
+      - cd apps/frontend && bun run build
 
   lang-update:
     cmds:

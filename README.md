@@ -10,6 +10,7 @@
 
 - Docker 25.x
 - Task 3.x
+- Bun 1.x
 
 ### Usage
 
