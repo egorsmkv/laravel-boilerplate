@@ -8,7 +8,7 @@
 
 ### Requirements
 
-- Docker 24.x
+- Docker 25.x
 - Task 3.x
 
 ### Usage
