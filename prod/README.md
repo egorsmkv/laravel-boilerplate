@@ -1,4 +1,4 @@
-# Laravel Boilerplate for Production
+# Production
 
 ### Requirements
 
@@ -12,7 +12,7 @@ Run the following commands to install this project:
 # Generate certificates for CockroachDB
 task certs-init
 
-# Create the app docker image
+# Create prod image
 task build-init
 
 task build-amd64
@@ -34,10 +34,4 @@ Enter the container:
 ```bash
 # Enter the container
 task bash
-```
-
-Check usage of resources:
-
-```bash
-task stats
 ```

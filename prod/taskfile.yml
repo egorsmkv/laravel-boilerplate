@@ -46,10 +46,6 @@ tasks:
     cmds:
       - docker exec -it apps_prod bash
 
-  stats:
-    cmds:
-      - docker stats --no-stream
-
   logs:
     cmds:
       - docker compose logs -f
