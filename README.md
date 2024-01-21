@@ -1,18 +1,17 @@
 # Laravel Boilerplate
 
 > [!NOTE]
-> Current boilerplate must:
+> It must:
 > - be on the latest version of Laravel
 > - be lightweight to run with Docker
 > - use modern technologies such as PHP 8.3, Go 1.21, Python 3.12, etc.
 
 ### Requirements
 
-- Docker Engine 24.x
+- Docker 24.x
+- Task 3.x
 
 ### Usage
-
-Run the following commands to install this project:
 
 ```bash
 # Build dev image
@@ -34,6 +33,9 @@ task install
 
 # Run queue worker
 task queue
+
+# Enter the apps container
+task bash
 ```
 
 ### Useful commands
@@ -92,6 +94,6 @@ task check-security
 
 ### Maintenance
 
-- Read **UPDATE.md** to keep the project up to date;
+- Read [UPDATE.md](https://github.com/egorsmkv/laravel-boilerplate/blob/main/UPDATE.md) to keep the project up to date;
 - Use [dive](https://github.com/wagoodman/dive) to analyze Docker images;
 - Use [grype](https://github.com/anchore/grype) and [dep-scan](https://github.com/owasp-dep-scan/dep-scan) to check security vulnerabilities.

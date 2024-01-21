@@ -2,11 +2,10 @@
 
 ### Requirements
 
-- Docker Engine 24.x
+- Docker 24.x
+- Task 3.x
 
 ### Usage
-
-Run the following commands to install this project:
 
 ```bash
 # Generate certificates for CockroachDB
@@ -25,13 +24,7 @@ task up
 
 # Migrate
 task migrate
-```
 
-### Useful commands
-
-Enter the container:
-
-```bash
-# Enter the container
+# Enter the apps container
 task bash
 ```
