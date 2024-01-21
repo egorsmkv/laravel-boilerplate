@@ -5,7 +5,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/bin/composer
 
-RUN apk --no-cache add wget unzip git linux-headers build-base autoconf zeromq-dev zlib-dev libpq-dev && \
+RUN apk --update --no-cache add wget unzip git linux-headers build-base autoconf zeromq-dev zlib-dev libpq-dev && \
     composer global require enlightn/security-checker && \
     docker-php-ext-install pgsql pdo_pgsql pcntl bcmath sockets && \
     pecl install xhprof excimer xdebug && \

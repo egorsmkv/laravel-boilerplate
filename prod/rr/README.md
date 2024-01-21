@@ -28,7 +28,7 @@ rm velox-1.7.2-darwin-arm64.tar.gz
 
 ```bash
 export RT_TOKEN=
-TIME=`date +%Y%m%d%H%M%S` ./vx build -c velox.toml -o .
+TIME=`date +%Y%m%d%H%M%S` CGO_ENABLED=0 GOOS=linux GOARCH=amd64 ./vx build -c velox.toml -o .
 
 # if you're on a MacOS but want to test prod setup
 TIME=`date +%Y%m%d%H%M%S` GOOS=linux GOARCH=amd64 ./vx build -c velox.toml -o .
