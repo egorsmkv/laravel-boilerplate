@@ -6,6 +6,8 @@ apps/frontend/node_modules
 apps/frontend/vendor
 apps/frontend/phpcs.php
 apps/frontend/phpstan.neon
+apps/frontend/phpunit.xml
+apps/frontend/tests
 
 apps/frontend/bun.lockb
 apps/frontend/package.json
