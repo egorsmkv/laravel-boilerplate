@@ -53,7 +53,7 @@ RUN wget https://pecl.php.net/get/redis-6.0.2.tgz && \
     php artisan route:cache && \
     php artisan config:cache && \
     composer clear-cache && \
-    chown -R daemon:daemon /app && chown -R daemon:daemon /tmp/caddy
+    chown -R daemon:daemon /app 
 
 WORKDIR /app/frontend
 
