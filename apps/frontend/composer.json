@@ -28,8 +28,11 @@
     "maantje/xhprof-buggregator-laravel": "^0.2.1",
     "mockery/mockery": "^1.6",
     "nunomaduro/collision": "^7",
+    "phpstan/phpstan-deprecation-rules": "^1.1",
+    "phpstan/phpstan-strict-rules": "^1.5",
     "phpunit/phpunit": "^10.1",
     "spatie/laravel-ignition": "^2",
+    "spaze/phpstan-disallowed-calls": "^3.1",
     "symfony/var-dumper": "^6.4"
   },
   "autoload": {
