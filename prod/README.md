@@ -12,11 +12,9 @@
 task certs-init
 
 # Create prod image
-task build-init
-
 task build-amd64
-task build-arm64
 
+# Remove builds
 task build-prune
 
 # Up containers
@@ -26,5 +24,5 @@ task up
 task migrate
 
 # Enter the apps container
-task bash
+task console
 ```

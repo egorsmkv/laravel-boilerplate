@@ -16,8 +16,9 @@
 
 ```bash
 # Build dev image
-task build-init
 task build
+
+# Remove builds
 task build-prune
 
 # Generate database certs
@@ -36,7 +37,7 @@ task install
 task queue
 
 # Enter the apps container
-task bash
+task console
 ```
 
 ### Useful commands

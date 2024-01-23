@@ -6,23 +6,11 @@ tasks:
       - docker run --rm -v ./certs:/certs -it cockroachdb/cockroach:v23.1.13 cert create-ca --certs-dir=/certs --ca-key=/certs/ca.key
       - docker run --rm -v ./certs:/certs -it cockroachdb/cockroach:v23.1.13 cert create-client root --certs-dir=/certs --ca-key=/certs/ca.key
 
-  build-init:
-    cmds:
-      - docker buildx create --bootstrap --use --name=laravel_builder_prod --node prod --driver=docker-container
-
-  build-arm64:
-    cmds:
-      - cp -r ../apps .
-      - cp -r ./rr/rr apps/frontend
-      - docker buildx build --builder laravel_builder_prod --force-rm --load --build-arg CADDY_ARCH=arm64 --tag laravel_app_prod:1.0 .
-      - docker image prune -f
-      - rm -rf ./apps
-
   build-amd64:
     cmds:
       - cp -r ../apps .
       - cp -r ./rr/rr apps/frontend
-      - docker buildx build --builder laravel_builder_prod --force-rm --load --build-arg CADDY_ARCH=amd64 --tag laravel_app_prod:1.0 .
+      - docker buildx build --force-rm --load --build-arg CADDY_ARCH=amd64 --tag laravel_app_prod:1.0 .
       - docker image prune -f
       - rm -rf ./apps
 
@@ -42,9 +30,9 @@ tasks:
     cmds:
       - docker exec -it apps_prod php artisan migrate
 
-  bash:
+  console:
     cmds:
-      - docker exec -it apps_prod bash
+      - docker exec -it apps_prod sh
 
   logs:
     cmds:
