@@ -19,7 +19,7 @@ class AnalyzeQueriesCommand extends Command
 
     public function handle(EntriesRepository $storage): void
     {
-        $limit = $this->argument('limit');
+        $limit = (int) $this->argument('limit');
 
         $entries = $storage->get(
             EntryType::QUERY,
@@ -29,7 +29,9 @@ class AnalyzeQueriesCommand extends Command
         try {
             $socket = new ZMQSocket(new ZMQContext(), ZMQ::SOCKET_REQ, 'app');
 
-            $socket = $socket->connect(config('rpc.go_analyze_query'));
+            /** @var string $zmqHost */
+            $zmqHost = config('rpc.go_analyze_query');
+            $socket = $socket->connect($zmqHost);
 
             foreach ($entries as $entry) {
                 $this->info('-- ' . $entry->content['file'] . ':' . $entry->content['line']);
@@ -40,6 +42,11 @@ class AnalyzeQueriesCommand extends Command
                 $result = $send->recv();
 
                 $data = json_encode(json_decode($result), JSON_PRETTY_PRINT);
+                if (!$data) {
+                    $this->error('Failed to decode JSON');
+                    $this->error($result);
+                    continue;
+                }
 
                 $this->comment($data);
                 $this->comment('');

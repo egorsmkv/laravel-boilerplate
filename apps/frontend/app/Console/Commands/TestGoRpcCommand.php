@@ -23,7 +23,9 @@ class TestGoRpcCommand extends Command
             $socket = new ZMQSocket(new ZMQContext(), ZMQ::SOCKET_REQ, 'MySocket-console-test1');
 
             // Connect to an endpoint
-            $socket = $socket->connect(config('rpc.go_hello_addr'));
+            /** @var string $zmqHost */
+            $zmqHost = config('rpc.go_hello_addr');
+            $socket = $socket->connect($zmqHost);
 
             for ($i = 0; $i < $nIters; $i++) {
                 $this->comment("Calling RPC #$i...");

@@ -40,7 +40,9 @@ class TestHelper
         // $socket->setSockOpt(ZMQ::SOCKOPT_TCP_KEEPALIVE_INTVL, 1);
         // $socket->setSockOpt(ZMQ::SOCKOPT_TCP_KEEPALIVE_IDLE, 1);
 
-        $socket = $socket->connect(config('rpc.go_hello_addr'));
+        /** @var string $zmqHost */
+        $zmqHost = config('rpc.go_hello_addr');
+        $socket = $socket->connect($zmqHost);
 
         try {
             // Send and receive

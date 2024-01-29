@@ -37,7 +37,9 @@ class Kernel extends ConsoleKernel
      */
     protected function scheduleTimezone(): DateTimeZone|string|null
     {
-        return (string) config('app.timezone');
+        /** @var string $tz */
+        $tz = config('app.timezone');
+        return $tz;
     }
 
     /**
