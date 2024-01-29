@@ -98,4 +98,4 @@ task check-security
 
 - Read [UPDATE.md](https://github.com/egorsmkv/laravel-boilerplate/blob/main/UPDATE.md) to keep the project up to date;
 - Use [dive](https://github.com/wagoodman/dive) to analyze Docker images;
-- Use [grype](https://github.com/anchore/grype) and [dep-scan](https://github.com/owasp-dep-scan/dep-scan) to check security vulnerabilities.
+- Use [grype](https://github.com/anchore/grype) to check security vulnerabilities.

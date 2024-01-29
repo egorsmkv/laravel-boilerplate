@@ -126,6 +126,7 @@ services:
   cockroachdb:
     image: cockroachdb/cockroach:v23.1.13
     container_name: cockroachdb_prod
+    restart: always
     env_file:
       - prod.env
     command:
@@ -158,6 +159,7 @@ services:
   dragonflydb:
     image: docker.dragonflydb.io/dragonflydb/dragonfly:latest
     container_name: dragonflydb_prod
+    restart: always
     command: dragonfly --logtostderr --requirepass L2hgheewayei5eechW2
     volumes:
       - dragonflydb_data:/data
@@ -173,6 +175,7 @@ services:
   minio:
     image: minio/minio:latest
     container_name: minio_prod
+    restart: always
     command: [
       "server",
       "--console-address",

@@ -23,6 +23,9 @@ task up
 # Migrate
 task migrate
 
+# Show logs
+task logs
+
 # Enter the apps container
 task console
 ```
