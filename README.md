@@ -99,3 +99,8 @@ task check-security
 - Read [UPDATE.md](https://github.com/egorsmkv/laravel-boilerplate/blob/main/UPDATE.md) to keep the project up to date;
 - Use [dive](https://github.com/wagoodman/dive) to analyze Docker images;
 - Use [grype](https://github.com/anchore/grype) to check security vulnerabilities.
+
+### Alternatives
+
+- https://github.com/egorsmkv/laravel-boilerplate-mariadb
+- https://github.com/egorsmkv/laravel-boilerplate-pgsql
