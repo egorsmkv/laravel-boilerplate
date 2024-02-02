@@ -67,7 +67,7 @@ task lang-update
 Apply fixes by phpcs:
 
 ```bash
-task phpcs-fix
+task fix-phpcs
 ```
 
 Analyse the code by [Larastan](https://github.com/larastan/larastan):

@@ -33,10 +33,6 @@ tasks:
     cmds:
       - docker compose down
 
-  fix-perms:
-    cmds:
-      - chmod -R 777 apps/frontend/storage
-
   bun-dev:
     cmds:
       - cd apps/frontend && bun run dev
@@ -51,9 +47,13 @@ tasks:
     cmds:
       - docker exec -it apps_dev php artisan lang:update
 
-  phpcs-fix:
+  fix-phpcs:
     cmds:
       - docker exec -it apps_dev vendor/bin/php-cs-fixer fix --config phpcs.php
+
+  fix-perms:
+    cmds:
+      - chmod -R 777 apps/frontend/storage
 
   phpstan:
     cmds:
