@@ -13,12 +13,7 @@ services:
       - ./custom.ini:/usr/local/etc/php/conf.d/custom.ini
       - ./apps:/app
       - ./certs:/certs
-    command: 
-      - php
-      - artisan
-      - serve
-      - --host=0.0.0.0
-      - --port=8080
+    command: sh run.sh
     networks:
       - app_dev
     depends_on:
