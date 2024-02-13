@@ -20,19 +20,19 @@
     "spiral/roadrunner-http": "^3.3"
   },
   "require-dev": {
-    "fakerphp/faker": "^1.23",
-    "friendsofphp/php-cs-fixer": "^3.46",
-    "larastan/larastan": "^2.8",
-    "laravel-lang/common": "^6.1",
-    "laravel/telescope": "^4.17",
-    "maantje/xhprof-buggregator-laravel": "^0.2.1",
+    "fakerphp/faker": "^1",
+    "friendsofphp/php-cs-fixer": "^3",
+    "larastan/larastan": "^2",
+    "laravel-lang/common": "^6",
+    "laravel/telescope": "^4",
+    "maantje/xhprof-buggregator-laravel": "^0.2",
     "mockery/mockery": "^1.6",
     "nunomaduro/collision": "^7",
-    "phpstan/phpstan-deprecation-rules": "^1.1",
-    "phpunit/phpunit": "^10.1",
+    "phpstan/phpstan-deprecation-rules": "^1",
+    "phpunit/phpunit": "^10",
     "spatie/laravel-ignition": "^2",
-    "spaze/phpstan-disallowed-calls": "^3.1",
-    "symfony/var-dumper": "^6.4"
+    "spaze/phpstan-disallowed-calls": "^3",
+    "symfony/var-dumper": "^6"
   },
   "autoload": {
     "psr-4": {
