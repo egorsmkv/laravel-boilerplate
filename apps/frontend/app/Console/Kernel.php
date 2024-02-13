@@ -39,6 +39,7 @@ class Kernel extends ConsoleKernel
     {
         /** @var string $tz */
         $tz = config('app.timezone');
+
         return $tz;
     }
 
