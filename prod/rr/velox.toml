@@ -2,20 +2,20 @@
 build_args = [
     '-trimpath',
     '-ldflags',
-    '-s -X github.com/roadrunner-server/roadrunner/v2023/internal/meta.version=v2023.3.9 -X github.com/roadrunner-server/roadrunner/v2023/internal/meta.buildTime=${TIME}'
+    '-s -X github.com/roadrunner-server/roadrunner/v2023/internal/meta.version=v2023.3.10 -X github.com/roadrunner-server/roadrunner/v2023/internal/meta.buildTime=${TIME}'
 ]
 
 [roadrunner]
-ref = "v2023.3.9"
+ref = "v2023.3.10"
 
 [github]
     [github.token]
     token = "${RT_TOKEN}"
 
     [github.plugins]
-    logger = { ref = "v4.2.13", owner = "roadrunner-server", repository = "logger" }
-    http = { ref = "v4.4.12", owner = "roadrunner-server", repository = "http" }
-    server = { ref = "v4.5.6", owner = "roadrunner-server", repository = "server" }
+    logger = { ref = "v4.2.14", owner = "roadrunner-server", repository = "logger" }
+    http = { ref = "v4.5.1", owner = "roadrunner-server", repository = "http" }
+    server = { ref = "v4.5.7", owner = "roadrunner-server", repository = "server" }
 
 [log]
 level = "info"
