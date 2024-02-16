@@ -124,7 +124,7 @@ services:
           memory: 128M
 
   cockroachdb:
-    image: cockroachdb/cockroach:v23.1.14
+    image: cockroachdb/cockroach:v23.2.0
     container_name: cockroachdb_prod
     restart: always
     env_file:

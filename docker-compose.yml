@@ -61,7 +61,7 @@ services:
           memory: 128M
 
   cockroachdb:
-    image: cockroachdb/cockroach:v23.1.14
+    image: cockroachdb/cockroach:v23.2.0
     container_name: cockroachdb_dev
     env_file:
       - dev.env

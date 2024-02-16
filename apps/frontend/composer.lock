@@ -108,16 +108,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.298.9",
+            "version": "3.299.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "db225c3a1c5dabfbb5071349cfb7e4c396c3d9ec"
+                "reference": "76d1165568d949b430a87eaa42f6dbc4b6705b6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/db225c3a1c5dabfbb5071349cfb7e4c396c3d9ec",
-                "reference": "db225c3a1c5dabfbb5071349cfb7e4c396c3d9ec",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/76d1165568d949b430a87eaa42f6dbc4b6705b6f",
+                "reference": "76d1165568d949b430a87eaa42f6dbc4b6705b6f",
                 "shasum": ""
             },
             "require": {
@@ -197,9 +197,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.298.9"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.299.0"
             },
-            "time": "2024-02-13T19:08:16+00:00"
+            "time": "2024-02-15T19:08:34+00:00"
         },
         {
             "name": "brick/math",
@@ -4613,16 +4613,16 @@
         },
         {
             "name": "spiral/roadrunner",
-            "version": "v2023.3.10",
+            "version": "v2023.3.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roadrunner-server/roadrunner.git",
-                "reference": "8cb2c6f4c5a52a867ccfb1768a4dbcd28998f04c"
+                "reference": "a39c549a196451fec13fde1266ea7b3dc3722f3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roadrunner-server/roadrunner/zipball/8cb2c6f4c5a52a867ccfb1768a4dbcd28998f04c",
-                "reference": "8cb2c6f4c5a52a867ccfb1768a4dbcd28998f04c",
+                "url": "https://api.github.com/repos/roadrunner-server/roadrunner/zipball/a39c549a196451fec13fde1266ea7b3dc3722f3a",
+                "reference": "a39c549a196451fec13fde1266ea7b3dc3722f3a",
                 "shasum": ""
             },
             "type": "metapackage",
@@ -4651,7 +4651,7 @@
                 "docs": "https://roadrunner.dev/docs",
                 "forum": "https://forum.roadrunner.dev/",
                 "issues": "https://github.com/roadrunner-server/roadrunner/issues",
-                "source": "https://github.com/roadrunner-server/roadrunner/tree/v2023.3.10"
+                "source": "https://github.com/roadrunner-server/roadrunner/tree/v2023.3.11"
             },
             "funding": [
                 {
@@ -4659,7 +4659,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-02-01T22:19:39+00:00"
+            "time": "2024-02-15T19:41:47+00:00"
         },
         {
             "name": "spiral/roadrunner-cli",
@@ -8526,16 +8526,16 @@
         },
         {
             "name": "laravel-lang/actions",
-            "version": "1.4.5",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Lang/actions.git",
-                "reference": "8085c1c3fb571ed82cb52945fd4efb5f5ab76bc4"
+                "reference": "3b71749230a5bcbb0b7d1466ec5c75c5af5f1ea1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Lang/actions/zipball/8085c1c3fb571ed82cb52945fd4efb5f5ab76bc4",
-                "reference": "8085c1c3fb571ed82cb52945fd4efb5f5ab76bc4",
+                "url": "https://api.github.com/repos/Laravel-Lang/actions/zipball/3b71749230a5bcbb0b7d1466ec5c75c5af5f1ea1",
+                "reference": "3b71749230a5bcbb0b7d1466ec5c75c5af5f1ea1",
                 "shasum": ""
             },
             "require": {
@@ -8587,9 +8587,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Laravel-Lang/actions/issues",
-                "source": "https://github.com/Laravel-Lang/actions/tree/1.4.5"
+                "source": "https://github.com/Laravel-Lang/actions/tree/1.5.1"
             },
-            "time": "2024-02-09T01:17:10+00:00"
+            "time": "2024-02-15T22:44:13+00:00"
         },
         {
             "name": "laravel-lang/attributes",
@@ -8863,16 +8863,16 @@
         },
         {
             "name": "laravel-lang/lang",
-            "version": "14.2.9",
+            "version": "14.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Lang/lang.git",
-                "reference": "8a69448df6b6cd12bd2ef4878689acbc6bbf94f0"
+                "reference": "70b0a0894d54c5cc113e0b028d7db5151b543879"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Lang/lang/zipball/8a69448df6b6cd12bd2ef4878689acbc6bbf94f0",
-                "reference": "8a69448df6b6cd12bd2ef4878689acbc6bbf94f0",
+                "url": "https://api.github.com/repos/Laravel-Lang/lang/zipball/70b0a0894d54c5cc113e0b028d7db5151b543879",
+                "reference": "70b0a0894d54c5cc113e0b028d7db5151b543879",
                 "shasum": ""
             },
             "require": {
@@ -8919,7 +8919,7 @@
                 "issues": "https://github.com/Laravel-Lang/lang/issues",
                 "source": "https://github.com/Laravel-Lang/lang"
             },
-            "time": "2024-02-05T01:58:49+00:00"
+            "time": "2024-02-15T06:25:30+00:00"
         },
         {
             "name": "laravel-lang/publisher",
