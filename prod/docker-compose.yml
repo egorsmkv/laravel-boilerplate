@@ -157,7 +157,7 @@ services:
           memory: 512M
 
   dragonflydb:
-    image: ghcr.io/dragonflydb/dragonfly:v1.14.1
+    image: ghcr.io/dragonflydb/dragonfly:v1.14.3
     container_name: dragonflydb_prod
     restart: always
     command: dragonfly --logtostderr --requirepass L2hgheewayei5eechW2
@@ -173,7 +173,7 @@ services:
       memlock: -1
 
   minio:
-    image: minio/minio:RELEASE.2024-01-31T20-20-33Z
+    image: minio/minio:RELEASE.2024-02-14T21-36-02Z
     container_name: minio_prod
     restart: always
     command: [
