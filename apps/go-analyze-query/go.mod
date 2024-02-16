@@ -1,6 +1,6 @@
-module github.com/egorsmkv/laravel-boilerplate-dev/apps/go-analyze-query
+module github.com/egorsmkv/laravel-boilerplate/apps/go-analyze-query
 
-go 1.21.6
+go 1.22.0
 
 require (
 	github.com/pebbe/zmq4 v1.2.10
