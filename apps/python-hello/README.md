@@ -3,5 +3,5 @@
 ## Build the image
 
 ```bash
-docker build --tag python-hello:1.0 .
+docker build --tag python_hello:1.0 .
 ```
