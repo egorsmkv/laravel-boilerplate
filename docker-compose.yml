@@ -41,7 +41,6 @@ services:
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - ./apps:/app
-      - caddy_data:/data
     networks:
       - app_dev
     depends_on:
@@ -157,8 +156,6 @@ services:
         hard: 40000
 
 volumes:
-  caddy_data:
-    name: caddy_dev_data
   dragonflydb_data:
     name: dragonflydb_dev_data
   minio_data:
