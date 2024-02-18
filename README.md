@@ -15,17 +15,20 @@
 ### Usage
 
 ```bash
+# Generate certificates for CockroachDB
+task certs-init
+
 # Build dev image
 task build
 
-# Remove builds
-task build-prune
-
-# Generate database certs
-task certs-init
+# Prune builds
+task prune-builds
 
 # Up containers
 task up
+
+# Show logs
+task logs
 
 # Copy Laravel environment variables file
 cp -n dev-frontend.env apps/frontend/.env
@@ -42,20 +45,11 @@ task console
 
 ### Commands
 
-Fix permissions:
+Build assets:
 
 ```bash
-task fix-perms
-```
-
-Use Vite:
-
-```bash
-# Start dev server
 task bun-dev
-
-# Build for production
-task bun-build
+task bun-prod
 ```
 
 Update locales:
@@ -64,10 +58,16 @@ Update locales:
 task lang-update
 ```
 
-Apply fixes by phpcs:
+Apply fixes by [phpcs](https://github.com/squizlabs/PHP_CodeSniffer):
 
 ```bash
 task fix-phpcs
+```
+
+Fix permissions:
+
+```bash
+task fix-perms
 ```
 
 Analyse the code by [Larastan](https://github.com/larastan/larastan):
@@ -82,7 +82,7 @@ Check security vulnerabilities in dependencies:
 task check-security
 ```
 
-Create a new migration:
+Create a new migration using [go-migrate](https://github.com/golang-migrate/migrate):
 
 ```bash
 task console

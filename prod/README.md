@@ -14,8 +14,8 @@ task certs-init
 # Create prod image
 task build-amd64
 
-# Remove builds
-task build-prune
+# Prune builds
+task prune-builds
 
 # Up containers
 task up
