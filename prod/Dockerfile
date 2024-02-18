@@ -53,7 +53,12 @@ RUN wget https://pecl.php.net/get/redis-6.0.2.tgz && \
     php artisan route:cache && \
     php artisan config:cache && \
     composer clear-cache && \
-    chown -R daemon:daemon /app
+    chown -R daemon:daemon /app && \
+    cd /tmp && \
+    wget https://github.com/golang-migrate/migrate/releases/download/v4.17.0/migrate.linux-amd64.tar.gz && \
+    tar xzf migrate.linux-amd64.tar.gz && \
+    mv migrate /usr/local/bin && \
+    rm README.md LICENSE migrate.linux-amd64.tar.gz
 
 WORKDIR /app/frontend
 
