@@ -12,41 +12,48 @@ class GenSqlShellCommand extends Command
 
     public function handle(): void
     {
-        $dbConn = config('database.default');
-        $db = config("database.connections.{$dbConn}");
+        /** @var array<string, string> $db */
+        $db = config('database.connections.pgsql');
 
-        // Show the command for development
+        /** @var array<string, string> $options */
+        $options = config('database.connections.pgsql.options');
+
+        /** @var array<int, string> $hosts */
+        $hosts = config('database.connections.pgsql.write.host');
+
         if (app()->isLocal()) {
             $dsn = sprintf(
-                '%s://%s:%s@%s:%s/%s?sslcert=%s&sslkey=%s&sslrootcert=%s&sslmode=require',
-                'postgresql',
+                'postgresql://%s:%s@%s:%s/%s?sslcert=%s&sslkey=%s&sslrootcert=%s&sslmode=%s',
                 $db['username'],
                 $db['password'],
-                $db['write']['host'][0],
+                $hosts[0],
                 $db['port'],
                 $db['database'],
-                $db['options']['sslcert'],
-                $db['options']['sslkey'],
-                $db['options']['sslrootcert'],
+                $options['sslcert'],
+                $options['sslkey'],
+                $options['sslrootcert'],
+                $db['sslmode'],
             );
-    
-            $command = sprintf('docker exec -it cockroachdb_dev cockroach sql --url "%s"', $dsn);
+
+            $container = 'cockroachdb_dev';
         } else {
             $dsn = sprintf(
-                '%s://%s:%s@%s:%s/%s?sslcert=%s&sslkey=%s&sslrootcert=%s&sslmode=require',
-                'postgresql',
+                'postgresql://%s:%s@%s:%s/%s?sslcert=%s&sslkey=%s&sslrootcert=%s&sslmode=%s',
                 $db['username'],
                 $db['password'],
-                $db['write']['host'][0],
+                $hosts[0],
                 $db['port'],
                 $db['database'],
-                Str::replace('/app/', '/', $db['options']['sslcert']),
-                Str::replace('/app/', '/', $db['options']['sslkey']),
-                Str::replace('/app/', '/', $db['options']['sslrootcert']),
+                Str::replace('/app/', '/', $options['sslcert']),
+                Str::replace('/app/', '/', $options['sslkey']),
+                Str::replace('/app/', '/', $options['sslrootcert']),
+                $db['sslmode'],
             );
-    
-            $command = sprintf('docker exec -it cockroachdb_prod cockroach sql --url "%s"', $dsn);
+
+            $container = 'cockroachdb_prod';
         }
+
+        $command = sprintf('docker exec -it %s cockroach sql --url "%s"', $container, $dsn);
 
         $this->info($command);
     }
