@@ -106,7 +106,6 @@ php artisan app:gen-sql-shell-command
 
 #### Database monitoring
 
-- Access `http://localhost:8081` to enter the pgweb;
 - Access `http://localhost:9080` to enter the CockroachDB UI.
 
 #### Other

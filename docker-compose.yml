@@ -92,33 +92,6 @@ services:
         limits:
           memory: 512M
 
-  pgweb:
-    image: sosedoff/pgweb:0.14.3
-    container_name: pgweb_dev
-    env_file:
-      - dev.env
-    networks:
-      - app_dev
-    ports:
-      - "8081:8081"
-    volumes:
-      - ./certs:/certs
-    depends_on:
-      - cockroachdb
-    logging:
-      options:
-        max-size: "10m"
-        max-file: "1"
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 20000
-        hard: 40000
-    deploy:
-      resources:
-        limits:
-          memory: 64M
-
   buggregator:
     image: ghcr.io/buggregator/server:1.5.0
     container_name: buggregator_dev

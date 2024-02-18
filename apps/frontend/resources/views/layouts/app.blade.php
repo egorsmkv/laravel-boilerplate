@@ -82,8 +82,6 @@
                     <a href="http://{{ request()->getHost() }}:9080" class="hover:underline">CockroachDB UI</a>
                     &bull;
                     <a href="http://{{ request()->getHost() }}:8000" class="hover:underline">Buggregator</a>
-                    &bull;
-                    <a href="http://{{ request()->getHost() }}:8081" class="hover:underline">pgweb</a>
                 @else
                     We are in production.
                 @endif
