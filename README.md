@@ -82,6 +82,26 @@ Check security vulnerabilities in dependencies:
 task check-security
 ```
 
+Create a new migration:
+
+```bash
+task console
+
+migrate create -ext sql -dir database/migrations -seq create_test_table
+```
+
+Generate a command to up migrations:
+
+```bash
+php artisan app:gen-migrate-command
+```
+
+Generate a command to enter CockroachDB SQL shell:
+
+```bash
+php artisan app:gen-sql-shell-command
+```
+
 ### Info
 
 #### Database monitoring
