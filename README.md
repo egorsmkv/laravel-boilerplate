@@ -4,7 +4,7 @@
 > It must:
 > - be on the latest version of Laravel
 > - be lightweight to run with Docker
-> - use modern technologies such as PHP 8.3, Go 1.21, Python 3.12, etc.
+> - use modern technologies such as PHP 8.3, Go 1.22, Python 3.12, etc.
 
 ### Requirements
 
