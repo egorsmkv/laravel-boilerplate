@@ -14,20 +14,23 @@ class TestPutFileCommand extends Command
     {
         $content = 'Some content';
 
-        $exists = Storage::disk('s3')->exists('first.txt');
+        /** @var \Illuminate\Filesystem\AwsS3V3Adapter $s3 */
+        $s3 = Storage::disk('s3');
+
+        $exists = $s3->exists('first.txt');
         if ($exists) {
             $this->comment('The file exists.');
 
             return;
         }
 
-        $result = Storage::disk('s3')->put('first.txt', $content);
+        $result = $s3->put('first.txt', $content);
 
         dump($result);
 
         $this->comment('Result of upload is dumped.');
 
-        $fileURL = Storage::disk('s3')->url('first.txt');
+        $fileURL = $s3->url('first.txt');
 
         $this->comment('The file URL:');
         $this->comment($fileURL);

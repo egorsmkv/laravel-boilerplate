@@ -81,6 +81,8 @@
                     &bull;
                     <a href="http://{{ request()->getHost() }}:9080" class="hover:underline">CockroachDB UI</a>
                     &bull;
+                    <a href="http://{{ request()->getHost() }}:9001/login" class="hover:underline">MinIO Console</a>
+                    &bull;
                     <a href="http://{{ request()->getHost() }}:8000" class="hover:underline">Buggregator</a>
                 @else
                     We are in production.
