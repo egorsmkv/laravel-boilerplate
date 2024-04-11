@@ -60,7 +60,7 @@ services:
           memory: 128M
 
   cockroachdb:
-    image: cockroachdb/cockroach:v23.2.0
+    image: cockroachdb/cockroach:v23.2.4
     container_name: cockroachdb_dev
     env_file:
       - dev.env
@@ -92,7 +92,7 @@ services:
           memory: 512M
 
   buggregator:
-    image: ghcr.io/buggregator/server:1.5.0
+    image: ghcr.io/buggregator/server:1.7.2
     container_name: buggregator_dev
     networks:
       - app_dev
@@ -113,9 +113,9 @@ services:
           memory: 512M
 
   dragonflydb:
-    image: ghcr.io/dragonflydb/dragonfly:v1.14.3
+    image: ghcr.io/dragonflydb/dragonfly:v1.16.1
     container_name: dragonflydb_dev
-    command: dragonfly --logtostderr --requirepass L2hgheewayei5eechW2
+    command: dragonfly --logtostderr --requirepass L2hgheewayei5eechW2 --maxmemory=2gb
     volumes:
       - dragonflydb_data:/data
     networks:
@@ -128,7 +128,7 @@ services:
       memlock: -1
 
   minio:
-    image: minio/minio:RELEASE.2024-02-14T21-36-02Z
+    image: minio/minio:RELEASE.2024-04-06T05-26-02Z
     container_name: minio_dev
     command: [
       "server",

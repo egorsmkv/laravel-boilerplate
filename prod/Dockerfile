@@ -1,4 +1,4 @@
-FROM php:8.3.3-cli-alpine3.19
+FROM php:8.3.6-cli-alpine3.19
 
 ARG CADDY_ARCH
 
@@ -8,7 +8,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     mv composer.phar /usr/bin/composer && \
     apk --update --no-cache add wget unzip git linux-headers build-base autoconf zeromq-dev zlib-dev libpq-dev && \
     docker-php-ext-install pgsql pdo_pgsql pcntl bcmath sockets && \
-    pecl install excimer
+    pecl install protobuf excimer
 
 WORKDIR /tmp
 

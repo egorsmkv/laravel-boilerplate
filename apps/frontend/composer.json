@@ -1,5 +1,6 @@
 {
   "name": "egorsmkv/laravel-app",
+  "version": "1.0.0",
   "type": "project",
   "description": "The Laravel app.",
   "keywords": [

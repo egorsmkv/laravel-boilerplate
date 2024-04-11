@@ -3,9 +3,9 @@ version: '3'
 tasks:
   certs-init:
     cmds:
-      - docker run --rm -v ./certs:/certs -it cockroachdb/cockroach:v23.2.0 cert create-ca --certs-dir=/certs --ca-key=/certs/ca.key
-      - docker run --rm -v ./certs:/certs -it cockroachdb/cockroach:v23.2.0 cert create-node 127.0.0.1 cockroachdb --certs-dir=/certs --ca-key=/certs/ca.key
-      - docker run --rm -v ./certs:/certs -it cockroachdb/cockroach:v23.2.0 cert create-client bolwanka_user --certs-dir=/certs --ca-key=/certs/ca.key
+      - docker run --rm -v ./certs:/certs -it cockroachdb/cockroach:v23.2.4 cert create-ca --certs-dir=/certs --ca-key=/certs/ca.key
+      - docker run --rm -v ./certs:/certs -it cockroachdb/cockroach:v23.2.4 cert create-node 127.0.0.1 cockroachdb --certs-dir=/certs --ca-key=/certs/ca.key
+      - docker run --rm -v ./certs:/certs -it cockroachdb/cockroach:v23.2.4 cert create-client bolwanka_user --certs-dir=/certs --ca-key=/certs/ca.key
       - find ./certs/ -type f -exec chmod 600 {} \;
 
   build-amd64:
