@@ -160,7 +160,7 @@ services:
     image: ghcr.io/dragonflydb/dragonfly:v1.16.1
     container_name: dragonflydb_prod
     restart: always
-    command: dragonfly --logtostderr --requirepass L2hgheewayei5eechW2
+    command: dragonfly --logtostderr --requirepass L2hgheewayei5eechW2 --maxmemory=2gb
     volumes:
       - dragonflydb_data:/data
     networks:
