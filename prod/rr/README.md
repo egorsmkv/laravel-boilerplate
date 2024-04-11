@@ -3,12 +3,12 @@
 ## AMD64
 
 ```bash
-wget https://github.com/roadrunner-server/velox/releases/download/v1.8.0/velox-1.8.0-linux-amd64.tar.gz
+wget https://github.com/roadrunner-server/velox/releases/download/v2024.1.0/velox-2024.1.0-linux-amd64.tar.gz
 
-tar xf velox-1.8.0-linux-amd64.tar.gz && \
-    mv velox-1.8.0-linux-amd64/vx . && \
-    rm -rf velox-1.8.0-linux-amd64 && \
-    rm velox-1.8.0-linux-amd64.tar.gz
+tar xf velox-2024.1.0-linux-amd64.tar.gz && \
+    mv velox-2024.1.0-linux-amd64/vx . && \
+    rm -rf velox-2024.1.0-linux-amd64 && \
+    rm velox-2024.1.0-linux-amd64.tar.gz
 ```
 
 ## Darwin
@@ -16,12 +16,12 @@ tar xf velox-1.8.0-linux-amd64.tar.gz && \
 ### ARM64
 
 ```bash
-wget https://github.com/roadrunner-server/velox/releases/download/v1.8.0/velox-1.8.0-darwin-arm64.tar.gz
+wget https://github.com/roadrunner-server/velox/releases/download/v2024.1.0/velox-2024.1.0-darwin-arm64.tar.gz
 
-tar xf velox-1.8.0-darwin-arm64.tar.gz && \
-    mv velox-1.8.0-darwin-arm64/vx . && \
-    rm -rf velox-1.8.0-darwin-arm64 && \
-    rm velox-1.8.0-darwin-arm64.tar.gz
+tar xf velox-2024.1.0-darwin-arm64.tar.gz && \
+    mv velox-2024.1.0-darwin-arm64/vx . && \
+    rm -rf velox-2024.1.0-darwin-arm64 && \
+    rm velox-2024.1.0-darwin-arm64.tar.gz
 ```
 
 ## Build
@@ -32,5 +32,5 @@ export RT_TOKEN=
 TIME=`date +%Y%m%d%H%M%S` CGO_ENABLED=0 GOOS=linux GOARCH=amd64 ./vx build -c velox.toml -o .
 
 # if you're on a MacOS but want to test prod setup
-TIME=`date +%Y%m%d%H%M%S` GOOS=linux GOARCH=amd64 ./vx build -c velox.toml -o .
+TIME=`date +%Y%m%d%H%M%S` CGO_ENABLED=0 GOOS=linux GOARCH=amd64 ./vx build -c velox.toml -o .
 ```
