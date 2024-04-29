@@ -5,9 +5,9 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/bin/composer
 
-RUN apk --update --no-cache add wget unzip git linux-headers build-base autoconf zeromq-dev zlib-dev libpq-dev && \
+RUN apk --update --no-cache add wget unzip git linux-headers build-base autoconf zeromq-dev zlib-dev && \
     composer global require enlightn/security-checker && \
-    docker-php-ext-install pgsql pdo_pgsql pcntl bcmath sockets && \
+    docker-php-ext-install pcntl bcmath sockets && \
     pecl install xhprof excimer xdebug && \
     composer clear-cache
 
@@ -34,7 +34,7 @@ RUN git clone https://github.com/NoiseByNorthwest/php-spx.git && \
     make install
 
 RUN cd /tmp && \
-    wget https://github.com/golang-migrate/migrate/releases/download/v4.17.0/migrate.linux-amd64.tar.gz && \
+    wget https://github.com/golang-migrate/migrate/releases/download/v4.17.1/migrate.linux-amd64.tar.gz && \
     tar xzf migrate.linux-amd64.tar.gz && \
     mv migrate /usr/local/bin && \
     rm README.md LICENSE migrate.linux-amd64.tar.gz

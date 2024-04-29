@@ -15,32 +15,29 @@
 ### Usage
 
 ```bash
-# Generate certificates for CockroachDB
-task certs-init
-
 # Build dev image
 task build
-
-# Prune builds
-task prune-builds
-
-# Up containers
-task up
-
-# Show logs
-task logs
 
 # Copy Laravel environment variables file
 cp -n dev-frontend.env apps/frontend/.env
 
+# Up containers
+task up
+
 # Install dependencies, generate key, run migrations
 task install
+
+# Show logs
+task logs
 
 # Run queue worker
 task queue
 
 # Enter the apps container
 task console
+
+# Prune builds
+task prune-builds
 ```
 
 ### Commands
@@ -94,12 +91,6 @@ Generate a command to up migrations:
 
 ```bash
 php artisan app:gen-migrate-command
-```
-
-Generate a command to enter CockroachDB SQL shell:
-
-```bash
-php artisan app:gen-sql-shell-command
 ```
 
 ### Misc
