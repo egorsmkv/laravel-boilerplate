@@ -28,11 +28,15 @@ tasks:
     cmds:
       - docker compose down
 
+  bun-install:
+    cmds:
+      - cd apps/frontend && bun install
+
   bun-dev:
     cmds:
       - cd apps/frontend && bun run dev
     env:
-      HMR_HOST: d.yehors.com
+      HMR_HOST: localhost
 
   bun-prod:
     cmds:

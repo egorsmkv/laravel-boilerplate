@@ -42,6 +42,12 @@ task prune-builds
 
 ### Commands
 
+Install asset deps:
+
+```bash
+task bun-install
+```
+
 Build assets:
 
 ```bash
