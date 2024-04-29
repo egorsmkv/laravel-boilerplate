@@ -8,7 +8,7 @@
 
 ### Requirements
 
-- Docker 25.x
+- [Moby](https://github.com/moby/moby) 26.x
 - [Task](https://taskfile.dev) 3.x
 - [Bun](https://bun.sh) 1.x
 
