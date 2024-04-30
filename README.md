@@ -85,20 +85,6 @@ Check security vulnerabilities in dependencies:
 task check-security
 ```
 
-Create a new migration using [go-migrate](https://github.com/golang-migrate/migrate):
-
-```bash
-task console
-
-migrate create -ext sql -dir database/migrations -seq create_test_table
-```
-
-Generate a command to up migrations:
-
-```bash
-php artisan app:gen-migrate-command
-```
-
 ### Misc
 
 - Access `http://localhost/?SPX_KEY=dev&SPX_UI_URI=/` to enable PHP-SPX and see the profiling results;
