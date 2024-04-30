@@ -33,12 +33,6 @@ RUN git clone https://github.com/NoiseByNorthwest/php-spx.git && \
     make &&  \
     make install
 
-RUN cd /tmp && \
-    wget https://github.com/golang-migrate/migrate/releases/download/v4.17.1/migrate.linux-amd64.tar.gz && \
-    tar xzf migrate.linux-amd64.tar.gz && \
-    mv migrate /usr/local/bin && \
-    rm README.md LICENSE migrate.linux-amd64.tar.gz
-
 ENV PATH="${PATH}:/root/.composer/vendor/bin"
 
 WORKDIR /app/frontend
