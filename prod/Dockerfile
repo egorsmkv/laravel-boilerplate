@@ -6,8 +6,8 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     php composer-setup.php && \
     php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/bin/composer && \
-    apk --update --no-cache add wget unzip git linux-headers build-base autoconf zeromq-dev zlib-dev libpq-dev && \
-    docker-php-ext-install pgsql pdo_pgsql pcntl bcmath sockets && \
+    apk --update --no-cache add wget unzip git linux-headers build-base autoconf zeromq-dev zlib-dev && \
+    docker-php-ext-install pcntl bcmath sockets && \
     pecl install protobuf excimer
 
 WORKDIR /tmp
@@ -39,7 +39,6 @@ RUN wget https://pecl.php.net/get/redis-6.0.2.tgz && \
     rm caddy_2.7.6_linux_$CADDY_ARCH.tar.gz LICENSE README.md && \
     cd /tmp && \
     mv /tmp/Caddyfile /app && \
-    mv /tmp/certs /app && \
     mv /tmp/apps/frontend /app && \
     mv prod-frontend.env /app/frontend/.env && \
     cp ./custom.ini /usr/local/etc/php/conf.d/custom.ini && \
@@ -53,12 +52,7 @@ RUN wget https://pecl.php.net/get/redis-6.0.2.tgz && \
     php artisan route:cache && \
     php artisan config:cache && \
     composer clear-cache && \
-    chown -R daemon:daemon /app && \
-    cd /tmp && \
-    wget https://github.com/golang-migrate/migrate/releases/download/v4.17.0/migrate.linux-amd64.tar.gz && \
-    tar xzf migrate.linux-amd64.tar.gz && \
-    mv migrate /usr/local/bin && \
-    rm README.md LICENSE migrate.linux-amd64.tar.gz
+    chown -R daemon:daemon /app
 
 WORKDIR /app/frontend
 

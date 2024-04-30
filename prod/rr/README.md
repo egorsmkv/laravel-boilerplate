@@ -11,19 +11,6 @@ tar xf velox-2024.1.0-linux-amd64.tar.gz && \
     rm velox-2024.1.0-linux-amd64.tar.gz
 ```
 
-## Darwin
-
-### ARM64
-
-```bash
-wget https://github.com/roadrunner-server/velox/releases/download/v2024.1.0/velox-2024.1.0-darwin-arm64.tar.gz
-
-tar xf velox-2024.1.0-darwin-arm64.tar.gz && \
-    mv velox-2024.1.0-darwin-arm64/vx . && \
-    rm -rf velox-2024.1.0-darwin-arm64 && \
-    rm velox-2024.1.0-darwin-arm64.tar.gz
-```
-
 ## Build
 
 ```bash

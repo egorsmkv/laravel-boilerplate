@@ -1,21 +1,10 @@
 # Production
 
-### Requirements
-
-- Docker 25.x
-- Task 3.x
-
 ### Usage
 
 ```bash
-# Generate certificates for CockroachDB
-task certs-init
-
 # Create prod image
-task build-amd64
-
-# Prune builds
-task prune-builds
+task build
 
 # Up containers
 task up
@@ -28,4 +17,10 @@ task logs
 
 # Enter the apps container
 task console
+
+# Prune builds
+task prune-builds
+
+# Down containers
+task down
 ```

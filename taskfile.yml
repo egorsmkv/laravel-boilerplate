@@ -63,10 +63,6 @@ tasks:
       - docker exec -it apps_dev security-checker security:check composer.lock
       - docker exec -it apps_dev composer audit
 
-  gen-explain-queries:
-    cmds:
-      - docker exec -it apps_dev app:gen-explain-queries 2 json
-
   logs:
     cmds:
       - docker compose logs -f

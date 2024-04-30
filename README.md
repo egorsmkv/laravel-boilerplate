@@ -38,6 +38,9 @@ task console
 
 # Prune builds
 task prune-builds
+
+# Down containers
+task down
 ```
 
 ### Commands
