@@ -140,7 +140,7 @@ services:
       memlock: -1
 
   minio:
-    image: minio/minio:RELEASE.2024-04-28T17-53-50Z
+    image: minio/minio:latest
     container_name: minio_prod
     restart: always
     command: [

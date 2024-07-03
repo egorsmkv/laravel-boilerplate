@@ -10,7 +10,6 @@ services:
     volumes:
       - ./custom.ini:/usr/local/etc/php/conf.d/custom.ini
       - ./apps:/app
-      - ./certs:/certs
     command: sh run.sh
     networks:
       - app_dev
@@ -31,7 +30,7 @@ services:
           memory: 512M
 
   caddy:
-    image: caddy:2.7.6-alpine
+    image: caddy:2.8-alpine
     container_name: caddy_dev
     ports:
       - "80:80"
@@ -57,7 +56,7 @@ services:
           memory: 128M
 
   buggregator:
-    image: ghcr.io/buggregator/server:1.7.4
+    image: ghcr.io/buggregator/server:1.10.3
     container_name: buggregator_dev
     networks:
       - app_dev
@@ -99,7 +98,7 @@ services:
       memlock: -1
 
   minio:
-    image: minio/minio:RELEASE.2024-04-28T17-53-50Z
+    image: minio/minio:latest
     container_name: minio_dev
     command: [
       "server",

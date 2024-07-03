@@ -1,4 +1,4 @@
-FROM php:8.3.6-cli-alpine3.19
+FROM php:8.3.8-cli-alpine3.20
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
     php composer-setup.php && \

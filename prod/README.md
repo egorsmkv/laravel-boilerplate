@@ -18,9 +18,6 @@ task logs
 # Enter the apps container
 task console
 
-# Prune builds
-task prune-builds
-
 # Down containers
 task down
 ```

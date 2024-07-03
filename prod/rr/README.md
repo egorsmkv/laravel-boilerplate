@@ -3,12 +3,12 @@
 ## AMD64
 
 ```bash
-wget https://github.com/roadrunner-server/velox/releases/download/v2024.1.0/velox-2024.1.0-linux-amd64.tar.gz
+wget https://github.com/roadrunner-server/velox/releases/download/v2024.1.5/velox-2024.1.5-linux-amd64.tar.gz
 
-tar xf velox-2024.1.0-linux-amd64.tar.gz && \
-    mv velox-2024.1.0-linux-amd64/vx . && \
-    rm -rf velox-2024.1.0-linux-amd64 && \
-    rm velox-2024.1.0-linux-amd64.tar.gz
+tar xf velox-2024.1.5-linux-amd64.tar.gz && \
+    mv velox-2024.1.5-linux-amd64/vx . && \
+    rm -rf velox-2024.1.5-linux-amd64 && \
+    rm velox-2024.1.5-linux-amd64.tar.gz
 ```
 
 ## Build

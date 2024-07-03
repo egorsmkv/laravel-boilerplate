@@ -1,4 +1,4 @@
-FROM php:8.3.6-cli-alpine3.19
+FROM php:8.3.8-cli-alpine3.20
 
 ARG CADDY_ARCH
 
@@ -34,9 +34,9 @@ RUN wget https://pecl.php.net/get/redis-6.0.2.tgz && \
     make install && \
     cd /app && \
     rm -rf php-zmq && \
-    wget https://github.com/caddyserver/caddy/releases/download/v2.7.6/caddy_2.7.6_linux_$CADDY_ARCH.tar.gz && \
-    tar xzf caddy_2.7.6_linux_$CADDY_ARCH.tar.gz && \
-    rm caddy_2.7.6_linux_$CADDY_ARCH.tar.gz LICENSE README.md && \
+    wget https://github.com/caddyserver/caddy/releases/download/v2.8.4/caddy_2.8.4_linux_$CADDY_ARCH.tar.gz && \
+    tar xzf caddy_2.8.4_linux_$CADDY_ARCH.tar.gz && \
+    rm caddy_2.8.4_linux_$CADDY_ARCH.tar.gz LICENSE README.md && \
     cd /tmp && \
     mv /tmp/Caddyfile /app && \
     mv /tmp/apps/frontend /app && \

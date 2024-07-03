@@ -9,10 +9,6 @@ tasks:
       - docker image prune -f
       - rm -rf ./apps
 
-  prune-builds:
-    cmds:
-      - docker buildx prune -f
-
   up:
     cmds:
       - docker compose up -d

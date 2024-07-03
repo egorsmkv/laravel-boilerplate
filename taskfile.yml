@@ -6,10 +6,6 @@ tasks:
       - docker buildx build --force-rm --load --tag laravel_app_dev:1.0 .
       - docker image prune -f
 
-  prune-builds:
-    cmds:
-      - docker buildx prune -f
-
   install:
     cmds:
       - docker exec -it apps_dev sh -c 'composer install && php artisan horizon:publish && php artisan telescope:publish'
