@@ -1,4 +1,4 @@
-FROM golang:1.22.2-alpine3.19 AS build
+FROM golang:1.22.5-alpine3.20 AS build
 
 WORKDIR /app
 
@@ -25,7 +25,7 @@ COPY . .
 RUN CGO_LDFLAGS="$CGO_LDFLAGS -lstdc++ -lm" \
     go build -v -a -o server ./...
 
-FROM alpine:3.19
+FROM alpine:3.20
 
 WORKDIR /app
 
