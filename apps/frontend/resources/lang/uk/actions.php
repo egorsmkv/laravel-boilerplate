@@ -64,6 +64,7 @@ return [
         'delete'    => 'Видалити :name',
         'duplicate' => 'Дублікат: ім\'я',
         'edit'      => 'Редагувати :name',
+        'export'    => 'Export :name',
         'hide'      => 'Сховати :name',
         'import'    => 'Імпорт :name',
         'new'       => 'Новий :name',

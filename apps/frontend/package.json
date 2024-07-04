@@ -7,13 +7,13 @@
     "build": "vite build --debug"
   },
   "devDependencies": {
-    "axios": "^1.6.5",
-    "autoprefixer": "^10.4.17",
-    "flowbite": "^2.2.1",
-    "laravel-vite-plugin": "^1.0.1",
-    "postcss": "^8.4.33",
-    "tailwindcss": "^3.4.1",
-    "vite": "^5.0.12",
-    "npm-check-updates": "^16.14.12"
+    "axios": "^1.7.2",
+    "autoprefixer": "^10.4.19",
+    "flowbite": "^2.4.1",
+    "laravel-vite-plugin": "^1.0.4",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4",
+    "vite": "^5.3.3",
+    "npm-check-updates": "^16.14.20"
   }
 }
