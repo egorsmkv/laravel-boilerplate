@@ -1,8 +1,8 @@
 {
-  "name": "egorsmkv/laravel-app",
+  "name": "egorsmkv/laravel-boilerplate",
   "version": "1.0.0",
   "type": "project",
-  "description": "The Laravel app.",
+  "description": "A Laravel Boilerplate with Batteries on Modern Technologies.",
   "keywords": [
     "app"
   ],
