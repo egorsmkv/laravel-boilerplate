@@ -67,12 +67,6 @@ Apply fixes by [phpcs](https://github.com/squizlabs/PHP_CodeSniffer):
 task fix-phpcs
 ```
 
-Fix permissions:
-
-```bash
-task fix-perms
-```
-
 Analyse the code by [Larastan](https://github.com/larastan/larastan):
 
 ```bash
