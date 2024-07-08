@@ -91,7 +91,6 @@ task check-security
 ### Misc
 
 - Access `http://localhost/?SPX_KEY=dev&SPX_UI_URI=/` to enable PHP-SPX and see the profiling results;
-- Read [UPDATE.md](https://github.com/egorsmkv/laravel-boilerplate/blob/main/UPDATE.md) to keep the project up to date;
 - Use [dive](https://github.com/wagoodman/dive) to analyze Docker images;
 - Use [grype](https://github.com/anchore/grype) to check security vulnerabilities.
 
