@@ -79,6 +79,15 @@ Check security vulnerabilities in dependencies:
 task check-security
 ```
 
+### How to update components
+
+- In `docker-compose.yml` check new versions of images
+- In `Dockerfile` check new version of `php` image
+  - Check a new version of php-zmq, phpredis
+  - Check a new version of Caddy
+- In the apps container run `composer update` / `composer outdated` to check new versions
+- In the apps container run `bun x npm-check-updates --format group -i` to check new versions
+
 ### Misc
 
 - Access `http://localhost/?SPX_KEY=dev&SPX_UI_URI=/` to enable PHP-SPX and see the profiling results;
