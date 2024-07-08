@@ -4,7 +4,7 @@
 > It must:
 > - be on the latest version of Laravel
 > - be lightweight to run with Docker
-> - use modern technologies such as [PHP 8.3][1], [Go 1.22][2], [Python 3.12][3], etc.
+> - use modern technologies such as **PHP 8.3**, **Go 1.22**, **Python 3.12**, etc.
 
 ### Requirements
 
@@ -90,7 +90,3 @@ task check-security
 
 - https://github.com/egorsmkv/laravel-boilerplate-mariadb
 - https://github.com/egorsmkv/laravel-boilerplate-pgsql
-
-[1]: https://hub.docker.com/layers/library/php/8.3.6-cli-alpine3.19/images/sha256-dc7d4d8248ec8c31bfa65ec964b7db7b34384cf9a3a16ee5fbc8bf25e29c7413?context=explore
-[2]: https://hub.docker.com/layers/library/golang/1.22.2-alpine3.19/images/sha256-963da5f97ab931c0df6906e8c0ebc7db28c88d013735ae020f9558c3e6cf0580?context=explore
-[3]: https://hub.docker.com/layers/library/python/3.12-alpine3.19/images/sha256-4cd9558bd358d0d25fe46ce38f01b34eb83171b9aa0a9be018701a8fece8854d?context=explore
