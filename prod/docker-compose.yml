@@ -120,7 +120,7 @@ services:
 
   redis:
     image: redis:7.2-alpine
-    container_name: redis_dev
+    container_name: redis_prod
     command: [
       "redis-server",
       "--appendonly",
