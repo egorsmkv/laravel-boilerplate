@@ -95,9 +95,8 @@ task validate-and-format-caddyfile
 ```bash
 docker run --rm -v .:/code -it node:20-alpine sh
 
-npm -g install npm-check-updates
-
-npm-check-updates --format group -i
+$ npm -g install npm-check-updates
+$ npm-check-updates --format group -i
 ```
 
 ### Misc

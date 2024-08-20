@@ -9,7 +9,12 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    /** @use HasFactory<UserFactory> */
+    use HasFactory;
+
+    use Notifiable;
+
+    protected static string $factory = UserFactory::class;
 
     /**
      * The attributes that are mass assignable.
