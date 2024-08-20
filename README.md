@@ -64,7 +64,7 @@ task lang-update
 Apply fixes by [phpcs](https://github.com/squizlabs/PHP_CodeSniffer):
 
 ```bash
-task fix-phpcs
+task phpcs-fix
 ```
 
 Analyse the code by [Larastan](https://github.com/larastan/larastan):
@@ -90,7 +90,15 @@ task validate-and-format-caddyfile
   - Check a new version of php-zmq, phpredis
   - Check a new version of Caddy
 - In the apps container run `composer update` / `composer outdated` to check new versions
-- In the apps folder run `bun x npm-check-updates --format group -i` to check new versions
+- In the `apps/frontend` folder run:
+
+```bash
+docker run --rm -v .:/code -it node:20-alpine sh
+
+npm -g install npm-check-updates
+
+npm-check-updates --format group -i
+```
 
 ### Misc
 

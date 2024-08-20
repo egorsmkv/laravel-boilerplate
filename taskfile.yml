@@ -1,5 +1,7 @@
 version: '3'
 
+dotenv: ['dev.env']
+
 tasks:
   build:
     cmds:
@@ -31,8 +33,6 @@ tasks:
   bun-dev:
     cmds:
       - cd apps/frontend && bun run dev
-    env:
-      HMR_HOST: localhost
 
   bun-prod:
     cmds:
@@ -42,7 +42,7 @@ tasks:
     cmds:
       - docker exec -it apps_dev php artisan lang:update
 
-  fix-phpcs:
+  phpcs-fix:
     cmds:
       - docker exec -it apps_dev vendor/bin/php-cs-fixer fix --config phpcs.php
 
@@ -74,5 +74,4 @@ tasks:
 
   lint-yaml:
     cmds:
-      - docker run --rm -i sdesbure/yamllint < taskfile.yml
-  
+      - yamllint -d relaxed docker-compose.yml docker-compose.rpc.yml taskfile.yml

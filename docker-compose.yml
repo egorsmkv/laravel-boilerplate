@@ -132,6 +132,6 @@ volumes:
     name: minio_dev_data
 
 networks:
-   app_dev:
-     driver: bridge
-     name: app_dev
+  app_dev:
+    driver: bridge
+    name: app_dev

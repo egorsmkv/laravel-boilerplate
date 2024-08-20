@@ -37,3 +37,7 @@ tasks:
     cmds:
       - docker run --rm -v .:/code -i caddy:2.8-alpine caddy validate --config /code/Caddyfile
       - docker run --rm -v .:/code -i caddy:2.8-alpine caddy fmt --overwrite /code/Caddyfile
+
+  lint-yaml:
+    cmds:
+      - yamllint -d relaxed docker-compose.yml docker-compose.rpc.yml taskfile.yml

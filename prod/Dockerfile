@@ -2,11 +2,14 @@ FROM php:8.3.10-cli-alpine3.20
 
 ARG CADDY_ARCH
 
+ENV XDG_DATA_HOME=/tmp/
+ENV XDG_CONFIG_HOME=/tmp/
+
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
     php composer-setup.php && \
     php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/bin/composer && \
-    apk --update --no-cache add wget unzip git linux-headers build-base autoconf zeromq-dev zlib-dev && \
+    apk --update --no-cache add wget=1.24.5-r0 git=2.45.2-r0 linux-headers=6.6-r0 build-base=0.5-r3 autoconf=2.72-r0 zeromq-dev=4.3.5-r2 zlib-dev=1.3.1-r1 && \
     docker-php-ext-install pcntl bcmath sockets && \
     pecl install protobuf excimer
 
@@ -16,7 +19,8 @@ COPY . .
 
 WORKDIR /app
 
-RUN wget https://pecl.php.net/get/redis-6.0.2.tgz && \
+# hadolint ignore=DL3003
+RUN wget -q https://pecl.php.net/get/redis-6.0.2.tgz && \
     tar xzf redis-6.0.2.tgz && \
     cd redis-6.0.2 && \
     phpize && \
@@ -34,7 +38,7 @@ RUN wget https://pecl.php.net/get/redis-6.0.2.tgz && \
     make install && \
     cd /app && \
     rm -rf php-zmq && \
-    wget https://github.com/caddyserver/caddy/releases/download/v2.8.4/caddy_2.8.4_linux_$CADDY_ARCH.tar.gz && \
+    wget -q https://github.com/caddyserver/caddy/releases/download/v2.8.4/caddy_2.8.4_linux_$CADDY_ARCH.tar.gz && \
     tar xzf caddy_2.8.4_linux_$CADDY_ARCH.tar.gz && \
     rm caddy_2.8.4_linux_$CADDY_ARCH.tar.gz LICENSE README.md && \
     cd /tmp && \
@@ -55,8 +59,5 @@ RUN wget https://pecl.php.net/get/redis-6.0.2.tgz && \
     chown -R daemon:daemon /app
 
 WORKDIR /app/frontend
-
-ENV XDG_DATA_HOME=/tmp/
-ENV XDG_CONFIG_HOME=/tmp/
 
 USER daemon
