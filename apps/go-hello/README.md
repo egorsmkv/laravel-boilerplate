@@ -1,7 +1,12 @@
 # Go sample application
 
-## Build the image
+### Usage
 
 ```bash
-docker build --tag go_hello:1.0 .
+# Build image
+task build
+
+# Linting
+task lint-dockerfile
+task lint-yaml
 ```
