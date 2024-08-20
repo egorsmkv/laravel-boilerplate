@@ -3,14 +3,14 @@ version: '3'
 tasks:
   build:
     cmds:
-      - docker buildx build --force-rm --load --tag laravel_app_dev:1.0 .
+      - docker build --force-rm --load --tag laravel_app_dev:1.0 .
       - docker image prune -f
 
   install:
     cmds:
       - docker exec -it apps_dev sh -c 'composer install && php artisan horizon:publish && php artisan telescope:publish'
       - docker exec -it apps_dev php artisan key:generate
-      - docker exec -it apps_dev php artisan migrate
+      - docker exec -it apps_dev php artisan migrate --force
 
   up:
     cmds:
@@ -62,3 +62,17 @@ tasks:
   console:
     cmds:
       - docker exec -it apps_dev sh
+
+  lint-dockerfile:
+    cmds:
+      - docker run --rm -i hadolint/hadolint < Dockerfile
+
+  validate-and-format-caddyfile:
+    cmds:
+      - docker run --rm -v .:/code -i caddy:2.8-alpine caddy validate --config /code/Caddyfile
+      - docker run --rm -v .:/code -i caddy:2.8-alpine caddy fmt --overwrite /code/Caddyfile
+
+  lint-yaml:
+    cmds:
+      - docker run --rm -i sdesbure/yamllint < taskfile.yml
+  

@@ -1,4 +1,4 @@
-FROM php:8.3.8-cli-alpine3.20
+FROM php:8.3.10-cli-alpine3.20
 
 ARG CADDY_ARCH
 
@@ -17,20 +17,20 @@ COPY . .
 WORKDIR /app
 
 RUN wget https://pecl.php.net/get/redis-6.0.2.tgz && \
-    tar xzf redis-6.0.2.tgz &&  \
-    cd redis-6.0.2 &&  \
-    phpize &&  \
-    ./configure &&  \
-    make &&  \
+    tar xzf redis-6.0.2.tgz && \
+    cd redis-6.0.2 && \
+    phpize && \
+    ./configure && \
+    make && \
     make install && \
     cd /app && \
     rm redis-6.0.2.tgz package.xml && \
     rm -rf redis-6.0.2 && \
     git clone https://github.com/zeromq/php-zmq.git && \
-    cd php-zmq &&  \
-    phpize &&  \
-    ./configure &&  \
-    make &&  \
+    cd php-zmq && \
+    phpize && \
+    ./configure && \
+    make && \
     make install && \
     cd /app && \
     rm -rf php-zmq && \

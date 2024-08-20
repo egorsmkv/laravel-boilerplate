@@ -1,5 +1,6 @@
 {
 	debug
+	admin off
 }
 
 :80 {

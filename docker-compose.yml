@@ -56,7 +56,7 @@ services:
           memory: 128M
 
   buggregator:
-    image: ghcr.io/buggregator/server:1.10.3
+    image: ghcr.io/buggregator/server:1.11.3
     container_name: buggregator_dev
     networks:
       - app_dev
@@ -77,7 +77,7 @@ services:
           memory: 512M
 
   redis:
-    image: redis:7.2-alpine
+    image: redis:7.4-alpine
     container_name: redis_dev
     command: [
       "redis-server",

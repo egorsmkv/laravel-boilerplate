@@ -73,10 +73,14 @@ Analyse the code by [Larastan](https://github.com/larastan/larastan):
 task phpstan
 ```
 
-Check security vulnerabilities in dependencies:
+Other useful commands:
 
 ```bash
 task check-security
+
+task lint-dockerfile
+
+task validate-and-format-caddyfile
 ```
 
 ### How to update components
@@ -86,15 +90,10 @@ task check-security
   - Check a new version of php-zmq, phpredis
   - Check a new version of Caddy
 - In the apps container run `composer update` / `composer outdated` to check new versions
-- In the apps container run `bun x npm-check-updates --format group -i` to check new versions
+- In the apps folder run `bun x npm-check-updates --format group -i` to check new versions
 
 ### Misc
 
 - Access `http://localhost/?SPX_KEY=dev&SPX_UI_URI=/` to enable PHP-SPX and see the profiling results;
 - Use [dive](https://github.com/wagoodman/dive) to analyze Docker images;
 - Use [grype](https://github.com/anchore/grype) to check security vulnerabilities.
-
-### Alternatives
-
-- https://github.com/egorsmkv/laravel-boilerplate-mariadb
-- https://github.com/egorsmkv/laravel-boilerplate-pgsql
