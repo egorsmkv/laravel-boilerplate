@@ -79,13 +79,12 @@ services:
   redis:
     image: redis:latest
     container_name: redis_dev
-    command: [
-      "redis-server",
-      "--appendonly",
-      "yes",
-      "--requirepass",
-      "L2hgheewayei5eechW2"
-    ]
+    env_file:
+      - dev-frontend.env
+    command:
+      - /bin/sh
+      - -c
+      - redis-server --appendonly yes --requirepass "$${REDIS_PASSWORD}"
     volumes:
       - redis_data:/data
     networks:

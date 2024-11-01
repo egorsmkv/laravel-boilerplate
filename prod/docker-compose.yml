@@ -121,13 +121,13 @@ services:
   redis:
     image: redis:7.4-alpine
     container_name: redis_prod
-    command: [
-      "redis-server",
-      "--appendonly",
-      "yes",
-      "--requirepass",
-      "L2hgheewayei5eechW2"
-    ]
+    restart: always
+    env_file:
+      - prod-frontend.env
+    command:
+      - /bin/sh
+      - -c
+      - redis-server --appendonly yes --requirepass "$${REDIS_PASSWORD}"
     volumes:
       - redis_data:/data
     networks:
