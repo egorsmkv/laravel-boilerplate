@@ -15,6 +15,9 @@
 ### Usage
 
 ```bash
+# Pull newer images
+task pull
+
 # Build dev image
 task build
 
@@ -80,6 +83,8 @@ task check-security
 
 task lint-dockerfile
 
+task lint-yaml
+
 task validate-and-format-caddyfile
 ```
 
@@ -95,6 +100,7 @@ task validate-and-format-caddyfile
 ```bash
 docker run --rm -v .:/code -it node:20-alpine sh
 
+$ cd /code/apps/frontend
 $ npm -g install npm-check-updates
 $ npm-check-updates --format group -i
 ```

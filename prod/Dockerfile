@@ -1,4 +1,4 @@
-FROM php:8.3.10-cli-alpine3.20
+FROM php:8.3.13-cli-alpine3.20
 
 ARG CADDY_ARCH
 

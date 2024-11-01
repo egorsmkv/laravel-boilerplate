@@ -1,6 +1,11 @@
 version: '3'
 
 tasks:
+  pull:
+    cmds:
+      - docker pull redis:7.4-alpine
+      - docker pull minio/minio:latest
+
   build:
     cmds:
       - cp -r ../apps .

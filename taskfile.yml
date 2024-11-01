@@ -3,6 +3,13 @@ version: '3'
 dotenv: ['dev.env']
 
 tasks:
+  pull:
+    cmds:
+      - docker pull caddy:latest
+      - docker pull ghcr.io/buggregator/server:latest
+      - docker pull redis:latest
+      - docker pull minio/minio:latest
+
   build:
     cmds:
       - docker build --force-rm --load --tag laravel_app_dev:1.0 .

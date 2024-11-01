@@ -3,6 +3,9 @@
 ### Usage
 
 ```bash
+# Pull newer images
+task pull
+
 # Create prod image
 task build
 
