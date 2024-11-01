@@ -20,16 +20,16 @@ COPY . .
 WORKDIR /app
 
 # hadolint ignore=DL3003
-RUN wget -q https://pecl.php.net/get/redis-6.0.2.tgz && \
-    tar xzf redis-6.0.2.tgz && \
-    cd redis-6.0.2 && \
+RUN wget -q https://pecl.php.net/get/redis-6.1.0.tgz && \
+    tar xzf redis-6.1.0.tgz && \
+    cd redis-6.1.0 && \
     phpize && \
     ./configure && \
     make && \
     make install && \
     cd /app && \
-    rm redis-6.0.2.tgz package.xml && \
-    rm -rf redis-6.0.2 && \
+    rm redis-6.1.0.tgz package.xml && \
+    rm -rf redis-6.1.0 && \
     git clone https://github.com/zeromq/php-zmq.git && \
     cd php-zmq && \
     phpize && \

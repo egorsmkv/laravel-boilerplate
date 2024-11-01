@@ -13,8 +13,8 @@ RUN apk --update --no-cache add wget=1.24.5-r0 git=2.45.2-r0 linux-headers=6.6-r
 
 WORKDIR /opt
 RUN git clone https://github.com/zeromq/php-zmq.git php-zmq && \
-    wget -q https://pecl.php.net/get/redis-6.0.2.tgz && \
-    tar xzf redis-6.0.2.tgz && \
+    wget -q https://pecl.php.net/get/redis-6.1.0.tgz && \
+    tar xzf redis-6.1.0.tgz && \
     git clone https://github.com/NoiseByNorthwest/php-spx.git
 
 WORKDIR /opt/php-zmq
@@ -23,7 +23,7 @@ RUN phpize && \
     make && \
     make install
 
-WORKDIR /opt/redis-6.0.2
+WORKDIR /opt/redis-6.1.0
 RUN phpize && \
     ./configure && \
     make && \
@@ -35,7 +35,7 @@ RUN phpize && \
     make && \
     make install
 
-RUN rm -rf /opt/php-zmq /opt/redis-6.0.2 /opt/redis-6.0.2.tgz /opt/php-spx
+RUN rm -rf /opt/php-zmq /opt/redis-6.1.0 /opt/redis-6.1.0.tgz /opt/php-spx
 
 ENV PATH="${PATH}:/root/.composer/vendor/bin"
 
