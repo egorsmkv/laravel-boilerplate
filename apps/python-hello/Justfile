@@ -1,0 +1,12 @@
+build:
+    - podman build --tag python_hello:1.0 .
+
+lint-containerfile:
+    - podman run --rm -i hadolint/hadolint < Containerfile
+
+lint-yaml:
+    - yamllint -d relaxed taskfile.yml
+
+fmt:
+    - just --fmt --unstable
+    - dockerfmt --write Containerfile

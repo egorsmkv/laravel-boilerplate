@@ -1,4 +1,4 @@
-FROM php:8.4.6-cli-alpine3.21
+FROM docker.io/library/php:8.4.6-cli-alpine3.21
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
     php composer-setup.php && \

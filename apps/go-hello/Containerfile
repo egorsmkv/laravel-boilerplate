@@ -1,4 +1,4 @@
-FROM golang:1.23.0-alpine3.20 AS build
+FROM docker.io/library/golang:1.24.2-alpine3.21 AS build
 
 WORKDIR /app
 
@@ -8,12 +8,12 @@ ENV CGO_ENABLED=1
 ENV GOOS=linux
 
 RUN apk update && apk add --no-cache \
-    ca-certificates=20240705-r0 \
-    git=2.45.2-r0 \
+    ca-certificates=20241121-r1 \
+    git=2.47.2-r0 \
     build-base=0.5-r3 \
-    gcc=13.2.1_git20240309-r0 \
-    g++=13.2.1_git20240309-r0 \
-    linux-headers=6.6-r0 \
+    gcc=14.2.0-r4 \
+    g++=14.2.0-r4 \
+    linux-headers=6.6-r1 \
     zeromq=4.3.5-r2 \
     zeromq-dev=4.3.5-r2 \
     && rm -rf /var/cache/apk/*
@@ -25,7 +25,7 @@ COPY . .
 RUN CGO_LDFLAGS="$CGO_LDFLAGS -lstdc++ -lm" \
     go build -v -a -o server ./...
 
-FROM alpine:3.20
+FROM docker.io/library/alpine:3.21
 
 WORKDIR /app
 

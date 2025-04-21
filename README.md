@@ -81,7 +81,7 @@ Other useful commands:
 ```bash
 just check-security
 
-just lint-podmanfile
+just lint-containerfile
 
 just lint-yaml
 
@@ -91,7 +91,7 @@ just validate-and-format-caddyfile
 ### How to update components
 
 - In `compose.yml` check new versions of images
-- In `Podmanfile` check new version of `php` image
+- In `Containerfile` check new version of `php` image
   - Check a new version of php-zmq, phpredis
   - Check a new version of Caddy
 - In the apps container run `composer update` / `composer outdated` to check new versions
@@ -100,9 +100,9 @@ just validate-and-format-caddyfile
 ```bash
 podman run --rm -v .:/code -it node:20-alpine sh
 
-$ cd /code/apps/frontend
-$ npm -g install npm-check-updates
-$ npm-check-updates --format group -i
+cd /code/apps/frontend
+npm -g install npm-check-updates
+npm-check-updates --format group -i
 ```
 
 ### Misc

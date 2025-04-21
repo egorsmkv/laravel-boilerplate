@@ -52,12 +52,16 @@ logs:
 console:
     -   podman exec -it apps_dev sh
 
-lint-podmanfile:
-    -   podman run --rm -i hadolint/hadolint < podmanfile
+lint-containerfile:
+    -   podman run --rm -i hadolint/hadolint < Containerfile
 
 validate-and-format-caddyfile:
-    -   podman run --rm -v .:/code -i caddy:2.8-alpine caddy validate --config /code/Caddyfile
-    -   podman run --rm -v .:/code -i caddy:2.8-alpine caddy fmt --overwrite /code/Caddyfile
+    -   podman run --rm -v .:/code -i docker.io/library/caddy:2.9-alpine caddy validate --config /code/Caddyfile
+    -   podman run --rm -v .:/code -i docker.io/library/caddy:2.9-alpine caddy fmt --overwrite /code/Caddyfile
 
 lint-yaml:
-    - yamllint -d relaxed   podman-compose.yml   podman-compose.rpc.yml taskfile.yml
+    - yamllint -d relaxed podman-compose.yml podman-compose.rpc.yml taskfile.yml
+
+fmt:
+    - just --fmt --unstable
+    - dockerfmt --write Containerfile

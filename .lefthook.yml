@@ -1,0 +1,19 @@
+pre-push:
+  parallel: true
+
+pre-commit:
+  commands:
+    phpstan:
+      run: just phpstan
+
+    validate-and-format-caddyfile:
+      run: just validate-and-format-caddyfile
+
+    lint-containerfile:
+      run: just lint-containerfile
+
+    phpcs-fix:
+      run: just phpcs-fix
+
+    fmt-justfile:
+      run: just fmt

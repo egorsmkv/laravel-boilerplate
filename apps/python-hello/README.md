@@ -4,9 +4,9 @@
 
 ```bash
 # Build image
-task build
+just build
 
 # Linting
-task lint-dockerfile
-task lint-yaml
+just lint-containerfile
+just lint-yaml
 ```
