@@ -1,0 +1,63 @@
+set dotenv-path := "dev.env"
+
+pull:
+    -   podman pull caddy:latest
+    -   podman pull ghcr.io/buggregator/server:latest
+    -   podman pull redis:latest
+    -   podman pull minio/minio:latest
+
+build:
+    -   podman build --force-rm --load --tag laravel_app_dev:1.0 .
+    -   podman image prune -f
+
+install:
+    -   podman exec -it apps_dev sh -c 'composer install && php artisan horizon:publish && php artisan telescope:publish'
+    -   podman exec -it apps_dev php artisan key:generate
+    -   podman exec -it apps_dev php artisan migrate --force
+
+up:
+    -   podman compose up -d
+
+queue:
+    -   podman exec -it apps_dev php artisan horizon
+
+down:
+    -   podman compose down
+
+bun-install:
+    - cd apps/frontend && bun install
+
+bun-dev:
+    - cd apps/frontend && bun run dev
+
+bun-prod:
+    - cd apps/frontend && bun run build
+
+lang-update:
+    -   podman exec -it apps_dev php artisan lang:update
+
+phpcs-fix:
+    -   podman exec -it apps_dev vendor/bin/php-cs-fixer fix --config phpcs.php
+
+phpstan:
+    -   podman exec -it apps_dev ./vendor/bin/phpstan analyse --memory-limit=256M
+
+check-security:
+    -   podman exec -it apps_dev security-checker security:check composer.lock
+    -   podman exec -it apps_dev composer audit
+
+logs:
+    -   podman compose logs -f
+
+console:
+    -   podman exec -it apps_dev sh
+
+lint-podmanfile:
+    -   podman run --rm -i hadolint/hadolint < podmanfile
+
+validate-and-format-caddyfile:
+    -   podman run --rm -v .:/code -i caddy:2.8-alpine caddy validate --config /code/Caddyfile
+    -   podman run --rm -v .:/code -i caddy:2.8-alpine caddy fmt --overwrite /code/Caddyfile
+
+lint-yaml:
+    - yamllint -d relaxed   podman-compose.yml   podman-compose.rpc.yml taskfile.yml

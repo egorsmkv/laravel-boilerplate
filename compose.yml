@@ -1,5 +1,5 @@
 # include:
-  # - docker-compose.rpc.yml
+  # - compose.rpc.yml
 
 services:
   apps:
@@ -30,10 +30,10 @@ services:
           memory: 512M
 
   caddy:
-    image: caddy:latest
+    image: docker.io/library/caddy:latest
     container_name: caddy_dev
     ports:
-      - "80:80"
+      - "8080:8080"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - ./apps:/app
@@ -77,7 +77,7 @@ services:
           memory: 512M
 
   redis:
-    image: redis:latest
+    image: docker.io/library/redis:latest
     container_name: redis_dev
     env_file:
       - dev-frontend.env
@@ -97,7 +97,7 @@ services:
       memlock: -1
 
   minio:
-    image: minio/minio:latest
+    image: docker.io/minio/minio:latest
     container_name: minio_dev
     command: [
       "server",

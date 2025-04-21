@@ -153,7 +153,6 @@ $finder = Finder::create()
 $config = new Config();
 
 return $config->setFinder($finder)
-    ->setParallelConfig(ParallelConfigFactory::detect())
     ->setRules($rules)
     ->setRiskyAllowed(true)
     ->setUsingCache(true);
