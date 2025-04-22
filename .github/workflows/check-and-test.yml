@@ -3,6 +3,11 @@ name: check and test code
 on:
   workflow_dispatch:
 
+defaults:
+  run:
+    shell: bash
+    working-directory: ./apps/frontend
+
 jobs:
   check-and-test:
     name: check and test
@@ -22,7 +27,7 @@ jobs:
           tools: composer:v2
 
       - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
+        run: composer install --prefer-dist --no-progress --no-interaction
 
       - name: Check code
         run: sh check-code.sh
