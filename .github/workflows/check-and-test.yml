@@ -33,7 +33,6 @@ jobs:
         run: |
           cp -n ../../dev-frontend.env .env
           php artisan key:generate
-          php artisan migrate --force
 
       - name: Check code
         run: sh check-code.sh
