@@ -6,11 +6,11 @@ pre-commit:
     phpstan:
       run: just phpstan
 
-    validate-and-format-caddyfile:
-      run: just validate-and-format-caddyfile
+    fmt:
+      run: just fmt
 
-    lint-containerfile:
-      run: just lint-containerfile
+    lint:
+      run: just lint
 
     phpcs-fix:
       run: just phpcs-fix
