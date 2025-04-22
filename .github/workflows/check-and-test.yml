@@ -1,0 +1,36 @@
+name: check and test code
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check-and-test:
+    name: check and test
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - uses: gacts/install-podman@v1
+
+      - uses: extractions/setup-just@v3
+
+      - name: Check podman version
+        run: podman --version
+
+      - name: Run containers
+        run: just up
+
+      - name: Check code
+        run: just check-code
+
+      - name: Run tests
+        run: just test
+
+      - name: Check security
+        run: just check-security
+
+      - name: Stop containers
+        run: just down

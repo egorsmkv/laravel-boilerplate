@@ -2,7 +2,6 @@
 
 use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
-use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
 
 $rules = [
     'array_syntax' => ['syntax' => 'short'],
@@ -143,7 +142,6 @@ $finder = Finder::create()
         __DIR__ . '/database',
         __DIR__ . '/resources',
         __DIR__ . '/routes',
-        // __DIR__ . '/tests',
     ])
     ->name('*.php')
     ->notName('*.blade.php')
@@ -153,6 +151,7 @@ $finder = Finder::create()
 $config = new Config();
 
 return $config->setFinder($finder)
+    ->setParallelConfig(PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())
     ->setRules($rules)
     ->setRiskyAllowed(true)
     ->setUsingCache(true);

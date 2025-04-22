@@ -36,11 +36,11 @@ bun-prod:
 lang-update:
     - podman exec -it apps_dev php artisan lang:update
 
-phpcs-fix:
-    - podman exec -it apps_dev vendor/bin/php-cs-fixer fix --config phpcs.php
+check-code:
+    - podman exec -it apps_dev sh check-code.sh
 
-phpstan:
-    - podman exec -it apps_dev ./vendor/bin/phpstan analyse --memory-limit=256M
+test:
+    - podman exec -it apps_dev php artisan test
 
 check-security:
     - podman exec -it apps_dev security-checker security:check composer.lock

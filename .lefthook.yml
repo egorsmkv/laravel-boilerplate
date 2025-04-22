@@ -3,17 +3,11 @@ pre-push:
 
 pre-commit:
   commands:
-    phpstan:
-      run: just phpstan
-
     fmt:
       run: just fmt
 
     lint:
       run: just lint
 
-    phpcs-fix:
-      run: just phpcs-fix
-
-    fmt-justfile:
-      run: just fmt
+    check-code:
+      run: just check-code
