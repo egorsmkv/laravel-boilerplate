@@ -1,3 +1,6 @@
+build-local:
+    - go build -o go_hello ./main.go
+
 build:
     - podman build --tag go_hello:1.0 .
 

@@ -1,0 +1,32 @@
+name: build go
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-go:
+    name: build go
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - uses: extractions/setup-just@v3
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.24.2'
+
+      - name: Install packages
+        run: sudo apt-get install -y libzmq3-dev
+
+      - name: Build
+        run: |
+          cd apps/go-hello
+          just build-local
+
+      - name: Check app
+        run: |
+          file ./go-hello
