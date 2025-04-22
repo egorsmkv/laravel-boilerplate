@@ -29,6 +29,11 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-interaction
 
+      - name: Set up key and migrate database
+        run: |
+          php artisan key:generate
+          php artisan migrate --force
+
       - name: Check code
         run: sh check-code.sh
 
