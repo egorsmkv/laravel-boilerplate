@@ -1,0 +1,19 @@
+name: image builds
+
+on:
+  workflow_dispatch:
+
+jobs:
+  image-builds:
+    name: image builds
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - uses: gacts/install-podman@v1
+
+      - name: Check podman version
+        run: podman --version
