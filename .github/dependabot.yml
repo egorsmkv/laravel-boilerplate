@@ -15,3 +15,8 @@ updates:
     directory: "/apps/python-hello"
     schedule:
       interval: "weekly"
+
+  - package-ecosystem: "composer"
+    directory: "/apps/frontend"
+    schedule:
+      interval: "weekly"
