@@ -1,5 +1,7 @@
 # Laravel Boilerplate
 
+[![deps](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/dependabot/dependabot-updates)
+
 > [!NOTE]
 > It must:
 > - be on the latest version of Laravel
