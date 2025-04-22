@@ -29,4 +29,4 @@ jobs:
 
       - name: Check app
         run: |
-          file ./go-hello
+          file ./go_hello
