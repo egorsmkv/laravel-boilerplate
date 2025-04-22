@@ -31,6 +31,7 @@ jobs:
 
       - name: Set up key and migrate database
         run: |
+          cp -n ../../dev-frontend.env .env
           php artisan key:generate
           php artisan migrate --force
 
