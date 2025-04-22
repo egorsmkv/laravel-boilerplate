@@ -1,5 +1,6 @@
 # Laravel Boilerplate
 
+[![check and test code](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/check-and-test.yml/badge.svg)](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/check-and-test.yml)
 [![deps](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/dependabot/dependabot-updates)
 
 > [!NOTE]
