@@ -1,5 +1,5 @@
 # include:
-#  - docker-compose.rpc.yml
+#  - compose.rpc.yml
 
 services:
   apps:
@@ -93,8 +93,8 @@ services:
     container_name: caddy_prod
     restart: always
     ports:
-      - '80:80'
-      - '443:443'
+      - '8080:8080'
+      # - '443:443'
     command:
       - /app/caddy
       - run
@@ -119,7 +119,7 @@ services:
           memory: 128M
 
   redis:
-    image: redis:7.4-alpine
+    image: docker.io/library/redis:7.4-alpine3.21
     container_name: redis_prod
     restart: always
     env_file:
@@ -140,7 +140,7 @@ services:
       memlock: -1
 
   minio:
-    image: minio/minio:latest
+    image: docker.io/minio/minio:latest
     container_name: minio_prod
     restart: always
     command: [

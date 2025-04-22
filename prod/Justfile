@@ -1,0 +1,34 @@
+pull:
+    - podman pull docker.io/library/redis:7.4-alpine3.21
+    - podman pull docker.io/minio/minio:latest
+
+build:
+    - cp -r ../apps .
+    - cp -r ./rr/rr apps/frontend
+    - podman build --force-rm --load --build-arg CADDY_ARCH=amd64 --tag laravel_app_prod:1.0 .
+    - podman image prune -f
+    - rm -rf ./apps
+
+up:
+    - podman compose up -d
+
+down:
+    - podman compose down
+
+migrate:
+    - podman exec -it apps_prod php artisan migrate
+
+console:
+    - podman exec -it apps_prod sh
+
+logs:
+    - podman compose logs -f
+
+lint:
+    - podman run --rm -i hadolint/hadolint < Dockerfile
+
+fmt:
+    - podman run --rm -v .:/code -i caddy:2.8-alpine caddy validate --config /code/Caddyfile
+    - podman run --rm -v .:/code -i caddy:2.8-alpine caddy fmt --overwrite /code/Caddyfile
+    - just --fmt --unstable
+    - dockerfmt --write Containerfile

@@ -3,7 +3,7 @@
 ## AMD64
 
 ```bash
-export VERSION=2024.2.1
+export VERSION=2024.3.7
 
 wget -q https://github.com/roadrunner-server/velox/releases/download/v$VERSION/velox-$VERSION-linux-amd64.tar.gz
 

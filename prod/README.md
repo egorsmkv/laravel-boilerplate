@@ -4,23 +4,23 @@
 
 ```bash
 # Pull newer images
-task pull
+just pull
 
 # Create prod image
-task build
+just build
 
 # Up containers
-task up
+just up
 
 # Migrate
-task migrate
+just migrate
 
 # Show logs
-task logs
+just logs
 
 # Enter the apps container
-task console
+just console
 
 # Down containers
-task down
+just down
 ```
