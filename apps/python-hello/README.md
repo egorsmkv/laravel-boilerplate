@@ -7,6 +7,8 @@
 just build
 
 # Linting
-just lint-containerfile
-just lint-yaml
+just lint
+
+# Formatting
+just fmt
 ```

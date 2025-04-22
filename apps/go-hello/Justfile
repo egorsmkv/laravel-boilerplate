@@ -1,11 +1,8 @@
 build:
     - podman build --tag go_hello:1.0 .
 
-lint-containerfile:
+lint:
     - podman run --rm -i docker.io/hadolint/hadolint < Containerfile
-
-lint-yaml:
-    - yamllint -d relaxed taskfile.yml
 
 fmt:
     - just --fmt --unstable
