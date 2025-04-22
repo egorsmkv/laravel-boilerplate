@@ -1,4 +1,4 @@
-name: build go
+name: build Go app locally
 
 on:
   workflow_dispatch:

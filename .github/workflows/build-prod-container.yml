@@ -1,4 +1,4 @@
-name: build-prod
+name: build prod container
 
 on:
   workflow_dispatch:
@@ -8,6 +8,9 @@ jobs:
     name: build prod
 
     runs-on: ubuntu-latest
+
+    env:
+      RT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout code
@@ -28,7 +31,7 @@ jobs:
         run: |
           cd prod/rr
           sh download.sh
-          RT_TOKEN=${GITHUB_TOKEN} sh build.sh
+          sh build.sh
           just build
 
       - name: Build apps/frontend for production

@@ -1,0 +1,26 @@
+name: build Go container
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - uses: gacts/install-podman@v1
+
+      - uses: extractions/setup-just@v3
+
+      - name: Check podman version
+        run: podman --version
+
+      - name: Build apps/go-hello
+        run: |
+          cd apps/go-hello
+          just build
