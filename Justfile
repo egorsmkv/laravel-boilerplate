@@ -1,28 +1,28 @@
 set dotenv-path := "dev.env"
 
 pull:
-    -   podman pull caddy:latest
-    -   podman pull ghcr.io/buggregator/server:latest
-    -   podman pull redis:latest
-    -   podman pull minio/minio:latest
+    - podman pull caddy:latest
+    - podman pull ghcr.io/buggregator/server:latest
+    - podman pull redis:latest
+    - podman pull minio/minio:latest
 
 build:
-    -   podman build --force-rm --load --tag laravel_app_dev:1.0 .
-    -   podman image prune -f
+    - podman build --force-rm --load --tag laravel_app_dev:1.0 .
+    - podman image prune -f
 
 install:
-    -   podman exec -it apps_dev sh -c 'composer install && php artisan horizon:publish && php artisan telescope:publish'
-    -   podman exec -it apps_dev php artisan key:generate
-    -   podman exec -it apps_dev php artisan migrate --force
+    - podman exec -it apps_dev sh -c 'composer install && php artisan horizon:publish && php artisan telescope:publish'
+    - podman exec -it apps_dev php artisan key:generate
+    - podman exec -it apps_dev php artisan migrate --force
 
 up:
-    -   podman compose up -d
+    - podman compose up -d
 
 queue:
-    -   podman exec -it apps_dev php artisan horizon
+    - podman exec -it apps_dev php artisan horizon
 
 down:
-    -   podman compose down
+    - podman compose down
 
 bun-install:
     - cd apps/frontend && bun install
@@ -34,34 +34,29 @@ bun-prod:
     - cd apps/frontend && bun run build
 
 lang-update:
-    -   podman exec -it apps_dev php artisan lang:update
+    - podman exec -it apps_dev php artisan lang:update
 
 phpcs-fix:
-    -   podman exec -it apps_dev vendor/bin/php-cs-fixer fix --config phpcs.php
+    - podman exec -it apps_dev vendor/bin/php-cs-fixer fix --config phpcs.php
 
 phpstan:
-    -   podman exec -it apps_dev ./vendor/bin/phpstan analyse --memory-limit=256M
+    - podman exec -it apps_dev ./vendor/bin/phpstan analyse --memory-limit=256M
 
 check-security:
-    -   podman exec -it apps_dev security-checker security:check composer.lock
-    -   podman exec -it apps_dev composer audit
+    - podman exec -it apps_dev security-checker security:check composer.lock
+    - podman exec -it apps_dev composer audit
 
 logs:
-    -   podman compose logs -f
+    - podman compose logs -f
 
 console:
-    -   podman exec -it apps_dev sh
+    - podman exec -it apps_dev sh
 
-lint-containerfile:
-    -   podman run --rm -i hadolint/hadolint < Containerfile
-
-validate-and-format-caddyfile:
-    -   podman run --rm -v .:/code -i docker.io/library/caddy:2.9-alpine caddy validate --config /code/Caddyfile
-    -   podman run --rm -v .:/code -i docker.io/library/caddy:2.9-alpine caddy fmt --overwrite /code/Caddyfile
-
-lint-yaml:
-    - yamllint -d relaxed podman-compose.yml podman-compose.rpc.yml taskfile.yml
+lint:
+    - podman run --rm -i hadolint/hadolint < Containerfile
 
 fmt:
+    - podman run --rm -v .:/code -i docker.io/library/caddy:2.9-alpine caddy validate --config /code/Caddyfile
+    - podman run --rm -v .:/code -i docker.io/library/caddy:2.9-alpine caddy fmt --overwrite /code/Caddyfile
     - just --fmt --unstable
     - dockerfmt --write Containerfile

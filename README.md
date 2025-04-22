@@ -80,12 +80,8 @@ Other useful commands:
 
 ```bash
 just check-security
-
-just lint-containerfile
-
-just lint-yaml
-
-just validate-and-format-caddyfile
+just lint
+just fmt
 ```
 
 ### How to update components
