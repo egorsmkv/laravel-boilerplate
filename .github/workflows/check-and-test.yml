@@ -20,6 +20,9 @@ jobs:
       - name: Check podman version
         run: podman --version
 
+      - name: Start podman
+        run: podman machine init --cpus 1 --memory 2000 --disk-size 10GiB
+
       - name: Run containers
         run: just up
 
