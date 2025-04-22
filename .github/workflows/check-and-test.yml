@@ -27,7 +27,9 @@ jobs:
           tools: composer:v2
 
       - name: Install dependencies
-        run: composer install --prefer-dist --no-progress --no-interaction
+        run: |
+          composer install --prefer-dist --no-progress --no-interaction
+          composer global require enlightn/security-checker
 
       - name: Set up key and migrate database
         run: |
