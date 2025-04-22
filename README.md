@@ -67,16 +67,10 @@ Update locales:
 just lang-update
 ```
 
-Apply fixes by [phpcs](https://github.com/squizlabs/PHP_CodeSniffer):
+Apply fixes by [phpcs](https://github.com/squizlabs/PHP_CodeSniffer) and check code by [Larastan](https://github.com/larastan/larastan):
 
 ```bash
-just phpcs-fix
-```
-
-Analyse the code by [Larastan](https://github.com/larastan/larastan):
-
-```bash
-just phpstan
+just check-code
 ```
 
 Other useful commands:
