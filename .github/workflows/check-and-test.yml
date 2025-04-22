@@ -12,39 +12,25 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
-      - uses: gacts/install-podman@v1
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: mbstring, xml, zip, curl, gd, bcmath, exif, fileinfo, intl, json, mysqli, pdo_mysql, soap, sqlite3
+          coverage: xdebug
+          tools: composer:v2
 
       - name: Install dependencies
-        run: |
-          sudo apt-get install -y qemu-system-x86
-          curl -s https://api.github.com/repos/containers/gvisor-tap-vsock/releases/latest | awk 'BEGIN { FS = "\"\\s*:\\s*" } /browser_download_url/ && /linux-amd64/ {print $2}' | xargs wget -O gvproxy-linux-amd64
-          chmod +x ./gvproxy-linux-amd64
-          sudo mkdir -p /usr/local/lib/podman/
-          sudo mv gvproxy-linux-amd64 /usr/local/lib/podman/gvproxy
-
-      - uses: extractions/setup-just@v3
-
-      - name: Check podman version
-        run: podman --version
-
-      - name: Init podman machine
-        run: podman machine init --cpus 1 --memory 2048 --disk-size 10
-
-      - name: Start podman machine
-        run: sudo podman machine start
-
-      - name: Run containers
-        run: just up
+        run: composer install --prefer-dist --no-progress --no-suggest --no-interaction
 
       - name: Check code
-        run: just check-code
+        run: sh check-code.sh
 
       - name: Run tests
-        run: just test
+        run: php artisan test
 
       - name: Check security
-        run: just check-security
-
-      - name: Stop containers
-        run: just down
+        run: |
+          security-checker security:check composer.lock
+          composer audit
