@@ -1,4 +1,7 @@
-name: build dev container
+name: "Build dev container"
+
+permissions:
+  contents: read
 
 on:
   workflow_dispatch:
