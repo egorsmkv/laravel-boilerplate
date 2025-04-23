@@ -1,4 +1,7 @@
-name: build prod container
+name: "Build prod container"
+
+permissions:
+  contents: read
 
 on:
   workflow_dispatch:
