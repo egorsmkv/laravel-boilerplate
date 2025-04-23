@@ -1,4 +1,7 @@
-name: build Go app locally
+name: "Build Go locally"
+
+permissions:
+  contents: read
 
 on:
   workflow_dispatch:
