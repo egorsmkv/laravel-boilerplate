@@ -1,4 +1,7 @@
-name: check and test code
+name: "Check and Test code"
+
+permissions:
+  contents: read
 
 on:
   push:
