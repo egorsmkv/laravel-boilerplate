@@ -1,4 +1,7 @@
-name: build Python container
+name: "Build Python container"
+
+permissions:
+  contents: read
 
 on:
   workflow_dispatch:
