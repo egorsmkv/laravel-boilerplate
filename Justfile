@@ -55,8 +55,15 @@ console:
 lint:
     - podman run --rm -i hadolint/hadolint < Containerfile
 
+build-node-image:
+    - podman build -f Containerfile.node --tag node_dev:1.0 .
+
+update-frontend: build-node-image
+    - podman run --rm -it -v ./apps/frontend:/app/frontend node_dev:1.0 sh -c "npm-check-updates --format group -i"
+
 fmt:
     - podman run --rm -v .:/code -i docker.io/library/caddy:2.9-alpine caddy validate --config /code/Caddyfile
     - podman run --rm -v .:/code -i docker.io/library/caddy:2.9-alpine caddy fmt --overwrite /code/Caddyfile
     - just --fmt --unstable
     - dockerfmt --write Containerfile
+    - dockerfmt --write Containerfile.node
