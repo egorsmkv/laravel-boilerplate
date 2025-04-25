@@ -8,7 +8,7 @@
 
 ### Requirements
 
-- [podman](https://github.com/moby/moby)
+- [podman](https://podman.io)
 - [just](https://github.com/casey/just)
 - [bun](https://bun.sh)
 
@@ -99,11 +99,8 @@ just fmt
 - In the `apps/frontend` folder run:
 
 ```bash
-podman run --rm -v .:/code -it node:20-alpine sh
-
-cd /code/apps/frontend
-npm -g install npm-check-updates
-npm-check-updates --format group -i
+podman build -f Containerfile.node --tag node_dev:1.0 .
+podman run --rm -it -v ./apps/frontend:/app/frontend node_dev:1.0 sh -c "npm-check-updates --format group -i"
 ```
 
 ### Misc
