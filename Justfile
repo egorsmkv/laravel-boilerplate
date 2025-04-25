@@ -1,10 +1,10 @@
 set dotenv-path := "dev.env"
 
 pull:
-    - podman pull caddy:latest
+    - podman pull docker.io/library/caddy:latest
     - podman pull ghcr.io/buggregator/server:latest
-    - podman pull redis:latest
-    - podman pull minio/minio:latest
+    - podman pull docker.io/library/redis:latest
+    - podman pull docker.io/minio/minio:latest
 
 build:
     - podman build --force-rm --load --tag laravel_app_dev:1.0 .
