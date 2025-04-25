@@ -96,12 +96,7 @@ just fmt
   - Check a new version of php-zmq, phpredis
   - Check a new version of Caddy
 - In the apps container run `composer update` / `composer outdated` to check new versions
-- In the `apps/frontend` folder run:
-
-```bash
-podman build -f Containerfile.node --tag node_dev:1.0 .
-podman run --rm -it -v ./apps/frontend:/app/frontend node_dev:1.0 sh -c "npm-check-updates --format group -i"
-```
+- Update frontend libraries: `just update-frontend`
 
 ### Misc
 
