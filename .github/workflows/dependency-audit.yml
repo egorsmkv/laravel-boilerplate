@@ -51,5 +51,5 @@ jobs:
         if: ${{ success() }}
         with:
           title: Weekly Dependency Audit
-          content-filepath: ./report.md
+          content-filepath: /home/runner/work/laravel-boilerplate/laravel-boilerplate/apps/frontend/report.md
           labels: maintenance, dependencies
