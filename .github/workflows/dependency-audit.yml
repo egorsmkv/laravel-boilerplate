@@ -41,6 +41,11 @@ jobs:
           chmod +x ./npm-audit-to-report
           ./npm-audit-to-report --fail-if-no-vulnerabilities --audit-file security-audit.json --output-file report.md
 
+      - name: Check files
+        run: |
+          pwd
+          ls -lh
+
       - name: Create issue if problems found
         uses: peter-evans/create-issue-from-file@v5
         if: ${{ success() }}
