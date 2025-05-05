@@ -22,8 +22,8 @@ jobs:
         with:
           node-version: "23"
 
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+      - name: Convert Bun lockfile to Yarn
+        run: bun bun.lockb > yarn.lock
 
       - name: Run audit
         continue-on-error: true
