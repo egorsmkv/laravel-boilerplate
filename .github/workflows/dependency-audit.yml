@@ -22,6 +22,10 @@ jobs:
         with:
           node-version: "23"
 
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
       - name: Convert Bun lockfile to Yarn
         run: bun bun.lockb > yarn.lock
 
