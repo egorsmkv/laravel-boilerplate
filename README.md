@@ -22,6 +22,7 @@
 [![Build prod container](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/build-prod-container.yml/badge.svg)](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/build-prod-container.yml)
 [![Build Python container](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/build-python-container.yml/badge.svg)](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/build-python-container.yml)
 [![Dependabot Updates](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/dependabot/dependabot-updates)
+[![Dependency Audit](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/dependency-audit.yml/badge.svg)](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/dependency-audit.yml)
 
 ### Usage
 
