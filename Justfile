@@ -67,3 +67,4 @@ fmt:
     - just --fmt --unstable
     - dockerfmt --write Containerfile
     - dockerfmt --write Containerfile.node
+    - dprint fmt

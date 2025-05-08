@@ -1,5 +1,5 @@
 # include:
-  # - compose.rpc.yml
+# - compose.rpc.yml
 
 services:
   apps:
@@ -103,7 +103,7 @@ services:
       "server",
       "--console-address",
       ":9001",
-      "/data"
+      "/data",
     ]
     env_file:
       - dev.env

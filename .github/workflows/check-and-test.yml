@@ -24,7 +24,7 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.4'
+          php-version: "8.4"
           extensions: mbstring, xml, zip, curl, gd, bcmath, exif, fileinfo, intl, json, mysqli, pdo_mysql, soap, sqlite3
           coverage: xdebug
           tools: composer:v2

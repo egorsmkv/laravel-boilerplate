@@ -96,7 +96,7 @@ services:
     container_name: caddy_prod
     restart: always
     ports:
-      - '8080:8080'
+      - "8080:8080"
       # - '443:443'
     command:
       - /app/caddy
@@ -150,7 +150,7 @@ services:
       "server",
       "--console-address",
       ":9001",
-      "/data"
+      "/data",
     ]
     env_file:
       - prod.env

@@ -1,21 +1,21 @@
 [velox]
 build_args = [
-    '-trimpath',
-    '-ldflags',
-    '-s -X github.com/roadrunner-server/roadrunner/v2024/internal/meta.version=v2024.3.5 -X github.com/roadrunner-server/roadrunner/v2024/internal/meta.buildTime=${TIME}'
+  '-trimpath',
+  '-ldflags',
+  '-s -X github.com/roadrunner-server/roadrunner/v2024/internal/meta.version=v2024.3.5 -X github.com/roadrunner-server/roadrunner/v2024/internal/meta.buildTime=${TIME}',
 ]
 
 [roadrunner]
 ref = "v2024.3.5"
 
 [github]
-    [github.token]
-    token = "${RT_TOKEN}"
+[github.token]
+token = "${RT_TOKEN}"
 
-    [github.plugins]
-    logger = { ref = "v5.1.6", owner = "roadrunner-server", repository = "logger" }
-    http = { ref = "v5.2.5", owner = "roadrunner-server", repository = "http" }
-    server = { ref = "v5.2.7", owner = "roadrunner-server", repository = "server" }
+[github.plugins]
+logger = { ref = "v5.1.6", owner = "roadrunner-server", repository = "logger" }
+http = { ref = "v5.2.5", owner = "roadrunner-server", repository = "http" }
+server = { ref = "v5.2.7", owner = "roadrunner-server", repository = "server" }
 
 [debug]
 enabled = false
