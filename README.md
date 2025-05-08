@@ -11,7 +11,7 @@
 
 - [podman](https://podman.io)
 - [just](https://github.com/casey/just)
-- [bun](https://bun.sh)
+- [bun](https://bun.sh), [dockerfmt](https://github.com/reteps/dockerfmt), [dprint](https://github.com/dprint/dprint)
 
 ### Statuses
 
