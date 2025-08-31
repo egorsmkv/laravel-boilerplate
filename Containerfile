@@ -1,11 +1,11 @@
-FROM docker.io/library/php:8.4.6-cli-alpine3.21
+FROM docker.io/library/php:8.4.12-cli-alpine3.21
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
     php composer-setup.php && \
     php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/bin/composer
 
-RUN apk --update --no-cache add wget=1.25.0-r0 git=2.47.2-r0 linux-headers=6.6-r1 build-base=0.5-r3 autoconf=2.72-r0 zeromq-dev=4.3.5-r2 zlib-dev=1.3.1-r2 \
+RUN apk --update --no-cache add wget git linux-headers build-base autoconf zeromq-dev zlib-dev \
     && composer global require enlightn/security-checker \
     && docker-php-ext-install pcntl bcmath sockets \
     && pecl install xhprof excimer xdebug \
