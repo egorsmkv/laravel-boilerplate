@@ -34,7 +34,7 @@ just pull
 just build
 
 # Copy Laravel environment variables file
-cp --update=none dev-frontend.env apps/frontend/.env
+cp dev-frontend.env apps/frontend/.env
 
 # Up containers
 just up
