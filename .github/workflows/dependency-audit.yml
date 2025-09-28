@@ -36,8 +36,8 @@ jobs:
       - name: Generate report
         continue-on-error: true
         run: |
-          wget -O "npm-audit-to-report_0.2.0_linux_amd64.tar.gz" "https://github.com/egorsmkv/npm-audit-to-report/releases/download/v0.2.0/npm-audit-to-report_0.2.0_linux_amd64.tar.gz"
-          tar xf npm-audit-to-report_0.2.0_linux_amd64.tar.gz
+          wget -O "npm-audit-to-report_0.3.0_linux_amd64.tar.gz" "https://github.com/egorsmkv/npm-audit-to-report/releases/download/v0.3.0/npm-audit-to-report_0.3.0_linux_amd64.tar.gz"
+          tar xf npm-audit-to-report_0.3.0_linux_amd64.tar.gz
           chmod +x ./npm-audit-to-report
           ./npm-audit-to-report --fail-if-no-vulnerabilities --audit-file security-audit.json --output-file report.md
 
