@@ -1,5 +1,7 @@
 FROM docker.io/library/php:8.4.12-cli-alpine3.21
 
+ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
     php composer-setup.php && \
     php -r "unlink('composer-setup.php');" && \
@@ -7,7 +9,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
 
 RUN apk --update --no-cache add wget git linux-headers build-base autoconf zeromq-dev zlib-dev \
     && composer global require enlightn/security-checker \
-    && docker-php-ext-install pcntl bcmath sockets \
+    && install-php-extensions pcntl bcmath sockets \
     && pecl install xhprof excimer xdebug \
     && composer clear-cache
 
