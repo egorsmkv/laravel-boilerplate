@@ -5,11 +5,11 @@
 >
 > - be on the latest version of Laravel
 > - be lightweight to run with Podman
-> - use modern technologies such as **PHP 8.4**, **Go 1.24**, **Python 3.13**, etc.
+> - use modern technologies such as **PHP 8.4**, **Go 1.25**, **Python 3.13**, etc.
 
 ### Requirements
 
-- [podman](https://podman.io)
+- [podman](https://podman.io) >= 4.9
 - [just](https://github.com/casey/just), [bun](https://bun.sh), [dockerfmt](https://github.com/reteps/dockerfmt), [dprint](https://github.com/dprint/dprint)
 
 ### Statuses
