@@ -1,6 +1,6 @@
-FROM docker.io/library/node:23-alpine3.21
+FROM docker.io/library/node:24-alpine3.22
 
-RUN apk --update --no-cache add bash=5.2.37-r0 curl=8.12.1-r1
+RUN apk --update --no-cache add bash curl
 
 RUN curl -fsSL https://bun.sh/install | bash
 
@@ -8,6 +8,6 @@ ENV HOME=/root
 ENV BUN_INSTALL="$HOME/.bun"
 ENV PATH="$BUN_INSTALL/bin:$PATH"
 
-RUN npm -g install npm-check-updates
+RUN bun install --global npm-check-updates
 
 WORKDIR /app/frontend
