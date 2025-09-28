@@ -1,4 +1,4 @@
-FROM docker.io/library/php:8.4.12-cli-alpine3.21
+FROM docker.io/library/php:8.4.13-cli-alpine3.21
 
 ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
