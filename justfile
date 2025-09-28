@@ -16,13 +16,13 @@ install:
     - podman exec -it apps_dev php artisan migrate --force
 
 up:
-    - podman-compose up -d
+    - podman compose up -d
 
 queue:
     - podman exec -it apps_dev php artisan horizon
 
 down:
-    - podman-compose down
+    - podman compose down
 
 bun-install:
     - cd apps/frontend && bun install
