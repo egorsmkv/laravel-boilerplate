@@ -12,18 +12,6 @@
 - [podman](https://podman.io) >= 4.9
 - [just](https://github.com/casey/just), [bun](https://bun.sh), [dockerfmt](https://github.com/reteps/dockerfmt), [dprint](https://github.com/dprint/dprint)
 
-### Statuses
-
-[![Check and Test code](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/check-and-test.yml/badge.svg)](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/check-and-test.yml)
-[![CodeQL](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/github-code-scanning/codeql)
-[![Build dev container](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/build-dev-container.yml/badge.svg)](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/build-dev-container.yml)
-[![Build Go container](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/build-go-container.yml/badge.svg)](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/build-go-container.yml)
-[![Build Go locally](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/build-go-local.yml/badge.svg)](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/build-go-local.yml)
-[![Build prod container](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/build-prod-container.yml/badge.svg)](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/build-prod-container.yml)
-[![Build Python container](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/build-python-container.yml/badge.svg)](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/build-python-container.yml)
-[![Dependabot Updates](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/dependabot/dependabot-updates)
-[![Dependency Audit](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/dependency-audit.yml/badge.svg)](https://github.com/egorsmkv/laravel-boilerplate/actions/workflows/dependency-audit.yml)
-
 ### Usage
 
 ```bash
@@ -102,5 +90,4 @@ just fmt
 ### Misc
 
 - Access `http://localhost/?SPX_KEY=dev&SPX_UI_URI=/` to enable PHP-SPX and see the profiling results;
-- Use [dive](https://github.com/wagoodman/dive) to analyze Podman images;
-- Use [grype](https://github.com/anchore/grype) to check security vulnerabilities.
+- Use [dive](https://github.com/wagoodman/dive) and [grype](https://github.com/anchore/grype) to analyze OCI images and check their security.

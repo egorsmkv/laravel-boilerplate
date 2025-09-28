@@ -7,32 +7,21 @@ ENV XDG_CONFIG_HOME=/tmp/
 
 ADD --chmod=0755 https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
+WORKDIR /tmp
+
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
     php composer-setup.php && \
     php -r "unlink('composer-setup.php');" && \
     mv composer.phar /usr/bin/composer && \
     apk --update --no-cache add wget git linux-headers build-base autoconf zeromq-dev zlib-dev && \
-    install-php-extensions pcntl bcmath sockets && \
-    pecl install protobuf excimer
-
-WORKDIR /tmp
+    install-php-extensions pcntl bcmath sockets protobuf excimer redis
 
 COPY . .
 
 WORKDIR /app
 
 # hadolint ignore=DL3003
-RUN wget -q https://pecl.php.net/get/redis-6.2.0.tgz \
-    && tar xzf redis-6.2.0.tgz \
-    && cd redis-6.2.0 \
-    && phpize \
-    && ./configure \
-    && make \
-    && make install \
-    && cd /app \
-    && rm redis-6.2.0.tgz package.xml \
-    && rm -rf redis-6.2.0 \
-    && git clone https://github.com/zeromq/php-zmq.git \
+RUN git clone https://github.com/zeromq/php-zmq.git \
     && cd php-zmq \
     && phpize \
     && ./configure \
