@@ -27,10 +27,10 @@ down:
 bun-install:
     - cd apps/frontend && bun install
 
-bun-dev:
+bun-dev: bun-install
     - cd apps/frontend && bun run dev
 
-bun-prod:
+bun-prod: bun-install
     - cd apps/frontend && bun run build
 
 lang-update:
