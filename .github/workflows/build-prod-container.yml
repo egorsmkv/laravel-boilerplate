@@ -42,7 +42,7 @@ jobs:
         run: |
           cp -r ../apps .
           cp -r ./rr/rr apps/frontend
-          podman build --build-arg CADDY_ARCH=amd64 --tag -t ghcr.io/${{ github.repository }}/laravel_boilerplate:latest .
+          podman build --build-arg CADDY_ARCH=amd64 --tag ghcr.io/${{ github.repository }}/laravel_boilerplate:latest .
 
       - name: Push image to GHCR
         run: |
