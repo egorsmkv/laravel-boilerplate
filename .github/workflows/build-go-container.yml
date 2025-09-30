@@ -24,6 +24,6 @@ jobs:
         run: podman --version
 
       - name: Build apps/go-hello
+        working-directory: ./apps/go-hello
         run: |
-          cd apps/go-hello
           just build
