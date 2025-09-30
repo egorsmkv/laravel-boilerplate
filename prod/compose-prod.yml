@@ -1,0 +1,180 @@
+services:
+  apps:
+    image: ghcr.io/egorsmkv/laravel-boilerplate:latest
+    container_name: apps_prod
+    restart: always
+    env_file:
+      - prod.env
+      - prod-frontend.env
+    command:
+      - php
+      - artisan
+      - octane:roadrunner
+      - --rr-config
+      - /app/frontend/.rr.yaml
+    depends_on:
+      - redis
+    networks:
+      - app_prod
+    logging:
+      options:
+        max-size: 256M
+        max-file: 3
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  queue:
+    image: ghcr.io/egorsmkv/laravel-boilerplate:latest
+    container_name: queue_prod
+    restart: always
+    env_file:
+      - prod.env
+      - prod-frontend.env
+    command:
+      - php
+      - artisan
+      - horizon
+    depends_on:
+      - redis
+    networks:
+      - app_prod
+    logging:
+      options:
+        max-size: 100M
+        max-file: 3
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+  schedule:
+    image: ghcr.io/egorsmkv/laravel-boilerplate:latest
+    container_name: schedule_prod
+    restart: always
+    env_file:
+      - prod.env
+      - prod-frontend.env
+    command:
+      - php
+      - artisan
+      - schedule:work
+    depends_on:
+      - redis
+    networks:
+      - app_prod
+    logging:
+      options:
+        max-size: 100M
+        max-file: 3
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
+  caddy:
+    image: ghcr.io/egorsmkv/laravel-boilerplate:latest
+    container_name: caddy_prod
+    restart: always
+    ports:
+      - "8080:8080"
+      # - '443:443'
+    command:
+      - /app/caddy
+      - run
+      - --config
+      - /app/Caddyfile
+    depends_on:
+      - apps
+    networks:
+      - app_prod
+    logging:
+      options:
+        max-size: 64M
+        max-file: 3
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
+  redis:
+    image: docker.io/library/redis:8-alpine3.22
+    container_name: redis_prod
+    restart: always
+    env_file:
+      - prod-frontend.env
+    command:
+      - /bin/sh
+      - -c
+      - redis-server --appendonly yes --requirepass "$${REDIS_PASSWORD}"
+    volumes:
+      - redis_data:/data
+    networks:
+      - app_prod
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "1"
+    ulimits:
+      memlock: -1
+
+  minio:
+    image: docker.io/minio/minio:latest
+    container_name: minio_prod
+    restart: always
+    command: [
+      "server",
+      "--console-address",
+      ":9001",
+      "/data",
+    ]
+    env_file:
+      - prod.env
+    volumes:
+      - minio_data:/data
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    networks:
+      - app_prod
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "1"
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+
+volumes:
+  redis_data:
+    name: redis_prod_data
+  minio_data:
+    name: minio_prod_data
+
+networks:
+  app_prod:
+    driver: bridge
+    name: app_prod
