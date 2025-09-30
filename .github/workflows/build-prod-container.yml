@@ -31,11 +31,8 @@ jobs:
         run: podman --version
 
       - name: Build RoadRunner
-        run: |
-          cd prod/rr
-          sh download.sh
-          sh build.sh
-          just build
+        working-directory: ./prod/rr
+        run: sh download.sh && sh build.sh
 
       - name: Build apps/frontend for production
         run: |
