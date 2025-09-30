@@ -24,6 +24,5 @@ jobs:
         run: podman --version
 
       - name: Build apps/python-hello
-        run: |
-          cd apps/python-hello
-          just build
+        working-directory: ./apps/python-hello
+        run: just build

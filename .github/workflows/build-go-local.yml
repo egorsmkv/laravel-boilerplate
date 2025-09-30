@@ -26,10 +26,8 @@ jobs:
         run: sudo apt-get install -y libzmq3-dev
 
       - name: Build
-        run: |
-          cd apps/go-hello
-          just build-local
+        working-directory: ./apps/go-hello
+        run: just build-local
 
       - name: Check app
-        run: |
-          file ./apps/go-hello/go_hello
+        run: file ./apps/go-hello/go_hello

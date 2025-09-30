@@ -34,7 +34,16 @@ jobs:
         working-directory: ./prod/rr
         run: sh download.sh && sh build.sh
 
-      - name: Build apps/frontend for production
+      - name: Login to GHCR
+        run: echo ${{ secrets.GITHUB_TOKEN }} | podman login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Build image
+        working-directory: ./prod
         run: |
-          cd prod
-          just build
+          cp -r ../apps .
+          cp -r ./rr/rr apps/frontend
+          podman build --build-arg CADDY_ARCH=amd64 --tag -t ghcr.io/${{ github.repository }}/laravel_boilerplate:latest .
+
+      - name: Push image to GHCR
+        run: |
+          podman push ghcr.io/${{ github.repository }}/laravel_boilerplate:latest

@@ -25,5 +25,4 @@ jobs:
 
       - name: Build apps/go-hello
         working-directory: ./apps/go-hello
-        run: |
-          just build
+        run: just build
