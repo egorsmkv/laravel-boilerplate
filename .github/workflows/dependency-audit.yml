@@ -47,7 +47,7 @@ jobs:
           ls -lh
 
       - name: Create issue if problems found
-        uses: peter-evans/create-issue-from-file@v5
+        uses: peter-evans/create-issue-from-file@v6
         if: ${{ success() }}
         with:
           title: Weekly Dependency Audit
