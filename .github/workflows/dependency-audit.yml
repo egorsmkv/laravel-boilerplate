@@ -20,7 +20,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: "23"
+          node-version: "25"
 
       - uses: oven-sh/setup-bun@v2
         with:
@@ -36,10 +36,9 @@ jobs:
       - name: Generate report
         continue-on-error: true
         run: |
-          wget -O "npm-audit-to-report_0.3.0_linux_amd64.tar.gz" "https://github.com/egorsmkv/npm-audit-to-report/releases/download/v0.3.0/npm-audit-to-report_0.3.0_linux_amd64.tar.gz"
-          tar xf npm-audit-to-report_0.3.0_linux_amd64.tar.gz
-          chmod +x ./npm-audit-to-report
-          ./npm-audit-to-report --fail-if-no-vulnerabilities --audit-file security-audit.json --output-file report.md
+          wget -O "audit-to-report" "https://github.com/egorsmkv/npm-audit-to-report/releases/download/v0.4.0/npm-audit-to-report"
+          chmod +x ./audit-to-report
+          ./audit-to-report --fail-if-no-vulnerabilities --audit-file security-audit.json --output-file report.md
 
       - name: Check files
         run: |
