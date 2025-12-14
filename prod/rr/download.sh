@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export VERSION=2025.1.3
+export VERSION=2025.1.5
 
 wget -q https://github.com/roadrunner-server/velox/releases/download/v$VERSION/velox-$VERSION-linux-amd64.tar.gz
 
