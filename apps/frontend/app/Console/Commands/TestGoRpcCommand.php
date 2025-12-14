@@ -49,7 +49,7 @@ class TestGoRpcCommand extends Command
                 sleep(1);
             }
         } catch (ZMQSocketException $e) {
-            Log::error($e);
+            Log::error($e->getMessage(), ['exception' => $e]);
         }
     }
 }
