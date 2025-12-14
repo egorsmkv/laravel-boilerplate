@@ -21,8 +21,8 @@
     "spiral/roadrunner-http": "^3"
   },
   "require-dev": {
+    "carthage-software/mago": "^1.0@rc",
     "fakerphp/faker": "^1",
-    "friendsofphp/php-cs-fixer": "^3",
     "larastan/larastan": "^3",
     "laravel-lang/common": "^6",
     "laravel/telescope": "^5.1",
@@ -76,6 +76,7 @@
     "preferred-install": "dist",
     "sort-packages": true,
     "allow-plugins": {
+      "carthage-software/mago": true,
       "pestphp/pest-plugin": true,
       "php-http/discovery": true
     }

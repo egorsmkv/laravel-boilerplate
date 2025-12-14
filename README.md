@@ -64,7 +64,7 @@ Update locales:
 just lang-update
 ```
 
-Apply fixes by [phpcs](https://github.com/squizlabs/PHP_CodeSniffer) and check code by [Larastan](https://github.com/larastan/larastan):
+Apply fixes by [Mago](https://github.com/carthage-software/mago) and check code by [Larastan](https://github.com/larastan/larastan):
 
 ```bash
 just check-code
