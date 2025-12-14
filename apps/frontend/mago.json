@@ -1,0 +1,16 @@
+{
+  "source": {
+    "roots": [
+      "app",
+      "config",
+      "database",
+      "resources",
+      "routes"
+    ]
+  },
+  "formatter": {
+    "ignore_paths": [
+      "*.blade.php"
+    ]
+  }
+}
