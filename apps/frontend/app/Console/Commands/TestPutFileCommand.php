@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
@@ -7,7 +9,10 @@ use Illuminate\Support\Facades\Storage;
 
 class TestPutFileCommand extends Command
 {
+    /** @var string */
     protected $signature = 'app:test-put-file-command';
+
+    /** @var string */
     protected $description = 'Test command to put a file to the S3 storage';
 
     public function handle(): void

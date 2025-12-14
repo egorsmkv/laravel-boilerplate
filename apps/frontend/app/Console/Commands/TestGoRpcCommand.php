@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
@@ -11,11 +13,15 @@ use ZMQSocketException;
 
 class TestGoRpcCommand extends Command
 {
+    /** @var string */
     protected $signature = 'app:test-go-rpc {n_iters}';
+
+    /** @var string */
     protected $description = 'Make a call to the Go service.';
 
     public function handle(): void
     {
+        /** @var int $nIters */
         $nIters = $this->argument('n_iters');
 
         try {
