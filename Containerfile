@@ -13,7 +13,7 @@ RUN apk --update --no-cache add wget git linux-headers build-base autoconf zerom
     && composer clear-cache
 
 WORKDIR /opt
-RUN git clone https://github.com/zeromq/php-zmq.git php-zmq \
+RUN git clone -b issue-php85 https://github.com/remicollet/php-zmq.git php-zmq \
     && git clone https://github.com/NoiseByNorthwest/php-spx.git
 
 WORKDIR /opt/php-zmq
