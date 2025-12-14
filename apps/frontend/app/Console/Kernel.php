@@ -11,17 +11,11 @@ class Kernel extends ConsoleKernel
 {
     /**
      * The Artisan commands provided by your application.
-     *
-     * @var array<int, string>
      */
-    protected $commands = [
-    ];
+    protected $commands = [];
 
     /**
      * Define the application's command schedule.
-     *
-     * @param Schedule $schedule
-     * @return void
      */
     protected function schedule(Schedule $schedule): void
     {
@@ -32,8 +26,6 @@ class Kernel extends ConsoleKernel
 
     /**
      * Get the timezone that should be used by default for scheduled events.
-     *
-     * @return DateTimeZone|string|null
      */
     protected function scheduleTimezone(): DateTimeZone|string|null
     {
@@ -45,8 +37,6 @@ class Kernel extends ConsoleKernel
 
     /**
      * Register the commands for the application.
-     *
-     * @return void
      */
     protected function commands(): void
     {

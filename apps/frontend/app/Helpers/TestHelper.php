@@ -11,10 +11,6 @@ class TestHelper
 {
     /**
      * Returns the concatenation of two strings formatted as "<$v1> - <$v2>".
-     *
-     * @param string $v1 The first string.
-     * @param string $v2 The second string.
-     * @return string The concatenated string.
      */
     public static function test(string $v1, string $v2): string
     {
@@ -24,7 +20,6 @@ class TestHelper
     /**
      * Returns the current date and time formatted as "Y-m-d H:i:s".
      *
-     * @return string The formatted date and time returned from the Go service.
      * @throws ZMQSocketException
      */
     public static function currentDate(): string
