@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 return [
     'accepted'               => 'Ви повинні прийняти :attribute.',
     'accepted_if'            => 'Поле :attribute має бути прийнятним, коли :other є :value.',
@@ -12,7 +11,7 @@ return [
     'alpha'                  => 'Поле :attribute має містити лише літери.',
     'alpha_dash'             => 'Поле :attribute має містити лише літери, цифри, тире та підкреслення.',
     'alpha_num'              => 'Поле :attribute має містити лише літери та цифри.',
-    'any_of'                 => 'The :attribute field is invalid.',
+    'any_of'                 => 'Поле :attribute є недійсним.',
     'array'                  => 'Поле :attribute має бути масивом.',
     'ascii'                  => 'Поле :attribute має містити лише однобайтові буквено-цифрові знаки та символи.',
     'attached'               => 'Цей :attribute вже прикріплений.',
@@ -40,7 +39,7 @@ return [
     'digits_between'         => 'Довжина цифрового поля :attribute повинна бути від :min до :max.',
     'dimensions'             => 'Поле :attribute містить неприпустимі розміри зображення.',
     'distinct'               => 'Поле :attribute містить значення, яке дублюється.',
-    'doesnt_contain'         => 'The :attribute field must not contain any of the following: :values.',
+    'doesnt_contain'         => 'Поле :attribute не повинно містити жодного з наведеного: :values.',
     'doesnt_end_with'        => 'Поле :attribute не може закінчуватися одним із таких: :values.',
     'doesnt_start_with'      => 'Поле :attribute не може починатися з одного з наступного: :values.',
     'email'                  => 'Поле :attribute повинне містити коректну електронну адресу.',
@@ -66,7 +65,7 @@ return [
     'image'                  => 'Поле :attribute має містити зображення.',
     'in'                     => 'Значення поля :attribute відсутнє у списку допустимих значень.',
     'in_array'               => 'Значення поля :attribute не міститься в :other.',
-    'in_array_keys'          => 'The :attribute field must contain at least one of the following keys: :values.',
+    'in_array_keys'          => 'Поле :attribute має містити принаймні один із таких ключів: :values.',
     'integer'                => 'Поле :attribute має містити ціле число.',
     'ip'                     => 'Поле :attribute має містити IP адресу.',
     'ipv4'                   => 'Поле :attribute має містити IPv4 адресу.',
@@ -75,7 +74,7 @@ return [
     'list'                   => 'Значення поля :attribute має бути списком.',
     'lowercase'              => 'Поле :attribute має бути рядком у нижньому регістрі',
     'lt'                     => [
-        'array'   => 'Поле :attribute має містити менше ніж :value items.',
+        'array'   => 'Поле :attribute має містити менше ніж :value елементів.',
         'file'    => 'Поле :attribute має бути менше ніж :value кілобайт.',
         'numeric' => 'Поле :attribute має бути менше ніж :value.',
         'string'  => 'Поле :attribute має бути менше ніж :value символів.',
@@ -126,8 +125,8 @@ return [
     'present_with_all'       => 'Поле :attribute повинно бути присутнім, якщо присутні :values.',
     'prohibited'             => 'Поле :attribute заборонено.',
     'prohibited_if'          => 'Поле :attribute заборонено, коли :other дорівнює :value.',
-    'prohibited_if_accepted' => 'The :attribute field is prohibited when :other is accepted.',
-    'prohibited_if_declined' => 'The :attribute field is prohibited when :other is declined.',
+    'prohibited_if_accepted' => 'Поле :attribute заборонено, якщо :other прийнято.',
+    'prohibited_if_declined' => 'Поле :attribute заборонено, якщо :other відхилено.',
     'prohibited_unless'      => 'Поле :attribute заборонено, якщо тільки :other не знаходиться в :values.',
     'prohibits'              => 'Поле :attribute забороняє присутність :other.',
     'regex'                  => 'Поле :attribute має хибний формат.',
