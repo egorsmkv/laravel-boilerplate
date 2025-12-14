@@ -11,7 +11,7 @@ build:
     - podman image prune -f
 
 install:
-    - podman exec -it apps_dev sh -c 'composer install && php artisan horizon:publish && php artisan telescope:publish'
+    - podman exec -it apps_dev sh -c 'composer install && php artisan telescope:publish'
     - podman exec -it apps_dev php artisan key:generate
     - podman exec -it apps_dev php artisan migrate --force
 
