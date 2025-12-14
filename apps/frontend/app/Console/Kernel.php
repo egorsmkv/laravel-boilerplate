@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Console;
 
 use App\Console\Commands\TestScheduleCommand;
@@ -11,6 +13,8 @@ class Kernel extends ConsoleKernel
 {
     /**
      * The Artisan commands provided by your application.
+     *
+     * @var array<int, class-string>
      */
     protected $commands = [];
 

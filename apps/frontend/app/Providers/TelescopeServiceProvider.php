@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
@@ -57,7 +59,7 @@ class TelescopeServiceProvider extends TelescopeApplicationServiceProvider
      */
     protected function gate(): void
     {
-        Gate::define('viewTelescope', function ($user) {
+        Gate::define('viewTelescope', function (\Illuminate\Foundation\Auth\User $user): bool {
             return in_array($user->email, [
                 //
             ]);
