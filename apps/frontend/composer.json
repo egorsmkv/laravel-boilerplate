@@ -21,8 +21,8 @@
     "spiral/roadrunner-http": "^3"
   },
   "require-dev": {
+    "carthage-software/mago": "*",
     "fakerphp/faker": "^1",
-    "friendsofphp/php-cs-fixer": "^3",
     "larastan/larastan": "^3",
     "laravel-lang/common": "^6",
     "laravel/telescope": "^5.1",
