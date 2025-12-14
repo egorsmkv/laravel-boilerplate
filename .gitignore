@@ -12,6 +12,7 @@ apps/frontend/storage/*.key
 apps/frontend/db.sqlite
 apps/frontend/rr
 apps/frontend/storage/db.sqlite
+apps/frontend/package-lock.json
 
 .env
 .env.backup
