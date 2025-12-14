@@ -12,12 +12,9 @@ class TestJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    private int $iterations;
-
-    public function __construct(int $iterations)
-    {
-        $this->iterations = $iterations;
-    }
+    public function __construct(
+        private int $iterations
+    ) {}
 
     /**
      * Executes the job for a given number of iterations.

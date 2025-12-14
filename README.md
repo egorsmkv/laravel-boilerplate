@@ -5,7 +5,7 @@
 >
 > - be on the latest version of Laravel
 > - be lightweight to run with Podman
-> - use modern technologies such as **PHP 8.4**, **Go 1.25**, **Python 3.13**, etc.
+> - use modern technologies such as **PHP 8.5**, **Go 1.25**, **Python 3.13**, etc.
 
 ### Requirements
 

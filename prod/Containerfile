@@ -1,4 +1,4 @@
-FROM docker.io/library/php:8.4.13-cli-alpine3.22
+FROM docker.io/library/php:8.5-cli-alpine3.22
 
 ARG CADDY_ARCH
 

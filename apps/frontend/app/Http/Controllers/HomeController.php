@@ -18,9 +18,6 @@ class HomeController extends Controller
 {
     /**
      * Show the home page.
-     *
-     * @param Request $request
-     * @return View
      */
     public function index(Request $request): View
     {
@@ -29,9 +26,6 @@ class HomeController extends Controller
 
     /**
      * Just a test to invoke the job.
-     *
-     * @param Request $request
-     * @return string
      */
     public function startTestJob(Request $request): string
     {
@@ -42,9 +36,6 @@ class HomeController extends Controller
 
     /**
      * Just a test to invoke the email.
-     *
-     * @param Request $request
-     * @return string
      */
     public function startTestEmail(Request $request): string
     {
@@ -56,8 +47,6 @@ class HomeController extends Controller
     /**
      * Just a test to invoke the email.
      *
-     * @param Request $request
-     * @return string
      * @throws ZMQSocketException
      */
     public function startTestPythonZMQ(Request $request): string
