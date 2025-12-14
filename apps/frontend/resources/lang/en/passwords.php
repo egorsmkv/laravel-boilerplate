@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-declare(strict_types=1);
 
 return [
     'reset'     => 'Your password has been reset.',
