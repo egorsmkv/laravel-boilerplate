@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'go_hello_addr' => env('RPC_HELLO_ADDR', 'tcp://go_hello_dev:6001'),
 

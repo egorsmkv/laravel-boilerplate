@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+declare(strict_types=1);
+
 return [
     'reset'     => 'Ваш пароль змінено!',
     'sent'      => 'Ми надіслали на Вашу електронну адресу посилання для зміни пароля!',

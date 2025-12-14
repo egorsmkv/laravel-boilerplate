@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+declare(strict_types=1);
+
 return [
     '0'            => 'Невідома помилка',
     '100'          => 'Продовжити',

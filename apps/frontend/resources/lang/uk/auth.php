@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+declare(strict_types=1);
+
 return [
     'failed'   => 'Вказані облікові дані не збігаються з нашими записами.',
     'password' => 'Пароль невірний.',

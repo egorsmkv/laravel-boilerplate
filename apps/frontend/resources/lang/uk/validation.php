@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+declare(strict_types=1);
+
 return [
     'accepted'               => 'Ви повинні прийняти :attribute.',
     'accepted_if'            => 'Поле :attribute має бути прийнятним, коли :other є :value.',
