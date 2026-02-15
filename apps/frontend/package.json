@@ -7,11 +7,11 @@
     "build": "vite build --debug"
   },
   "devDependencies": {
-    "axios": "^1.12.2",
+    "@tailwindcss/vite": "^4.1.13",
+    "axios": "^1.13.5",
     "flowbite": "^4.0.1",
     "laravel-vite-plugin": "^2.0.1",
     "tailwindcss": "^4.1.13",
-    "vite": "^7.1.11",
-    "@tailwindcss/vite": "^4.1.13"
+    "vite": "^7.1.11"
   }
 }
