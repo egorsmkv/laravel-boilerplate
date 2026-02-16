@@ -8835,16 +8835,16 @@
     "packages-dev": [
         {
             "name": "carthage-software/mago",
-            "version": "1.2.2",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/carthage-software/mago.git",
-                "reference": "9e6e3c629349f5bdc2a3b7c7404a22a3946a33f0"
+                "reference": "8d58c5c129d7259f42e8de596cf17c41b49c293d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/carthage-software/mago/zipball/9e6e3c629349f5bdc2a3b7c7404a22a3946a33f0",
-                "reference": "9e6e3c629349f5bdc2a3b7c7404a22a3946a33f0",
+                "url": "https://api.github.com/repos/carthage-software/mago/zipball/8d58c5c129d7259f42e8de596cf17c41b49c293d",
+                "reference": "8d58c5c129d7259f42e8de596cf17c41b49c293d",
                 "shasum": ""
             },
             "require": {
@@ -8882,7 +8882,7 @@
             ],
             "support": {
                 "issues": "https://github.com/carthage-software/mago/issues",
-                "source": "https://github.com/carthage-software/mago/tree/1.2.2"
+                "source": "https://github.com/carthage-software/mago/tree/1.8.0"
             },
             "funding": [
                 {
@@ -8890,7 +8890,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-01-25T13:20:59+00:00"
+            "time": "2026-02-12T05:55:55+00:00"
         },
         {
             "name": "codezero/browser-locale",
@@ -12902,9 +12902,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "carthage-software/mago": 5
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
@@ -12912,5 +12910,5 @@
         "ext-zmq": "*"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.6.0"
 }
