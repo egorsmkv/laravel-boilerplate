@@ -8,7 +8,7 @@
   ],
   "license": "proprietary",
   "require": {
-    "php": "^8.5",
+    "php": "^8.3",
     "ext-zmq": "*",
     "guzzlehttp/guzzle": "^7",
     "laravel-lang/locales": "^2",
@@ -79,6 +79,9 @@
       "carthage-software/mago": true,
       "pestphp/pest-plugin": true,
       "php-http/discovery": true
+    },
+    "platform": {
+      "php": "8.3.6"
     }
   },
   "minimum-stability": "stable",
