@@ -41,7 +41,7 @@ class TestGoRpcCommand extends Command
 
                     $this->comment($result);
                 } catch (ZMQSocketException $e) {
-                    $this->comment('ERROR:', $e->getCode());
+                    $this->comment('ERROR: ' . $e->getCode());
                 }
 
                 $this->comment('');
