@@ -1,43 +1,27 @@
 # Mago Configuration File
 # https://mago.carthage.software/
 
-[formatter]
-# Enable automatic formatting
-enabled = true
-
-# Paths to format
-include = [
+[source]
+includes = [
   "app/**/*.php",
   "config/**/*.php",
   "database/**/*.php",
   "routes/**/*.php",
   "resources/**/*.php",
 ]
-
-# Paths to exclude
-exclude = [
+excludes = [
   "vendor/**",
   "storage/**",
   "bootstrap/cache/**",
   "**/*.blade.php",
 ]
 
-[linter]
-# Enable linting
-enabled = true
-
-# Use the same include/exclude paths as formatter
-include = [
-  "app/**/*.php",
-  "config/**/*.php",
-  "database/**/*.php",
-  "routes/**/*.php",
-  "resources/**/*.php",
+[formatter]
+excludes = [
+  "**/*.blade.php",
 ]
 
-exclude = [
-  "vendor/**",
-  "storage/**",
-  "bootstrap/cache/**",
+[linter]
+excludes = [
   "**/*.blade.php",
 ]
