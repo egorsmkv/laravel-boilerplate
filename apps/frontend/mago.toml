@@ -1,9 +1,6 @@
 # Mago Configuration File
 # https://mago.carthage.software/
 
-[project]
-name = "laravel-boilerplate"
-
 [formatter]
 # Enable automatic formatting
 enabled = true
