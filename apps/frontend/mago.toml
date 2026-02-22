@@ -7,19 +7,19 @@ enabled = true
 
 # Paths to format
 include = [
-    "app/**/*.php",
-    "config/**/*.php",
-    "database/**/*.php",
-    "routes/**/*.php",
-    "resources/**/*.php",
+  "app/**/*.php",
+  "config/**/*.php",
+  "database/**/*.php",
+  "routes/**/*.php",
+  "resources/**/*.php",
 ]
 
 # Paths to exclude
 exclude = [
-    "vendor/**",
-    "storage/**",
-    "bootstrap/cache/**",
-    "**/*.blade.php",
+  "vendor/**",
+  "storage/**",
+  "bootstrap/cache/**",
+  "**/*.blade.php",
 ]
 
 [linter]
@@ -28,16 +28,16 @@ enabled = true
 
 # Use the same include/exclude paths as formatter
 include = [
-    "app/**/*.php",
-    "config/**/*.php",
-    "database/**/*.php",
-    "routes/**/*.php",
-    "resources/**/*.php",
+  "app/**/*.php",
+  "config/**/*.php",
+  "database/**/*.php",
+  "routes/**/*.php",
+  "resources/**/*.php",
 ]
 
 exclude = [
-    "vendor/**",
-    "storage/**",
-    "bootstrap/cache/**",
-    "**/*.blade.php",
+  "vendor/**",
+  "storage/**",
+  "bootstrap/cache/**",
+  "**/*.blade.php",
 ]

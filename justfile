@@ -62,6 +62,12 @@ build-node-image:
 update-frontend: build-node-image
     - podman run --rm -it -v ./apps/frontend:/app/frontend node_dev:1.0 sh -c "npm-check-updates --format group -i"
 
+install-dockerfmt:
+    - go install github.com/reteps/dockerfmt@latest
+
+install-dprint:
+    - cargo install --locked dprint
+
 fmt:
     - podman run --rm -v .:/code -i docker.io/library/caddy:alpine caddy validate --config /code/Caddyfile
     - podman run --rm -v .:/code -i docker.io/library/caddy:alpine caddy fmt --overwrite /code/Caddyfile
