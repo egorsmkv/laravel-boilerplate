@@ -119,7 +119,7 @@ services:
           memory: 128M
 
   redis:
-    image: docker.io/library/redis:8-alpine3.22
+    image: docker.io/library/redis:8-alpine3.23
     container_name: redis_prod
     restart: always
     env_file:
