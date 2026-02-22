@@ -1,4 +1,4 @@
-FROM docker.io/library/node:24-alpine3.22
+FROM docker.io/library/node:25-alpine3.23
 
 RUN apk --update --no-cache add bash curl
 
