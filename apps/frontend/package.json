@@ -6,6 +6,9 @@
     "optimize": "vite optimize --debug",
     "build": "vite build --debug"
   },
+  "overrides": {
+    "tar": "7.5.8"
+  },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.13",
     "axios": "^1.13.5",
