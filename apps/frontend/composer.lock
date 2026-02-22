@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "45c7aa48277c53156b285676856aa63c",
+    "content-hash": "285e9ddccbb5ee07c05705f009a171b5",
     "packages": [
         {
             "name": "archtechx/enums",
@@ -5289,16 +5289,16 @@
         },
         {
             "name": "spiral/roadrunner-http",
-            "version": "v3.6.0",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roadrunner-php/http.git",
-                "reference": "a44a5f7d54d4ee8a14fe99cd22dcd128db270c88"
+                "reference": "8e241065a26cc500d021a29ce28be0d5f4b80a8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roadrunner-php/http/zipball/a44a5f7d54d4ee8a14fe99cd22dcd128db270c88",
-                "reference": "a44a5f7d54d4ee8a14fe99cd22dcd128db270c88",
+                "url": "https://api.github.com/repos/roadrunner-php/http/zipball/8e241065a26cc500d021a29ce28be0d5f4b80a8f",
+                "reference": "8e241065a26cc500d021a29ce28be0d5f4b80a8f",
                 "shasum": ""
             },
             "require": {
@@ -5367,7 +5367,7 @@
                 "docs": "https://docs.roadrunner.dev",
                 "forum": "https://forum.roadrunner.dev/",
                 "issues": "https://github.com/roadrunner-server/roadrunner/issues",
-                "source": "https://github.com/roadrunner-php/http/tree/v3.6.0"
+                "source": "https://github.com/roadrunner-php/http/tree/v4.0.0"
             },
             "funding": [
                 {
@@ -5375,7 +5375,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-31T12:42:23+00:00"
+            "time": "2026-02-18T16:00:02+00:00"
         },
         {
             "name": "spiral/roadrunner-worker",
