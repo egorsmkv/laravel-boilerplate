@@ -16,6 +16,7 @@
     "laravel/horizon": "^5",
     "laravel/octane": "^2",
     "league/flysystem-aws-s3-v3": "^3",
+    "nyholm/psr7": "^1.8",
     "sentry/sentry-laravel": "^4",
     "spiral/roadrunner-cli": "^2",
     "spiral/roadrunner-http": "^3"
