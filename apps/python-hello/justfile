@@ -2,7 +2,7 @@ build:
     - podman build --tag python_hello:1.0 .
 
 lint:
-    - podman run --rm -i hadolint/hadolint < Containerfile
+    - podman run --rm -i docker.io/hadolint/hadolint < Containerfile
 
 fmt:
     - just --fmt --unstable

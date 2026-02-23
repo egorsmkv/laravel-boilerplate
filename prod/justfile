@@ -26,7 +26,7 @@ logs:
     - podman compose logs -f
 
 lint:
-    - podman run --rm -i hadolint/hadolint < Dockerfile
+    - podman run --rm -i docker.io/hadolint/hadolint < Dockerfile
 
 fmt: pull
     - podman run --rm -v .:/code -i caddy:2.10-alpine caddy validate --config /code/Caddyfile

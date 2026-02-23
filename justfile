@@ -53,8 +53,8 @@ console:
     - podman exec -it apps_dev sh
 
 lint:
-    - podman run --rm -i hadolint/hadolint < Containerfile
-    - podman run --rm -i hadolint/hadolint < Containerfile.node
+    - podman run --rm -i docker.io/hadolint/hadolint < Containerfile
+    - podman run --rm -i docker.io/hadolint/hadolint < Containerfile.node
 
 build-node-image:
     - podman build -f Containerfile.node --tag node_dev:1.0 .
