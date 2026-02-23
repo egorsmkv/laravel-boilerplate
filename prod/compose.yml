@@ -21,8 +21,8 @@ services:
       - app_prod
     logging:
       options:
-        max-size: 256M
-        max-file: 3
+        max-size: "256M"
+        max-file: "3"
     ulimits:
       nproc: 65535
       nofile:
@@ -50,8 +50,8 @@ services:
       - app_prod
     logging:
       options:
-        max-size: 100M
-        max-file: 3
+        max-size: "100M"
+        max-file: "3"
     ulimits:
       nproc: 65535
       nofile:
@@ -79,8 +79,8 @@ services:
       - app_prod
     logging:
       options:
-        max-size: 100M
-        max-file: 3
+        max-size: "100M"
+        max-file: "3"
     ulimits:
       nproc: 65535
       nofile:
@@ -109,8 +109,8 @@ services:
       - app_prod
     logging:
       options:
-        max-size: 64M
-        max-file: 3
+        max-size: "64M"
+        max-file: "3"
     ulimits:
       nproc: 65535
       nofile:
